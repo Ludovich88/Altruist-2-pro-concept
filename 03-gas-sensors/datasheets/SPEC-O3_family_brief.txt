@@ -1,0 +1,97 @@
+                                                                        PRODUCT BRIEF
+
+
+
+                      Ozone (O3) Sensor
+                      110-4xx
+
+                                                              FEATURES
+                                                              •     Small Size & Low Profile (20 x 20 x 3 mm)
+                                                              •     Improved stability and low ppb sensitivity
+                                                              •     Accurate & Linear Response
+                                                              •     Long Life (10 +years)
+                                                              •     Fast Response
+                                                              •     100% Factory Tested
+                                                              •     Ultra-Low Power < 50 uW max
+                                                              •     ROHS Compliant
+
+                                                              APPLICATIONS
+                                                              •     Outdoor Air Quality
+                                                              •     Indoor Air Quality
+                                                              •     Food Quality
+                                                              •     Health/ Sanitizing
+                                                              •     Weather Stations
+                  110-408 Thick Castellation                  •     Smart Homes
+                                                              •     Air Purification Control
+                                                              •     Industrial Safety
+
+
+
+     110-406 Pinned               110-407 Thin Castellation   The diagram below shows the basic measuring circuit
+                                                              for the 110-4xx. The sensor generates an electric
+                                                              current which is converted into output voltage (Vout)
+Interlink Electronics Screen Printed Electrochemical          using a linear circuit like the one shown.
+sensor (SPEC Sensor™) revolutionizes the current              Notes: Vbias = Vw-Vr
+state of the art, enabling new applications in
+consumer, medical and industrial safety. Interlink
+Electronics offer the performance of the best quality
+electrochemical sensors at a fraction of the price. The
+110-4xx family Ozone sensors are small and low-
+profile, facilitating easy integration into wireless,
+portable, and other IoT solutions. These sensors are
+ideal for health, food, environmental, industrial, and
+residential monitoring, because of their high
+performance, low cost, and small size. IE’S Ozone
+Sensor are available in three packages (110-406,
+110-407, 110-408).
+                                                                  © 2023, Interlink Electronics, Inc. All rights reserved
+ SPECIFICATIONS
+                Parameter                        Typical Value              Unit           Notes
+   Measurement Range                                 0 to 10               ppm             1,2,3
+   Lower Detection Limit                               0.02                ppm              1,2
+   Resolution                                          0.01                ppm              1,2
+   Accuracy                                             ±2                  %                1
+   Response Time – T (90)                             < 180              seconds             1
+   Sensitivity Range                                -50 ± 25             nA/ppm              1
+   Expected Operating Life                              10                years              1
+   Operating Temperature Range                      -30 to 55               °C               3
+   Operating Humidity Range                          10 to 95               %               3,4
+   Operating Pressure Range                         0.8 to 1.2             atm               3
+   Operating Bias Range                              0 to -25              mV
+   Power Consumption                                 10 to 50              uW                 2
+
+  1.   At standard conditions (25 °C, 50% RH, 1 atm), unless otherwise indicated.
+  2.   Depends on circuit design.
+  3.   Recommended operating range. The sensor may be damaged, and warranty voided if
+       operated outside the specified range. For the best optimum accuracy operate sensor
+       at -20 to 40 °C and 15 to 90% RH.
+  4.   Non-condensing.
+
+
+
+
+ KEY CHARACTERISTICS
+
+
+
+
+                                                                                                      CONTACT US
+                 Long Term Stability                                         Linearity                15707 Rockfield Blvd.
+                                                                                                      Suite 105
+                                                                                                      Irvine, CA 92618
+
+                                                                                                      Toll Free: +1.866.764.8965
+                                                                                                      Phone: +1.805.484.8855
+                                                                                                      Fax: +1.805.530.5598
+
+                                                                                                      Visit:
+                                                                                                      www.interlinkelectronics.com
+                                        Humidity Effect
+                                                                                                      Email:
+Information furnished by Interlink Electronics is believed to be accurate and reliable "as is".       sales@interlinkelectronics.com
+However, no responsibility is assumed by Interlink Electronics for any use of such information,
+nor for any infringements of patents or other rights of third parties that may result from its use.
+Specifications subject to change without notice. No license is granted by implication or
+otherwise under any patent or patent rights of Interlink Electronics. Trademarks and registered       © 2023, Interlink Electronics, Inc.
+trademarks are the property of their respective owners.                                               All rights reserved
+

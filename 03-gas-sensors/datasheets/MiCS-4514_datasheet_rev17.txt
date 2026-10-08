@@ -1,0 +1,256 @@
+                                                                                          MiCS-4514
+                                                   Data Sheet                             0278 rev 17
+
+
+
+
+The MiCS-4514 is a compact MOS sensor with two fully
+independent sensing elements on one package.
+
+
+The MiCS-4514 is a robust MEMS sensor for the
+detection of pollution from automobile exhausts.
+
+
+
+                                                             10.0
+
+
+
+
+   Features                                                   1.0         H2S
+                                                                                              CO
+
+
+                                                                                                                                                 Methane
+   • Smallest footprint for compact designs
+                                                     Rs/R0                                                            Ammonia
+   (5 x 7 x 1.55 mm)                                                      Ethanol       Hydrogen                                             Propane
+
+   • Robust MEMS sensor for harsh environments                0.1
+
+   • High-volume manufacturing for low-cost                                                                                                  Iso-butane
+
+
+   applications
+   • Short lead-times                                         0.0
+                                                                    0.1             1              10           100           1000       10000         100000
+                                                                                                        Concentration [ppm]
+
+                                                                RED sensor, continuous power ON, 25°C, 50% RH
+
+
+
+   Detectable gases
+   • Carbon monoxide CO            1 – 1000ppm
+   • Nitrogen dioxide NO2          0.05 – 10ppm
+   • Ethanol          C2H5OH       10 – 500ppm
+   • Hydrogen         H2           1 – 1000ppm
+   • Ammonia          NH3          1 – 500ppm
+   • Methane          CH4          >1000ppm
+
+
+                                                                OX sensor, continuous power ON, 25°C, 50% RH
+For more information please contact:
+info.em@sgxsensortech.com
+
+SGX Sensortech, Courtils 1
+CH-2035 Corcelles-Cormondrèche
+Switzerland
+
+www.sgxsensortech.com
+
+                                                                                                                                     Page 1 of 5
+                                                                              MiCS-4514
+                                                         Data Sheet           0278 rev 17
+
+
+
+  Performance RED sensor
+    Characteristic
+                                              Symbol        Typ         Min         Max        Unit
+    RED sensor
+    Sensing resistance in air (see note 1)       R0           -         100        1500        kΩ
+    Typical CO detection range                   FS                      1         1000        ppm
+    Sensitivity factor (see note 2)              S60          -         1.2          50          -
+
+
+
+
+  Performance OX sensor
+
+    Characteristic
+                                               Symbol       Typ         Min         Max        Unit
+    OX sensor
+    Sensing resistance in air (see note 1)       R0           -         0.8          20        kΩ
+    Typical NO2 detection range                  FS                     0.05         10        ppm
+    Sensitivity factor (see note 3)              SR           -          2           -           -
+
+
+
+
+Notes:
+1. Sensing resistance in air R0 is measured under controlled ambient conditions, i.e. synthetic air at 23
+     ±5°C and 50 ± 10% RH for RED sensor and synthetic air at 23 ±5°C and ≤ 5% RH for OX sensor.
+     Sampling test.
+2. Sensitivity factor is defined as Rs in air divided by Rs at 60 ppm CO. Test conditions are 23 ± 5°C and
+     50 ± 10% RH. Indicative values only. Sampling test.
+3. Sensitivity factor is defined as Rs at 0.25 ppm NO2, divided by Rs in air. Test conditions are 23 ± 5°C
+     and ≤ 5% RH . Indicative values only. Sampling test.
+
+IMPORTANT PRECAUTIONS:
+Read the following instructions carefully before using the MiCS-4514 described here to avoid erroneous
+readings and to prevent the device from permanent damage.
+•    The sensor must be reflow soldered in a neutral atmosphere, without soldering flux vapours.
+•    The sensor must not be exposed to high concentrations of organic solvents, silicone vapours or
+     cigarette-smoke in order to avoid poisoning the sensitive layer.
+•    Heater voltage above the specified maximum rating will destroy the sensor due to overheating.
+•    This sensor is to be placed in a filtered package that protects it against water and dust projections.
+•    SGX sensortech strongly recommends using ESD protection equipment to handle the sensor.
+
+
+
+
+                                                                                                     Page 2 of 5
+                                                                                      MiCS-4514
+                                                               Data Sheet             0278 rev 17
+
+
+
+
+MiCS-4514 with recommended supply circuit (top view)            MiCS-4514 with measurement circuit (top view)
+ Power circuit and measurement circuit
+RDRED is a 82 Ω and RDOX is a 133Ω. These resistors are         The two voltages measured on the load resistors are
+necessary to obtain the right temperatures on the two           directly linked to the resistances of the RED and OX sensors
+independant heaters while using a single 5V power supply.       respectively. RLOAD must be 820 Ω at the lowest in order
+The resulting voltages are typically VHRED = 2.4V and           not to damage the sensitive layer.
+VHOX= 1.7V.
+
+
+
+  Parameter
+                                             Symbol             Typ          Min            Max           Unit
+  RED sensor/OX sensor
+  Heating power                                 PH            76/43         71/30           88/50         mW
+  Heating voltage                               VH            2.4/1.7          -               -            V
+  Heating current                               IH            32/26            -               -          mA
+  Heating resistance
+                                                RH            74/66         66/59           82/73          Ω
+  at nominal power
+
+
+
+  Rating                                                    Symbol                 Value / Range                Unit
+                                                                              88 (RED sensor)/
+  Maximum heater power dissipation                            PH                                                mW
+                                                                               50 (OX sensor)
+  Maximum sensitive layer power dissipation                   Ps                        8                       mW
+  Voltage supply with adapted resistors                     Vsupply                  4.9 – 5.1                   V
+  Relative humidity range                                     RH                      5 – 95                    %RH
+  Ambient operating temperature                              Tamb                    -30 – 85                    °C
+  Storage temperature range                                  Tsto                    -40 – 120                   °C
+  Storage humidity range                                    RHsto                     5 - 95                    %RH
+
+
+
+
+                                                                                                                 Page 3 of 5
+                                                                      MiCS-4514
+                                                    Data Sheet        0278 rev 17
+
+
+
+
+Package outline dimensions
+The package is compatible with SMD assembly process.
+
+
+
+
+             Pin   Connection
+
+             A     Rh1 OX
+
+             B     Rs1 OX
+             C     Rh1 RED
+
+Operating D Rs1
+          conditions
+                RED
+              E    NC
+The heating power   is typically 80 mW and 43
+mW for the REDF andRh2OX  sensor respectively.
+                        RED
+Heating voltage
+              G is Rs2
+                   2.35RED
+                         and 1.7 V.
+Heating current
+              H
+                is 34  and
+                   Rh2 OX
+                            26 mA.
+Heating resistance at nominal power is 74 and
+              J    Rs2 OX
+66 ohm.
+The resistanceKunder
+                   NC air is 100 – 1500 kohm for
+                                                               MiCS-4514 configuration (bottom view)
+the RED sensor and 0.8 – 20 kohm for the OX
+sensor.
+
+
+Sensor configuration
+The silicon gas sensor structure consists of an accurately micro machined diaphragm with an
+embedded heating resistor and the sensing layer on top.
+The MiCS-4514 includes two sensor chips with independent heaters and sensitive layers. One sensor
+chip detects oxidising gases (OX) and the other sensor detects reducing gases (RED). The internal
+connections are shown above.
+
+
+
+
+                                                                                                Page 4 of 5
+                                                                                                      MiCS-4514
+                                                                              Data Sheet              0278 rev 17
+
+
+
+
+    Power circuit
+    The two resistors (82 ohm for RED and 51+82
+    Packaging
+    ohm for OX) are necessary to obtain the right
+    The sensors are
+    temperatures  onpackaged   in a tape andheaters
+                      the two independent    reel for
+    expedition.
+    while using a 5V power supply.
+    The sensors are placed in a carrier type. The
+    dimensions of the cavity are 5.5 x 7.5 x 2.55 mm
+    (the tolerance is +/- 0.2 mm).
+    The outside dimension of the reel is either 178
+    +- mm (for a maximum of 700 sensors ) or 330
+    + 0.25 / -4 mm (for a maximum of 2000
+    sensors).
+
+
+
+
+For more information please contact:
+info.em@sgxsensortech.com
+
+SGX Sensortech, Courtils 1
+CH-2035 Corcelles-Cormondrèche
+Switzerland
+
+www.sgxsensortech.com
+
+
+
+Whilst SGX sensortech has taken care to ensure the accuracy of the information contained herein it accepts no responsibility for the consequences
+of any use thereof and also reserves the right to change the specification of goods without notice. SGX sensortech accepts no liability beyond the set
+out in its standard conditions of sale in respect of infringement of third party patents arising from the use of tubes or other devices in accordance
+with information contained herein.
+                                                                                                                                    Page 5 of 5
+

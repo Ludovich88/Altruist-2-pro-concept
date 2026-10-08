@@ -1,0 +1,2082 @@
+                               Product            Sample &               Technical                 Tools &                  Support &
+                               Folder             Buy                    Documents                 Software                 Community
+
+
+
+                                                                                                                                                 LMP91000
+                                                                                                       SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+    LMP91000 Sensor AFE System: Configurable AFE Potentiostat for Low-Power Chemical-
+                                 Sensing Applications
+1 Features                                                                             3 Description
+•
+1    Typical Values, TA = 25°C                                                         The LMP91000 is a programmable analog front-end
+                                                                                       (AFE) for use in micro-power electrochemical sensing
+•    Supply Voltage 2.7 V to 5.25 V                                                    applications. It provides a complete signal path
+•    Supply Current (Average Over Time) <10 µA                                         solution between a sensor and a microcontroller that
+•    Cell Conditioning Current Up to 10 mA                                             generates an output voltage proportional to the cell
+•    Reference Electrode Bias Current (85°C) 900pA                                     current. The LMP91000’s programmability enables it
+                                                                                       to support multiple electrochemical sensors such as
+     (max)
+                                                                                       3-lead toxic gas sensors and 2-lead galvanic cell
+•    Output Drive Current 750 µA                                                       sensors with a single design as opposed to the
+•    Complete Potentiostat Circuit-to-Interface to Most                                multiple discrete solutions. The LMP91000 supports
+     Chemical Cells                                                                    gas sensitivities over a range of 0.5 nA/ppm to 9500
+                                                                                       nA/ppm. It also allows for an easy conversion of
+•    Programmable Cell Bias Voltage
+                                                                                       current ranges from 5 µA to 750 µA full scale.
+•    Low-Bias Voltage Drift
+                                                                                       The LMP91000’s adjustable cell bias and
+•    Programmable TIA gain 2.75 kΩ to 350 kΩ
+                                                                                       transimpedance       amplifier    (TIA)    gain    are
+•    Sink and Source Capability                                                        programmable through the I2C interface. The I2C
+•    I2C Compatible Digital Interface                                                  interface can also be used for sensor diagnostics. An
+•    Ambient Operating Temperature –40°C to 85°C                                       integrated temperature sensor can be read by the
+                                                                                       user through the VOUT pin and used to provide
+•    Package 14-Pin WSON                                                               additional signal correction in the µC or monitored to
+•    Supported by WEBENCH® Sensor AFE Designer                                         verify temperature conditions at the sensor.
+                                                                                       The LMP91000 is optimized for micro-power
+2 Applications                                                                         applications and operates over a voltage range of 2.7
+•    Chemical Species Identification                                                   to 5.25 V. The total current consumption can be less
+•    Amperometric Applications                                                         than 10 μA. Further power savings are possible by
+                                                                                       switching off the TIA amplifier and shorting the
+•    Electrochemical Blood Glucose Meter                                               reference electrode to the working electrode with an
+                                                                                       internal switch.
+
+                                                                                                                  Device Information(1)
+                                                                                            PART NUMBER                    PACKAGE         BODY SIZE (NOM)
+                                                                                        LMP91000                   WSON (14)               4.00 mm × 4.00 mm
+                                                                                        (1) For all available packages, see the orderable addendum at
+                                                                                            the end of the datasheet.
+
+                                                  Simplified Application Schematic
+                                                                                VREF        VDD
+
+                                                                                                                     SCL
+                                                 LMP91000
+
+                             3-Lead                                                               I2C INTERFACE
+                                                                                                        AND          SDA
+                        Electrochemical                                                              CONTROL
+                                                                                                                              CONTROLLER
+                              Cell                              VARIABLE            VREF
+                                                                                                    REGISTERS
+                                          CE                +
+                                                                  BIAS             DIVIDER                           MENB
+                                                       A1
+                                                            -
+
+
+
+                              CE
+                                          RE
+                                   RE
+                                                                                                     TEMP            DGND
+                                                                                                    SENSOR
+                              WE
+
+
+                                          WE                         +                                               VOUT
+                                                                          TIA
+                                                                     -
+                                               RLoad
+
+
+                                                                         RTIA
+
+                                                                C1                     C2              AGND
+
+
+1
+
+
+
+
+       An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+       intellectual property matters and other important disclaimers. PRODUCTION DATA.
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                                                       www.ti.com
+
+
+                                                                             Table of Contents
+    1   Features .................................................................. 1                 7.3    Feature Description................................................. 13
+    2   Applications ........................................................... 1                    7.4    Device Functional Modes........................................ 19
+    3   Description ............................................................. 1                   7.5    Programming .......................................................... 20
+                                                                                                      7.6    Registers Maps ...................................................... 21
+    4   Revision History..................................................... 2
+    5   Pin Configuration and Functions ......................... 3                             8    Application and Implementation ........................ 24
+                                                                                                      8.1 Application Information............................................ 24
+    6   Specifications......................................................... 4
+                                                                                                      8.2 Typical Application ................................................. 26
+        6.1    Absolute Maximum Ratings ...................................... 4
+        6.2    ESD Ratings.............................................................. 4      9    Power Supply Recommendations...................... 28
+                                                                                                      9.1 Power Consumption................................................ 28
+        6.3    Recommended Operating Conditions....................... 4
+        6.4    Thermal Information .................................................. 4         10 Layout................................................................... 29
+        6.5    Electrical Characteristics .......................................... 5                10.1 Layout Guidelines ................................................. 29
+        6.6    I2C Interface .............................................................. 7         10.2 Layout Example .................................................... 29
+        6.7    Timing Requirements ............................................... 8            11 Device and Documentation Support ................. 30
+        6.8    Typical Characteristics .............................................. 9               11.1 Trademarks ........................................................... 30
+    7   Detailed Description ............................................ 13                          11.2 Electrostatic Discharge Caution ............................ 30
+        7.1 Overview ................................................................. 13             11.3 Glossary ................................................................ 30
+        7.2 Functional Block Diagram ....................................... 13                 12 Mechanical, Packaging, and Orderable
+                                                                                                   Information ........................................................... 30
+
+
+
+4 Revision History
+Changes from Revision H (March 2013) to Revision I                                                                                                                            Page
+
+•   Added ESD Ratings table, Feature Description section, Device Functional Modes, Application and Implementation
+    section, Power Supply Recommendations section, Layout section, Device and Documentation Support section, and
+    Mechanical, Packaging, and Orderable Information section ................................................................................................. 3
+
+
+Changes from Revision G (March 2013) to Revision H                                                                                                                            Page
+
+•   Changed layout of National Data Sheet to TI format ........................................................................................................... 27
+
+
+
+
+2       Submit Documentation Feedback                                                                             Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                                          Product Folder Links: LMP91000
+                                                                                                                                  LMP91000
+www.ti.com                                                                                      SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+5 Pin Configuration and Functions
+
+                                                                   14-Pin WSON
+                                                                     Top View
+
+                                                    DGND 1                            14 CE
+
+                                                        MENB                               RE
+
+                                                         SCL                               WE
+
+                                                         SDA           DAP                 VREF
+
+                                                          NC                               C1
+
+                                                         VDD                               C2
+
+                                                        AGND 7                         8   VOUT
+
+
+
+
+                                                                 Pin Functions
+              PIN
+                                       I/O                                                 DESCRIPTION
+NAME                  NO.
+DGND                    1               G         Connect to ground
+MENB                    2                I        Module Enable, Active-Low
+SCL                     3                I        Clock signal for I2C compatible interface
+SDA                     4              I/O        Data for I2C compatible interface
+NC                      5              N/A        Not Internally Connected
+VDD                     6               P         Supply Voltage
+AGND                    7               G         Ground
+VOUT                    8               O         Analog Output
+C2                      9              N/A        External filter connector (Filter between C1 and C2)
+C1                     10              N/A        External filter connector (Filter between C1 and C2)
+VREF                   11                I        Voltage Reference input
+WE                     12                I        Working Electrode. Output to drive the Working Electrode of the chemical sensor
+RE                     13                I        Reference Electrode. Input to drive Counter Electrode of the chemical sensor
+CE                     14                I        Counter Electrode. Output to drive Counter Electrode of the chemical sensor
+DAP                    —               N/C        Connect to AGND
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                    Submit Documentation Feedback       3
+                                                           Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                       www.ti.com
+
+
+6 Specifications
+6.1 Absolute Maximum Ratings
+over operating free-air temperature (unless otherwise noted) (1)
+                                                                                                        MIN              MAX           UNIT
+Voltage between any two pins                                                                                             6.0            V
+Current through VDD or VSS                                                                                               50             mA
+Current sunk and sourced by CE pin                                                                                       10             mA
+Current out of other pins (2)                                                                                             5             mA
+                        (3)
+Junction Temperature                                                                                                     150            °C
+Storage temperature                                                                                     –65              150            °C
+
+(1)   Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+      only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+      Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2)   All non-power pins of this device are protected against ESD by snapback devices. Voltage at such pins will rise beyond absmax if
+      current is forced into pin.
+(3)   The maximum power dissipation is a function of TJ(MAX), RθJA, and the ambient temperature, TA. The maximum allowable power
+      dissipation at any ambient temperature is PDMAX = (TJ(MAX) - TA)/ θJA All numbers apply for packages soldered directly onto a PCB.
+
+6.2 ESD Ratings
+                                                                                                                         VALUE          UNIT
+                                         Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001 (1)                           ±2000
+V(ESD)     Electrostatic discharge       Charged-device model (CDM), per JEDEC specification JESD22-                      ±1000           V
+                                         C101 (2)
+
+(1)   JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)   JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+
+6.3 Recommended Operating Conditions
+                                                                                                              MIX              MAX     UNIT
+Supply Voltage VS= (VDD - AGND)                                                                               2.7              5.25      V
+Temperature Range (1)                                                                                         –40               85       °C
+
+(1)   The maximum power dissipation is a function of TJ(MAX), RθJA, and the ambient temperature, TA. The maximum allowable power
+      dissipation at any ambient temperature is PDMAX = (TJ(MAX) - TA)/ θJA All numbers apply for packages soldered directly onto a PCB.
+
+6.4 Thermal Information
+                                                                                                              LMP91000
+                                         THERMAL METRIC (1)                                                     WSON                  UNIT
+                                                                                                               14 PINS
+RθJA              Package Thermal Resistance                                                                        44                °C/W
+
+(1)   For more information about traditional and new thermal metrics, see the IC Package Thermal Metrics application report, SPRA953.
+
+
+
+
+4        Submit Documentation Feedback                                                      Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                       Product Folder Links: LMP91000
+                                                                                                                                    LMP91000
+www.ti.com                                                                                     SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+6.5 Electrical Characteristics
+Unless otherwise specified, TA = 25°C, VS=(VDD – AGND), VS = 3.3 V and AGND = DGND = 0 V, VREF = 2.5 V, Internal
+Zero = 20% VREF. (1)
+                   PARAMETER                                              TEST CONDITIONS                   MIN (2)   TYP (3)   MAX (2)   UNIT
+POWER SUPPLY SPECIFICATION
+                                                        3-lead amperometric cell mode
+                                                        MODECN = 0x03                                                     10      13.5
+                                                        –40 to 80°C (please verify that the degree is
+                                                                                                                                    15
+                                                        correct)
+                                                        Standby mode
+                                                        MODECN = 0x02                                                    6.5         8
+                                                        –40 to 80°C                                                                 10
+                                                        Temperature Measurement mode with TIA OFF
+                                                        MODECN = 0x06                                                   11.4      13.5
+                                                        –40 to 80°C                                                                 15
+IS              Supply Current                                                                                                            µA
+                                                        Temperature Measurement mode with TIA ON
+                                                        MODECN = 0x07                                                   14.9        18
+                                                        –40 to 80°C                                                                 20
+                                                        2-lead ground-referred galvanic cell mode
+                                                        VREF=1.5 V                                                       6.2
+                                                        MODECN = 0x01                                                                8
+                                                        –40 to 80°C                                                                  9
+                                                        Deep Sleep mode
+                                                        MODECN = 0x00                                                    0.6      0.85
+                                                        –40 to 80°C                                                                  1
+POTENTIOSTAT
+                Bias Programming range                  Percentage of voltage referred to VREF or VDD
+                (differential voltage between RE                                                                      ±24%
+                pin and WE pin)
+Bias_RW
+                                                        First two smallest step                                           ±1
+                Bias Programming Resolution
+                                                        All other steps                                                 ±2%
+                                                        VDD = 2.7 V
+                                                        Internal Zero 50% VDD                                 –90                   90
+                                                        –40 to 80°C                                          –800                  800
+IRE             Input bias current at RE pin                                                                                              pA
+                                                        VDD = 5.25 V
+                                                        Internal Zero 50% VDD                                 –90                   90
+                                                        –40 to 80°C                                          –900                  900
+ICE             Minimum operating current               sink                                                             750
+                capability                                                                                                                µA
+                                                        source                                                           750
+                Minimum charging capability (4)         sink                                                              10
+                                                                                                                                          mA
+                                                        source                                                            10
+AOL_A1          Open-loop voltage gain of control       300 mV ≤ VCE ≤ Vs-300 mV;
+                loop op amp (A1)
+                                                        –750 µA ≤ICE ≤ 750 µA                                                             dB
+                                                        –40 to 80°C                                           104        120
+
+
+(1)   Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+      limited self-heating of the device such that TJ = TA.
+(2)   Limits are 100% production tested at 25°C. Limits over the operating temperature range are specified through correlations using
+      statistical quality control (SQC) method.
+(3)   Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+      over time and will also depend on the application and configuration. The typical values are not tested and are not specified on shipped
+      production material.
+(4)   At such currents no accuracy of the output voltage can be expected.
+Copyright © 2011–2014, Texas Instruments Incorporated                                                   Submit Documentation Feedback             5
+                                                           Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                    www.ti.com
+
+
+Electrical Characteristics (continued)
+Unless otherwise specified, TA = 25°C, VS=(VDD – AGND), VS = 3.3 V and AGND = DGND = 0 V, VREF = 2.5 V, Internal
+Zero = 20% VREF.(1)
+                      PARAMETER                                    TEST CONDITIONS                      MIN (2)   TYP (3)   MAX (2)    UNIT
+en_RW          Low Frequency integrated noise      0.1 Hz to 10 Hz, Zero Bias
+                                                   (5)                                                                3.4
+               between RE pin and WE pin
+                                                                                                                                       µVpp
+                                                   0.1 Hz to 10 Hz, with Bias
+                                                   (5) (6)                                                            5.1
+
+                                                                         0% VREF
+                                                                         Internal Zero=20% VREF
+                                                                         0% VREF
+                                                                                                         –550                   550
+                                                                         Internal Zero=50% VREF
+                                                                         0% VREF
+                                                                         Internal Zero=67% VREF
+                                                                         ±1% VREF                        –575                   575
+                                                                         ±2% VREF                        –610                   610
+                                                                         ±4% VREF                        –750                   750
+                                                   BIAS polarity         ±6% VREF                        –840                   840
+                                                   (7)
+VOS_RW         WE Voltage Offset referred to RE                                                                                          µV
+                                                   –40 to 80°C           ±8% VREF                        –930                   930
+                                                                         ±10% VREF                      –1090                  1090
+                                                                         ±12% VREF                      –1235                  1235
+                                                                         ±14% VREF                      –1430                  1430
+                                                                         ±16% VREF                      –1510                  1510
+                                                                         ±18% VREF                      –1575                  1575
+                                                                         ±20% VREF                      –1650                  1650
+                                                                         ±22% VREF                      –1700                  1700
+                                                                         ±24% VREF                      –1750                  1750
+                                                                         0% VREF
+                                                                         Internal Zero=20% VREF
+                                                                         0% VREF
+                                                                                                            –4                     4
+                                                                         Internal Zero=50% VREF
+                                                                         0% VREF
+                                                                         Internal Zero=67% VREF
+                                                                         ±1% VREF                           –4                     4
+                                                                         ±2% VREF                           –4                     4
+                                                                         ±4% VREF                           –5                     5
+               WE Voltage Offset Drift referred                          ±6% VREF                           –5                     5
+                                                   BIAS polarity
+TcVOS_RW       to RE from –40°C to 85°C            (7)                                                                                 µV/°C
+                (8)                                                      ±8% VREF                           –5                     5
+                                                                         ±10% VREF                          –6                     6
+                                                                         ±12% VREF                          –6                     6
+                                                                         ±14% VREF                          –7                     7
+                                                                         ±16% VREF                          –7                     7
+                                                                         ±18% VREF                          –8                     8
+                                                                         ±20% VREF                          –8                     8
+                                                                         ±22% VREF                          –8                     8
+                                                                         ±24% VREF                          –8                     8
+
+
+
+
+(5)   This parameter includes both A1 and TIA's noise contribution.
+(6)   In case of external reference connected, the noise of the reference has to be added.
+(7)   For negative bias polarity the Internal Zero is set at 67% VREF.
+(8)   Offset voltage temperature drift is determined by dividing the change in VOS at the temperature extremes by the total temperature
+      change. Starting from the measured voltage offset at temperature T1 (VOS_RW(T1)), the voltage offset at temperature T2 (VOS_RW(T2)) is
+      calculated according the following formula: VOS_RW(T2)=VOS_RW(T1)+ABS(T2–T1)* TcVOS_RW.
+6        Submit Documentation Feedback                                                     Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                         Product Folder Links: LMP91000
+                                                                                                                                         LMP91000
+www.ti.com                                                                                  SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Electrical Characteristics (continued)
+Unless otherwise specified, TA = 25°C, VS=(VDD – AGND), VS = 3.3 V and AGND = DGND = 0 V, VREF = 2.5 V, Internal
+Zero = 20% VREF.(1)
+                   PARAMETER                                         TEST CONDITIONS                       MIN (2)      TYP (3)      MAX (2)      UNIT
+                Transimpedance gain accuracy                                                                               5%
+                Linearity                                                                                              ±0.05%
+                                                        7 programmable gain resistors                                     2.75
+                                                                                                                           3.5
+TIA_GAIN                                                                                                                     7
+                                                                                                                            14
+                Programmable TIA Gains                                                                                      35                     kΩ
+                                                                                                                          120
+                                                                                                                          350
+                                                        Maximum external gain resistor                                     350
+                Internal zero voltage                   3 programmable percentages of VREF                                20%
+                                                                                                                          50%
+                                                                                                                          67%
+TIA_ZV                                                  3 programmable percentages of VDD                                 20%
+                                                                                                                          50%
+                                                                                                                          67%
+                Internal zero voltage Accuracy                                                                         ±0.04%
+RL              Programmable Load                       4 programmable resistive loads                                      10
+                                                                                                                            33
+                                                                                                                                                   Ω
+                                                                                                                            50
+                                                                                                                           100
+                Load accuracy                                                                                              5%
+                                                        2.7 V ≤ VDD≤ 5.25   Internal zero 20% VREF
+                Power Supply Rejection Ratio at         V
+PSRR                                                                        Internal zero 50% VREF             80          110                     dB
+                RE pin
+                                                                            Internal zero 67% VREF
+TEMPERATURE SENSOR SPECIFICATION (Refer to Table 1 in the Feature Description for details)
+                Temperature Error                       TA= –40˚C to 85˚C                                      –3                             3    °C
+                Sensitivity                             TA= –40˚C to 85˚C                                                 -8.2                    mV/°C
+                Power on time                                                                                                            1.9       ms
+EXTERNAL REFERENCE SPECIFICATION
+VREF            External Voltage reference range                                                               1.5                     VDD         V
+                Input impedance                                                                                                10                  MΩ
+
+
+6.6 I2C Interface
+Unless otherwise specified, TA = 25°C, VS = (VDD – AGND), 2.7 V <VS< 5.25 V and AGND = DGND = 0 V, VREF = 2.5 V. (1)
+                     PARAMETER                                       TEST CONDITIONS                 MIN (2)         TYP (3)        MAX (2)       UNIT
+VIH           Input High Voltage                            –40 to 80°C                            0.7*VDD                                         V
+VIL           Input Low Voltage                             –40 to 80°C                                                         0.3*VDD            V
+VOL           Output Low Voltage                            IOUT= 3 mA                                                                  0.4        V
+                            (4)
+              Hysteresis                                    –40 to 80°C                            0.1*VDD                                         V
+CIN           Input Capacitance on all digital pins         –40 to 80°C                                                  0.5                      pF
+
+(1)   Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+      limited self-heating of the device such that TJ = TA.
+(2)   Limits are 100% production tested at 25°C. Limits over the operating temperature range are specified through correlations using
+      statistical quality control (SQC) method.
+(3)   Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+      over time and will also depend on the application and configuration. The typical values are not tested and are not specified on shipped
+      production material.
+(4)   This parameter is specified by design or characterization.
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                 Submit Documentation Feedback                       7
+                                                           Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                                                  www.ti.com
+
+
+6.7 Timing Requirements
+Unless otherwise specified, TA = 25°C, VS= (VDD – AGND), VS= 3.3 V and AGND = DGND = 0 V, VREF = 2.5 V, Internal
+Zero= 20% VREF. (1)
+                                                                                                                                 MIN           TYP        MAX       UNIT
+fSCL           Clock Frequency                                            –40 to 80°C                                             10                      100       kHz
+tLOW           Clock Low Time                                             –40 to 80°C                                            4.7                                 µs
+tHIGH          Clock High Time                                            –40 to 80°C                                            4.0                                 µs
+                                                                          After this period, the first clock
+tHD;STA        Data valid                                                                                                        4.0                                 µs
+                                                                          pulse is generated
+tSU;STA        Set-up time for a repeated START condition                 –40 to 80°C                                            4.7                                 µs
+tHD;DAT        Data hold time (2)                                         –40 to 80°C                                              0                                 ns
+tSU;DAT        Data Set-up time                                           –40 to 80°C                                            250                                 ns
+                                                                          IL ≤ 3 mA;
+tf             SDA fall time (3)                                          CL ≤ 400 pF                                                                     250        ns
+                                                                          –40 to 80°C
+tSU;STO        Set-up time for STOP condition                             –40 to 80°C                                            4.0                                 µs
+               Bus free time between a STOP and START                     –40 to 80°C
+tBUF                                                                                                                             4.7                                 µs
+               condition
+tVD;DAT        Data valid time                                            –40 to 80°C                                                                     3.45       µs
+tVD;ACK        Data valid acknowledge time                                –40 to 80°C                                                                     3.45       µs
+tSP            Pulse width of spikes that must be                         –40 to 80°C
+                                                                                                                                                           50        ns
+               suppressed by the input filter (3)
+t_timeout      SCL and SDA Timeout                                        –40 to 80°C                                             25                      100        ms
+                2
+tEN;START      I C Interface Enabling                                     –40 to 80°C                                            600                                 ns
+tEN;STOP       I2C Interface Disabling                                    –40 to 80°C                                            600                                 ns
+tEN;HIGH       Time between consecutive I2C interface                     –40 to 80°C
+                                                                                                                                 600                                 ns
+               enabling and disabling
+
+(1)    Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+       limited self-heating of the device such that TJ = TA.
+(2)    LMP91000 provides an internal 300-ns minimum hold time to bridge the undefined region of the falling edge of SCL.
+(3)    This parameter is specified by design or characterization.
+
+                          70%
+                 MENB
+                           30%
+                    tEN;START                                                                                                                  tEN;HIGH
+                                                                                                                    tEN;STOP
+
+                                      70%
+                    SDA
+                                      30%
+                                                                                                                                        tBUF
+                                 tf               tLOW       tVD;DAT                 tHD;STA
+                                                                                                                           tSP
+                                            70%
+                    SCL
+                                            30%
+                                                   tHD;STA                       tSU;STA                         tSU;STO
+                                                                  tHIGH
+                                                  tHD;DAT                           tSU;DAT           tVD;ACK
+
+                                      START         1/fSCL                                 REPEATED                              STOP          START
+                                                                                             START
+
+
+                                                                Figure 1. Timing Diagram
+
+
+
+
+8         Submit Documentation Feedback                                                                         Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                                 Product Folder Links: LMP91000
+                                                                                                                                                                                                                   LMP91000
+www.ti.com                                                                                                                                                               SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+6.8 Typical Characteristics
+Unless otherwise specified, TA = 25°C, VS= (VDD – AGND), 2.7V <VS< 5.25 V and AGND = DGND = 0 V, VREF = 2.5 V.
+
+
+                                       -100                                                                                                             -100
+                                                                VDD = 2.7V                                                                                                      85°C
+                                       -120                     VDD = 3.3V                                                                              -120                    25°C
+                                                                VDD = 5V                                                                                                        -40°C
+                                       -140                                                                                                             -140
+                                       -160                                                                                                             -160
+
+
+
+              VOS (V)                                                                                                       VOS (V)
+                                       -180                                                                                                             -180
+                                       -200                                                                                                             -200
+                                       -220                                                                                                             -220
+                                       -240                                                                                                             -240
+                                       -260                                                                                                             -260
+                                       -280                                                                                                             -280
+                                       -300                                                                                                             -300
+                                                       -50      -25      0   25  50    75         100                                                                     2.5   3.0  3.5  4.0 4.5    5.0         5.5
+                                                                      TEMPERATURE (°C)                                                                                            SUPPLY VOLTAGE (V)
+
+
+
+          Figure 2. Input VOS_RW vs. Temperature (Vbias 0 mV)                                                                    Figure 3. Input VOS_RW vs. VDD (Vbias 0 mV)
+
+
+
+
+                                                                                                                                     NORMALIZED OUTPUT TIA (200mV/DIV)
+                      NORMALIZED OUTPUT (200mV/DIV)
+                                                                                                                                                                                           IWE
+                                                                           IWE
+
+
+
+
+                                                                                                         IWE(50A/DIV)                                                                                                 IWE(50A/DIV)
+                                                                                                                                                                                                   2.75k
+                                                                                                                                                                                                   3.5k
+                                                                                                                                                                                                   7k
+                                                                                          2.75k                                                                                                    14k
+                                                                                          3.5k                                                                                                     35k
+                                                                                          7k                                                                                                       120k
+                                                                                          14k                                                                                                      350k
+                                                                                          35k
+                                                                                          120k
+                                                                                          350k
+
+
+                                                                       TIME (200s/DIV)                                                                                             TIME (200s/DIV)
+
+
+
+                     Figure 4. IWE Step Current Response (Rise)                                                                          Figure 5. IWE Step Current Response (Fall)
+
+                                                140                                                                                                 1320
+
+                                                130
+                                                                                                                                                    1318
+
+                                                120
+
+
+              PSRR (dB)                                                                                                      VOUT (mV)
+                                                                                                                                                    1316
+                                                110
+                                                                                                                                                    1314
+                                                100
+
+                                                                                                                                                    1312
+                                                      90
+
+                                                      80                                                                                            1310
+                                                           10     100    1k     10k               100k                                                                    2.5   3.0 3.5 4.0 4.5 5.0        5.5
+                                                                   FREQUENCY (Hz)                                                                                                SUPPLY VOLTAGE (V)
+
+
+
+                                                           Figure 6. AC PSRR vs. Frequency                                   Figure 7. Temperature Sensor Output vs. VDD
+                                                                                                                                         (Temperature = 30°C)
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                                                                                             Submit Documentation Feedback                        9
+                                                                                                  Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                                                             www.ti.com
+
+
+Typical Characteristics (continued)
+Unless otherwise specified, TA = 25°C, VS= (VDD – AGND), 2.7V <VS< 5.25 V and AGND = DGND = 0 V, VREF = 2.5 V.
+                                   1.0                                                                                    1.0
+                                           VDD = 2.7V                                                                                  85°C
+                                   0.9     VDD = 3.3V                                                                     0.9          25°C
+                                           VDD = 5V                                                                                    -40°C
+
+
+
+
+            SUPPLY CURRENT (A)                                                                     SUPPLY CURRENT (A)
+                                   0.8                                                                                    0.8
+                                   0.7                                                                                    0.7
+                                   0.6                                                                                    0.6
+                                   0.5                                                                                    0.5
+                                   0.4                                                                                    0.4
+                                   0.3                                                                                    0.3
+                                   0.2                                                                                    0.2
+                                   0.1                                                                                    0.1
+                                     -50   -25      0   25  50      75    100                                                2.5      3.0   3.5  4.0  4.5   5.0       5.5
+                                                 TEMPERATURE (°C)                                                                        SUPPLY VOLTAGE (V)
+
+
+
+                                  Figure 8. Supply Current vs. Temperature                                                       Figure 9. Supply Current vs. VDD
+                                             (Deep Sleep Mode)                                                                          (Deep Sleep Mode)
+
+                                  7.50                                                                                    7.50
+                                           VDD = 2.7V                                                                                  85°C
+                                           VDD = 3.3V                                                                                  25°C
+                                  7.25     VDD = 5V                                                                       7.25         -40°C
+
+
+
+
+            SUPPLY CURRENT (A)                                                                     SUPPLY CURRENT (A)
+                                  7.00                                                                                    7.00
+
+                                  6.75                                                                                    6.75
+
+                                  6.50                                                                                    6.50
+
+                                  6.25                                                                                    6.25
+
+                                  6.00                                                                                    6.00
+
+                                  5.75                                                                                    5.75
+
+                                  5.50                                                                                    5.50
+                                     -50   -25      0   25  50      75    100                                                2.5      3.0   3.5  4.0  4.5   5.0       5.5
+                                                 TEMPERATURE (°C)                                                                        SUPPLY VOLTAGE (V)
+
+
+
+                             Figure 10. Supply Current vs. Temperature                                                       Figure 11. Supply Current vs. VDD
+                                          (Standby Mode)                                                                              (Standby Mode)
+
+                                  11.0                                                                                    11.0
+                                           VDD = 2.7V                                                                                  85°C
+                                  10.8     VDD = 3.3V                                                                     10.8         25°C
+                                           VDD = 5V                                                                                    -40°C
+
+
+
+
+            SUPPLY CURRENT (A)
+                                  10.6
+
+
+
+
+                                                                                                    SUPPLY CURRENT (A)
+                                                                                                                          10.6
+                                  10.4                                                                                    10.4
+                                  10.2                                                                                    10.2
+                                  10.0                                                                                    10.0
+                                   9.8                                                                                    9.8
+                                   9.6                                                                                    9.6
+                                   9.4                                                                                    9.4
+                                   9.2                                                                                    9.2
+                                   9.0                                                                                    9.0
+                                     -50   -25      0   25  50    75     100                                                 2.5      3.0  3.5  4.0 4.5    5.0       5.5
+                                                 TEMPERATURE (°C)                                                                       SUPPLY VOLTAGE (V)
+
+
+
+                             Figure 12. Supply Current vs. Temperature                                                       Figure 13. Supply Current vs. VDD
+                                    (3-Lead Amperometric Mode)                                                                  (3-Lead Amperometric Mode)
+
+
+
+10     Submit Documentation Feedback                                                                                             Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                                         Product Folder Links: LMP91000
+                                                                                                                                                                   LMP91000
+www.ti.com                                                                                                                    SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Typical Characteristics (continued)
+Unless otherwise specified, TA = 25°C, VS= (VDD – AGND), 2.7V <VS< 5.25 V and AGND = DGND = 0 V, VREF = 2.5 V.
+                                    17.0                                                                                    16.0
+                                             VDD = 2.7V                                                                              85°C
+                                             VDD = 3.3V                                                                     15.8     25°C
+                                    16.5     VDD = 5V                                                                                -40°C
+
+
+
+
+              SUPPLY CURRENT (A)                                                                     SUPPLY CURRENT (A)
+                                                                                                                            15.6
+                                    16.0
+                                                                                                                            15.4
+                                    15.5                                                                                    15.2
+                                    15.0                                                                                    15.0
+
+                                    14.5                                                                                    14.8
+                                                                                                                            14.6
+                                    14.0
+                                                                                                                            14.4
+                                    13.5                                                                                    14.2
+                                    13.0                                                                                    14.0
+                                       -50   -25      0   25  50    75     100                                                 2.5   3.0  3.5  4.0 4.5    5.0    5.5
+                                                   TEMPERATURE (°C)                                                                    SUPPLY VOLTAGE (V)
+
+
+
+                               Figure 14. Supply Current vs. Temperature                                                       Figure 15. Supply Current vs. VDD
+                                      (Temp Measurement TIA On)                                                                   (Temp Measurement TIA On)
+
+                                    13.0                                                                                    13.0
+                                             VDD = 2.7V                                                                              85°C
+                                             VDD = 3.3V                                                                              25°C
+                                    12.5     VDD = 5V                                                                                -40°C
+                                                                                                                            12.5
+
+
+
+
+              SUPPLY CURRENT (A)                                                                     SUPPLY CURRENT (A)
+                                    12.0
+                                                                                                                            12.0
+                                    11.5
+
+                                    11.0                                                                                    11.5
+
+                                    10.5
+                                                                                                                            11.0
+                                    10.0
+                                                                                                                            10.5
+                                    9.5
+
+                                    9.0                                                                                     10.0
+                                       -50   -25      0   25  50    75     100                                                 2.5   3.0  3.5  4.0 4.5    5.0    5.5
+                                                   TEMPERATURE (°C)                                                                    SUPPLY VOLTAGE (V)
+
+
+
+                               Figure 16. Supply Current vs. Temperature                                                       Figure 17. Supply Current vs. VDD
+                                      (Temp Measurement TIA Off)                                                                  (Temp Measurement TIA Off)
+
+                                    7.50                                                                                    9.0
+                                             VDD = 2.7V                                                                              85°C
+                                    7.25     VDD = 3.3V                                                                              25°C
+                                             VDD = 5V                                                                       8.5      -40°C
+
+
+
+
+              SUPPLY CURRENT (A)
+                                    7.00
+
+
+
+
+                                                                                                      SUPPLY CURRENT (A)
+                                                                                                                            8.0
+                                    6.75
+                                    6.50                                                                                    7.5
+
+                                    6.25                                                                                    7.0
+                                    6.00                                                                                    6.5
+                                    5.75
+                                                                                                                            6.0
+                                    5.50
+                                    5.25                                                                                    5.5
+
+                                    5.00                                                                                    5.0
+                                       -50   -25      0   25  50      75    100                                                2.5   3.0   3.5  4.0  4.5   5.0    5.5
+                                                   TEMPERATURE (°C)                                                                     SUPPLY VOLTAGE (V)
+
+
+
+                Figure 18. Supply Current vs. Temperature                                                   Figure 19. Supply Current vs. VDD
+              (2-Lead Ground-Referred Amperometric Mode)                                              (2-Lead Ground-Referred Amperometric Mode)
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                                                  Submit Documentation Feedback      11
+                                                                           Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                                                www.ti.com
+
+
+Typical Characteristics (continued)
+Unless otherwise specified, TA = 25°C, VS= (VDD – AGND), 2.7V <VS< 5.25 V and AGND = DGND = 0 V, VREF = 2.5 V.
+                          1.5                                                                               2.5
+                                                                                                            2.0
+                          1.0
+                                                                                                            1.5
+                                                                                                            1.0
+                          0.5
+
+
+            EN_RW (V)                                                                         EN_RW (V)
+                                                                                                            0.5
+                          0.0                                                                               0.0
+                                                                                                            -0.5
+                         -0.5
+                                                                                                            -1.0
+                                                                                                            -1.5
+                         -1.0
+                                                                                                            -2.0
+                         -1.5                                                                               -2.5
+                                0   1   2   3   4 5 6      7   8   9 10                                            0   1    2   3    4 5 6      7   8   9 10
+                                                TIME (s)                                                                             TIME (s)
+
+
+
+                         Figure 20. 0.1-Hz to 10-Hz Noise, 0-V Bias                            Figure 21. 0.1-Hz to 10-Hz Noise, 300-mV Bias
+
+                          2.5                                                                               2.0
+                                                                                                                       LMP91000
+                          2.0                                                                               1.9
+                          1.5                                                                               1.8
+                          1.0                                                                               1.7
+
+
+
+            EN_RW (V)                                                                         VOUT (V)
+                          0.5                                                                               1.6
+                          0.0                                                                               1.5
+                         -0.5                                                                               1.4
+                         -1.0                                                                               1.3
+                         -1.5                                                                               1.2
+                                                                                                                                     RTIA=35k ,
+                         -2.0                                                                                                        Rload=10 ,
+                                                                                                            1.1
+                         -2.5                                                                                                        VREF=5V
+                                                                                                            1.0
+                                0   1   2   3   4 5 6      7   8   9 10                                            0       25   50      75    100   125   150
+                                                TIME (s)                                                                             TIME (s)
+
+
+
+            Figure 22. 0.1-Hz to 10-Hz Noise, 600-mV Bias                               Figure 23. A VOUT Step Response 100-PPM to 400-PPM CO
+                                                                                                 (CO Gas Sensor Connected to LMP91000)
+
+
+
+
+12     Submit Documentation Feedback                                                                               Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                                    Product Folder Links: LMP91000
+                                                                                                                                     LMP91000
+www.ti.com                                                                                         SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+7 Detailed Description
+
+7.1 Overview
+
+The LMP91000 is a programmable AFE for use in micropower chemical sensing applications. The LMP91000 is
+designed for 3-lead single gas sensors and for 2-lead galvanic cell sensors. This device provides all of the
+functionality for detecting changes in gas concentration based on a delta current at the working electrode. The
+LMP91000 generates an output voltage proportional to the cell current. Transimpedance gain is user
+programmable through an I2C compatible interface from 2.75 kΩ to 350 kΩ making it easy to convert current
+ranges from 5 µA to 750 µA full scale. Optimized for micro-power applications, the LMP91000 AFE works over a
+voltage range of 2.7 V to 5.25 V. The cell voltage is user selectable using the on board programmability. In
+addition, it is possible to connect an external transimpedance gain resistor. A temperature sensor is embedded
+and it can be power cycled through the interface. The output of this temperature sensor can be read by the user
+through the VOUT pin. It is also possible to have both temperature output and output of the TIA at the same
+time; the pin C2 is internally connected to the output of the transimpedance (TIA), while the temperature is
+available at the VOUT pin. Depending on the configuration, total current consumption for the device can be less
+than 10 µA. For power savings, the transimpedance amplifier can be turned off and instead a load impedance
+equivalent to the TIA’s inputs impedance is switched in.
+
+7.2 Functional Block Diagram
+
+                                                                                      VREF        VDD
+
+
+                                                 LMP91000                                                                    SCL
+
+                     3-Lead                                                                                 I2C INTERFACE
+                                                                                                                  AND
+                Electrochemical                                                                                CONTROL
+                                                                                                                             SDA
+                      Cell                                             VARIABLE           VREF
+                                                                                                              REGISTERS
+                                      CE                     +
+                                                        A1               BIAS            DIVIDER                             MENB
+                                                              -
+
+
+
+                       CE
+                                      RE
+                            RE
+                                                                                                               TEMP          DGND
+                                                                                                              SENSOR
+                       WE
+
+
+                                      WE                                   +                                                 VOUT
+                                                                               TIA
+                                                                           -
+                                              RLoad
+
+
+                                                                               RTIA
+
+                                                                      C1                     C2                  AGND
+
+
+
+
+7.3 Feature Description
+
+7.3.1 Potentiostat Circuitry
+The core of the LMP91000 is a potentiostat circuit. It consists of a differential input amplifier used to compare the
+potential between the working and reference electrodes to a required working bias potential (set by the Variable
+Bias circuitry). The error signal is amplified and applied to the counter electrode (through the Control Amplifier
+- A1). Any changes in the impedance between the working and reference electrodes will cause a change in the
+voltage applied to the counter electrode, in order to maintain the constant voltage between working and
+reference electrodes. A Transimpedance Amplifier connected to the working electrode, is used to provide an
+output voltage that is proportional to the cell current. The working electrode is held at virtual ground (Internal
+ground) by the transimpedance amplifier. The potentiostat will compare the reference voltage to the desired bias
+potential and adjust the voltage at the counter electrode to maintain the proper working-to-reference voltage.
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                       Submit Documentation Feedback      13
+                                                             Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                 www.ti.com
+
+
+Feature Description (continued)
+7.3.1.1 Transimpedance Amplifier
+The transimpedance amplifier (TIA) has 7 programmable internal gain resistors. This accommodates the full
+scale ranges of most existing sensors. Moreover an external gain resistor can be connected to the LMP91000
+between C1 and C2 pins. The gain is set through the I2C interface.
+
+7.3.1.2 Control Amplifier
+The control amplifier (A1 op amp) has two tasks: a) providing initial charge to the sensor, b) providing a bias
+voltage to the sensor. A1 has the capability to drive up to 10 mA into the sensor in order to to provide a fast initial
+conditioning. A1 is able to sink and source current according to the connected gas sensor (reducing or oxidizing
+gas sensor). It can be powered down to reduce system power consumption. However powering down A1 is not
+recommended, as it may take a long time for the sensor to recover from this situation.
+
+7.3.1.3 Variable Bias
+The Variable Bias block circuitry provides the amount of bias voltage required by a biased gas sensor between
+its reference and working electrodes. The bias voltage can be programmed to be 1% to 24% (14 steps in total) of
+the supply, or of the external reference voltage. The 14 steps can be programmed through the I2C interface. The
+polarity of the bias can be also programmed.
+
+7.3.1.4 Internal Zero
+The internal Zero is the voltage at the non-inverting pin of the TIA. The internal zero can be programmed to be
+either 67%, 50% or 20%, of the supply, or the external reference voltage. This provides both sufficient headroom
+for the counter electrode of the sensor to swing, in case of sudden changes in the gas concentration, and best
+use of the ADC’s full scale input range.
+The Internal zero is provided through an internal voltage divider. The divider is programmed through the I2C
+interface.
+
+7.3.1.5 Temperature Sensor
+The embedded temperature sensor can be switched off during gas concentration measurement to save power.
+The temperature measurement is triggered through the I2C interface. The temperature output is available at the
+VOUT pin until the configuration bit is reset. The output signal of the temperature sensor is a voltage, referred to
+the ground of the LMP91000 (AGND).
+
+                                          Table 1. Temperature Sensor Transfer
+        TEMPERATURE                    OUTPUT VOLTAGE                    TEMPERATURE                           OUTPUT VOLTAGE
+            (°C)                            (mV)                             (°C)                                   (mV)
+              -40                            1875                                  23                                  1375
+              -39                            1867                                  24                                  1367
+              -38                            1860                                  25                                  1359
+              -37                            1852                                  26                                  1351
+              -36                            1844                                  27                                  1342
+              -35                            1836                                  28                                  1334
+              -34                            1828                                  29                                  1326
+              -33                            1821                                  30                                  1318
+              -32                            1813                                  31                                  1310
+              -31                            1805                                  32                                  1302
+              -30                            1797                                  33                                  1293
+              -29                            1789                                  34                                  1285
+              -28                            1782                                  35                                  1277
+              -27                            1774                                  36                                  1269
+              -26                            1766                                  37                                  1261
+              -25                            1758                                  38                                  1253
+
+14     Submit Documentation Feedback                                                    Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                  Product Folder Links: LMP91000
+                                                                                                                               LMP91000
+www.ti.com                                                                                  SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Feature Description (continued)
+                                       Table 1. Temperature Sensor Transfer (continued)
+         TEMPERATURE                         OUTPUT VOLTAGE                      TEMPERATURE                     OUTPUT VOLTAGE
+             (°C)                                 (mV)                               (°C)                             (mV)
+                 -24                                    1750                               39                           1244
+                 -23                                    1742                               40                           1236
+                 -22                                    1734                               41                           1228
+                 -21                                    1727                               42                           1220
+                 -20                                    1719                               43                           1212
+                 -19                                    1711                               44                           1203
+                 -18                                    1703                               45                           1195
+                 -17                                    1695                               46                           1187
+                 -16                                    1687                               47                           1179
+                 -15                                    1679                               48                           1170
+                 -14                                    1671                               49                           1162
+                 -13                                    1663                               50                           1154
+                 -12                                    1656                               51                           1146
+                 -11                                    1648                               52                           1137
+                 -10                                    1640                               53                           1129
+                 -9                                     1632                               54                           1121
+                 -8                                     1624                               55                           1112
+                 -7                                     1616                               56                           1104
+                 -6                                     1608                               57                           1096
+                 -5                                     1600                               58                           1087
+                 -4                                     1592                               59                           1079
+                 -3                                     1584                               60                           1071
+                 -2                                     1576                               61                           1063
+                 -1                                     1568                               62                           1054
+                  0                                     1560                               63                           1046
+                  1                                     1552                               64                           1038
+                  2                                     1544                               65                           1029
+                  3                                     1536                               66                           1021
+                  4                                     1528                               67                           1012
+                  5                                     1520                               68                           1004
+                  6                                     1512                               69                            996
+                  7                                     1504                               70                            987
+                  8                                     1496                               71                            979
+                  9                                     1488                               72                            971
+                 10                                     1480                               73                            962
+                 11                                     1472                               74                            954
+                 12                                     1464                               75                            945
+                 13                                     1456                               76                            937
+                 14                                     1448                               77                            929
+                 15                                     1440                               78                            920
+                 16                                     1432                               79                            912
+                 17                                     1424                               80                            903
+                 18                                     1415                               81                            895
+                 19                                     1407                               82                            886
+                 20                                     1399                               83                            878
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                Submit Documentation Feedback      15
+                                                          Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                 www.ti.com
+
+
+Feature Description (continued)
+                                 Table 1. Temperature Sensor Transfer (continued)
+        TEMPERATURE                    OUTPUT VOLTAGE                    TEMPERATURE                           OUTPUT VOLTAGE
+            (°C)                            (mV)                             (°C)                                   (mV)
+               21                            1391                                  84                                   870
+               22                            1383                                  85                                   861
+
+Although the temperature sensor is very linear, its response does have a slight downward parabolic shape. This
+shape is very accurately reflected in Table 1. For a linear approximation, a line can easily be calculated over the
+desired temperature range from Table 1 using the two-point equation:
+      V-V1=((V2–V1)/(T2–T1))*(T-T1)
+      where
+           •   V is in mV, T is in °C, T1 and V1 are the coordinates of the lowest temperature
+           •   T2 and V2 are the coordinates of the highest temperature.                                                                 (1)
+For example, to determine the equation of a line over a temperature range of 20°C to 50°C, proceed as follows:
+      V-1399mV=((1154 mV - 1399 mV)/(50°C -20°C))*(T-20°C)                                                                               (2)
+      V-1399mV= -8.16 mV/°C*(T-20°C)                                                                                                     (3)
+      V=(-8.16 mV/°C)*T+1562.2 mV                                                                                                        (4)
+Using this method of linear approximation, the transfer function can be approximated for one or more
+temperature ranges of interest.
+
+
+
+
+16     Submit Documentation Feedback                                                    Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                  Product Folder Links: LMP91000
+                                                                                                                                     LMP91000
+www.ti.com                                                                                         SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+7.3.1.6 Gas Sensor Interface
+The LMP91000 supports both 3-lead and 2-lead gas sensors. Most of the toxic gas sensors are amperometric
+cells with 3 leads (Counter, Worker and Reference). These leads should be connected to the LMP91000 in the
+potentiostat topology. The 2-lead gas sensor (known as galvanic cell) should be connected as simple buffer
+either referred to the ground of the system or referred to a reference voltage. The LMP91000 support both
+connections for 2-lead gas sensor.
+
+7.3.1.6.1 3-Lead Amperometric Cell in Potentiostat Configuration
+Most of the amperometric cell have 3 leads (Counter, Reference and Working electrodes). The interface of the 3-
+lead gas sensor to the LMP91000 is straightforward, the leads of the gas sensor need to be connected to the
+namesake pins of the LMP91000.
+The LMP91000 is then configured in 3-lead amperometric cell mode; in this configuration the Control Amplifier
+(A1) is ON and provides the internal zero voltage and bias in case of biased gas sensor. The transimpedance
+amplifier (TIA) is ON, it converts the current generated by the gas sensor in a voltage, according to the
+transimpedance gain:
+       Gain=RTIA                                                                                                                               (5)
+If different gains are required, an external resistor can be connected between the pins C1 and C2. In this case
+the internal feedback resistor should be programmed to “external”. The RLoad together with the output
+capacitance of the gas sensor acts as a low pass filter.
+
+                                                                                      VREF        VDD
+
+
+                                                 LMP91000                                                                    SCL
+
+                     3-Lead                                                                                 I2C INTERFACE
+                                                                                                                  AND
+                Electrochemical                                                                                CONTROL
+                                                                                                                             SDA
+                      Cell                                             VARIABLE           VREF
+                                                                                                              REGISTERS
+                                      CE                     +
+                                                        A1               BIAS            DIVIDER                             MENB
+                                                              -
+
+
+
+                       CE
+                                      RE
+                            RE
+                                                                                                               TEMP          DGND
+                                                                                                              SENSOR
+                       WE
+
+
+                                      WE                                   +                                                 VOUT
+                                                                               TIA
+                                                                           -
+                                              RLoad
+
+
+                                                                               RTIA
+
+                                                                      C1                     C2                  AGND
+
+
+
+                                                Figure 24. 3-Lead Amperometric Cell
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                       Submit Documentation Feedback      17
+                                                             Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                             www.ti.com
+
+7.3.1.6.2 2-Lead Galvanic Cell In Ground Referred Configuration
+When the LMP91000 is interfaced to a galvanic cell (for instance to an Oxygen gas sensor) referred to the
+ground of the system, an external resistor needs to be placed in parallel to the gas sensor; the negative
+electrode of the gas sensor is connected to the ground of the system and the positive electrode to the Vref pin of
+the LMP91000, the working pin of the LMP91000 is connected to the ground.
+The LMP91000 is then configured in 2-lead galvanic cell mode and the Vref bypass feature needs to be enabled.
+In this configuration the Control Amplifier (A1) is turned off, and the output of the gas sensor is amplified by the
+Transimpedance Amplifier (TIA) which is configured as a simple non-inverting amplifier.
+The gain of this non inverting amplifier is set according the following formula:
+      Gain= 1+(RTIA/RLoad)                                                                                                                           (6)
+If different gains are required, an external resistor can be connected between the pins C1 and C2. In this case
+the internal feedback resistor should be programmed to “external”.
+
+
+
+                                                                        VE-
+                                                                                          2-wire
+                                                                              NC          Sensor
+                                                                                          such as
+                                                                                          Oxygen
+                                                                        VE+
+
+
+
+
+                                                                     VREF               VDD
+
+
+                                                                                                                             SCL
+                        LMP91000
+                                                                                                      I2C INTERFACE
+                                                                                                            AND
+                                                                                                                             SDA
+                                                                                                         CONTROL
+                                                                                                        REGISTERS
+                                                    VARIABLE                   VREF
+                                         +
+                                                      BIAS                    DIVIDER
+                 CE               A1                                                                                         MENB
+                                         -
+
+
+
+
+                 RE
+                                                                                                                             DGND
+                                                                                                         TEMP
+                                                                                                        SENSOR
+
+
+
+
+                 WE                                     +                                                                    VOUT
+                                                               TIA
+                                                        -
+
+                          RLoad
+
+
+
+                                                               RTIA
+
+                                               C1                                  C2                       AGND
+
+
+                                       Figure 25. 2-Lead Galvanic Cell Ground-Referred
+
+
+
+
+18     Submit Documentation Feedback                                                                Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                    Product Folder Links: LMP91000
+                                                                                                                                     LMP91000
+www.ti.com                                                                                        SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+7.3.1.6.3 2-lead Galvanic Cell in Potentiostat Configuration
+When the LMP91000 is interfaced to a galvanic cell (for instance to an Oxygen gas sensor) referred to a
+reference, the Counter and the Reference pin of the LMP91000 are shorted together and connected to negative
+electrode of the galvanic cell. The positive electrode of the galvanic cell is then connected to the Working pin of
+the LMP91000.
+The LMP91000 is then configured in 3-lead amperometric cell mode (as for amperometric cell). In this
+configuration the Control Amplifier (A1) is ON and provides the internal zero voltage. The transimpedance
+amplifier (TIA) is also ON, it converts the current generated by the gas sensor in a voltage, according to the
+transimpedance gain:
+       Gain= RTIA                                                                                                                             (7)
+If different gains are required, an external resistor can be connected between the pins C1 and C2. In this case
+the internal feedback resistor should be programmed to “external”.
+                                                                                      VREF        VDD
+
+
+                                                 LMP91000                                                                     SCL
+
+                                                                                                            I2C INTERFACE
+                                                                                                                  AND
+               2-wire Sensor                                                                                                  SDA
+                                                                                                               CONTROL
+              such as Oxygen                                                                                  REGISTERS
+                                      CE                               VARIABLE           VREF
+                                                             +
+                                                        A1               BIAS            DIVIDER                              MENB
+                                                              -
+
+
+
+                      VE-
+                                      RE
+                            NC
+                                                                                                               TEMP           DGND
+                                                                                                              SENSOR
+                     VE+
+
+
+                                     WE                                    +                                                  VOUT
+                                                                               TIA
+                                                                           -
+                                              RLoad
+
+
+
+                                                                               RTIA
+
+                                                                      C1                     C2                  AGND
+
+
+
+                                 Figure 26. 2-Lead Galvanic Cell in Potentiostat Configuration
+
+7.3.1.7 Timeout Feature
+The timeout is a safety feature to avoid bus lockup situation. If SCL is stuck low for a time exceeding t_timeout,
+the LMP91000 will automatically reset its I2C interface. Also, in the case the LMP91000 hangs the SDA for a time
+exceeding t_timeout, the LMP91000’s I2C interface will be reset so that the SDA line will be released. Since the
+SDA is an open-drain with an external resistor pull-up, this also avoids high power consumption when LMP91000
+is driving the bus and the SCL is stopped.
+
+7.4 Device Functional Modes
+The LMP91000 has 6 operational modes to optimize the current consumption and meet the needs of the
+applications. It is possible to select the operational mode through the I2C bus.
+At the power on the LMP91000 is in deep sleep mode. In this mode the device accepts I2C commands and
+burns the lowest supply current. In this mode the TIA, the A1 control amplifier and the temperature sensor are
+OFF. This mode of operation is suggested when the gas detector is not used and a zero bias is required
+between WE and RE electrodes of the gas sensor. The zero bias between the WE and RE electrodes is kept by
+enabling the internal FET feature.
+In the standby mode, the TIA is OFF, while the A1 control amplifier is ON. This mode of operation is suggested
+when the gas detector is not used for short amount of time and a faster warm-up of the gas detector is required.
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                      Submit Documentation Feedback      19
+                                                             Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                                      www.ti.com
+
+
+Device Functional Modes (continued)
+In the 3-lead amperometric cell, the LMP91000 is configured as a standard potentiostat with A1, TIA and bias
+circuitry completely ON.
+In the Temperature measurement (TIA OFF) the LMP91000 is in Standby mode with the Temperature sensor
+ON, at theVOUT pin of the LMP91000 it s possible to read the temperature sensor's output.
+In the Temperature measurement (TIA ON) the LMP91000 is 3-lead amperometric cell mode with the
+Temperature sensor ON, at theVOUT pin of the LMP91000 it s possible to read the temperature sensor's output.
+In 2-lead ground referred galvanic cell the A1 control amplifer is OFF and the Internal zero circuitry is bypassed.
+In this mode it is possible to connect 2-lead sensors like the O2 sensor to the LMP91000.
+
+7.5 Programming
+7.5.1 I2C Interface
+The I2C compatible interface operates in Standard mode (100kHz). Pull-up resistors or current sources are
+required on the SCL and SDA pins to pull them high when they are not being driven low. A logic zero is
+transmitted by driving the output low. A logic high is transmitted by releasing the output and allowing it to be
+pulled-up externally. The appropriate pull-up resistor values will depend upon the total bus capacitance and
+operating speed. The LMP91000 comes with a 7 bit bus fixed address: 1001 000.
+
+7.5.2 Write and Read Operation
+In order to start any read or write operation with the LMP91000, MENB needs to be set low during the whole
+communication. Then the master generates a start condition by driving SDA from high to low while SCL is high.
+The start condition is always followed by a 7-bit slave address and a Read/Write bit. After these 8 bits have been
+transmitted by the master, SDA is released by the master and the LMP91000 either ACKs or NACKs the
+address. If the slave address matches, the LMP91000 ACKs the master. If the address doesn't match, the
+LMP91000 NACKs the master. For a write operation, the master follows the ACK by sending the 8-bit register
+address pointer. Then the LMP91000 ACKs the transfer by driving SDA low. Next, the master sends the 8-bit
+data to the LMP91000. Then the LMP91000 ACKs the transfer by driving SDA low. At this point the master
+should generate a stop condition and optionally set the MENB at logic high level (refer to Figure 27, Figure 28,
+and Figure 29).
+A read operation requires the LMP91000 address pointer to be set first, also in this case the master needs
+setting at low logic level the MENB, then the master needs to write to the device and set the address pointer
+before reading from the desired register. This type of read requires a start, the slave address, a write bit, the
+address pointer, a Repeated Start (if appropriate), the slave address, and a read bit (refer to Figure 27,
+Figure 28, and Figure 29). Following this sequence, the LMP91000 sends out the 8-bit data of the register.
+When just one LMP91000 is present on the I2C bus the MENB can be tied to ground (low logic level).
+
+                       MENB
+                                          1                                         9    1                                         9
+                        SCL
+
+                        SDA
+                                      A6      A5    A4   A3   A2   A1     A0 R/W      D7     D6   D5    D4   D3   D2   D1     D0
+                               Start by                                          Ack                                             Ack
+                               Master                                             by                                              by
+                                                            Frame 1            LMP91000                    Frame 2             LMP91000
+                                                   Serial Bus Address Byte                        Internal Address Register
+                                                          from Master                                  Byte from Master
+
+                        MENB
+                        (continued)
+                                              1                                          9
+                        SCL
+                        (continued)
+                        SDA
+                                              D7    D6   D5   D4   D3     D2   D1   D0
+                        (continued)
+                                                                                       Ack    Stop by
+                                                                                        by    Master
+                                                                                     LMP91000
+                                                               Frame 3
+                                                              Data Byte
+
+
+                                                   Figure 27. Register Write Transaction
+
+20     Submit Documentation Feedback                                                                         Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                              Product Folder Links: LMP91000
+                                                                                                                                                              LMP91000
+www.ti.com                                                                                                       SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Programming (continued)
+
+                        MENB
+                                           1                                          9    1                                             9
+                          SCL
+
+                          SDA          A6       A5    A4    A3   A2    A1    A0 R/W      D7      D6   D5   D4   D3   D2     D1    D0
+                                Start by                                            Ack                                                Ack      Stop by
+                                Master                                               by                                                 by      Master
+                                                              Frame 1             LMP91000                     Frame 2               LMP91000
+                                                     Serial Bus Address Byte                          Internal Address Register
+                                                            from Master                                    Byte from Master
+
+
+                                                            Figure 28. Pointer Set Transaction
+
+
+                        MENB
+                                           1                                          9     1                                            9
+                          SCL
+
+
+                          SDA          A6       A5     A4   A3   A2    A1    A0 R/W      D7      D6   D5   D4   D3   D2     D1    D0
+                                Start by                                            Ack                                                No Ack    Stop
+                                Master                                               by                                                  by       by
+                                                          Frame 1                 LMP91000                    Frame 2                  Master   Master
+                                                 Serial Bus Address Byte                                   Data Byte from
+                                                        from Master                                            Slave
+
+
+                                                        Figure 29. Register Read Transaction
+
+
+7.6 Registers Maps
+The registers are used to configure the LMP91000.
+If writing to a reserved bit, user must write only 0. Readback value is unspecified and should be discarded.
+
+                                                                        Table 2. Register Map
+          Address                                Name                            Power on default                          Access                         Lockable?
+               0x00                             STATUS                                    0x00                            Read only                          No
+               0x01                              LOCK                                     0x01                               R/W                             No
+     0x02 through 0x09                         RESERVED                                    —                                     —                           —
+               0x10                             TIACN                                     0x03                               R/W                            Yes
+               0x11                             REFCN                                     0x20                               R/W                            Yes
+               0x12                            MODECN                                     0x00                               R/W                             No
+    0x13 through 0xFF                          RESERVED                                    —                                     —                           —
+
+
+7.6.1 STATUS -- Status Register (Address 0x00)
+The status bit is an indication of the LMP91000's power-on status. If its readback is “0”, the LMP91000 is not
+ready to accept other I2C commands.
+
+        Bit                           Name                                                                                Function
+       [7:1]                     RESERVED
+                                                                            Status of Device
+         0                          STATUS                                  0 Not Ready (default)
+                                                                            1 Ready
+
+
+7.6.2 LOCK -- Protection Register (Address 0x01)
+The lock bit enables and disables the writing of the TIACN and the REFCN registers. In order to change the
+content of the TIACN and the REFCN registers the lock bit needs to be set to “0”.
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                                            Submit Documentation Feedback        21
+                                                                      Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                              www.ti.com
+
+      Bit                      Name                                                       Function
+      [7:1]                 RESERVED
+                                                     Write protection
+       0                       LOCK                  0 Registers 0x10, 0x11 in write mode
+                                                     1 Registers 0x10, 0x11 in read only mode (default)
+
+
+7.6.3 TIACN -- TIA Control Register (Address 0x10)
+The parameters in the TIA control register allow the configuration of the transimpedance gain (RTIA) and the load
+resistance (RLoad).
+
+      Bit                      Name                                                       Function
+      [7:5]                 RESERVED                 RESERVED
+                                                     TIA feedback resistance selection
+                                                     000 External resistance (default)
+                                                     001 2.75kΩ
+                                                     010 3.5kΩ
+      [4:2]                  TIA_GAIN                011 7kΩ
+                                                     100 14kΩ
+                                                     101 35kΩ
+                                                     110 120kΩ
+                                                     111 350kΩ
+                                                     RLoad selection
+                                                     00 10Ω
+      [1:0]                   RLOAD                  01 33Ω
+                                                     10 50Ω
+                                                     11 100Ω (default)
+
+
+7.6.4 REFCN -- Reference Control Register (Address 0x11)
+The parameters in the Reference control register allow the configuration of the Internal zero, Bias and Reference
+source. When the Reference source is external, the reference is provided by a reference voltage connected to
+the VREF pin. In this condition the Internal Zero and the Bias voltage are defined as a percentage of VREF
+voltage instead of the supply voltage.
+
+      Bit                      Name                                                       Function
+                                                     Reference voltage source selection
+       7                   REF_SOURCE                0 Internal (default)
+                                                     1 external
+                                                     Internal zero selection (Percentage of the source reference)
+                                                     00 20%
+      [6:5]                    INT_Z                 01 50% (default)
+                                                     10 67%
+                                                     11 Internal zero circuitry bypassed (only in O2 ground referred measurement)
+                                                     Selection of the Bias polarity
+       4                    BIAS_SIGN                0 Negative (VWE – VRE)<0V (default)
+                                                     1 Positive (VWE –VRE)>0V
+                                                     BIAS selection (Percentage of the source reference)
+                                                     0000 0% (default)
+                                                     0001 1%
+                                                     0010 2%
+                                                     0011 4%
+                                                     0100 6%
+                                                     0101 8%
+      [3:0]                    BIAS                  0110 10%
+                                                     0111 12%
+                                                     1000 14%
+                                                     1001 16%
+                                                     1010 18%
+                                                     1011 20%
+                                                     1100 22%
+                                                     1101 24%
+
+
+
+
+22     Submit Documentation Feedback                                                 Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                  Product Folder Links: LMP91000
+                                                                                                                           LMP91000
+www.ti.com                                                                               SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+7.6.5 MODECN -- Mode Control Register (Address 0x12)
+The Parameters in the Mode register allow the configuration of the Operation Mode of the LMP91000.
+
+        Bit                         Name                                                     Function
+                                                           Shorting FET feature
+         7                       FET_SHORT                 0 Disabled (default)
+                                                           1 Enabled
+       [6:3]                     RESERVED
+                                                           Mode of Operation selection
+                                                           000 Deep Sleep (default)
+                                                           001 2-lead ground referred galvanic cell
+       [2:0]                      OP_MODE                  010 Standby
+                                                           011 3-lead amperometric cell
+                                                           110 Temperature measurement (TIA OFF)
+                                                           111 Temperature measurement (TIA ON)
+
+When the LMP91000 is in Temperature measurement (TIA ON) mode, the output of the temperature sensor is
+present at the VOUT pin, while the output of the potentiostat circuit is available at pin C2.
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                             Submit Documentation Feedback      23
+                                                        Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                             www.ti.com
+
+
+8 Application and Implementation
+
+                                                        NOTE
+            Information in the following applications sections is not part of the TI component
+            specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+            responsible for determining suitability of components for their purposes. Customers should
+            validate and test their design implementation to confirm system functionality.
+
+
+8.1 Application Information
+8.1.1 Connection of More Than One LMP91000 to the I2C BUS
+The LMP91000 comes out with a unique and fixed I2C slave address. It is still possible to connect more than one
+LMP91000 to an I2C bus and select each device using the MENB pin. The MENB simply enables/disables the
+I2C communication of the LMP91000. When the MENB is at logic level low all the I2C communication is enabled,
+it is disabled when MENB is at high logic level.
+In a system based on a μcontroller and more than one LMP91000 connected to the I2C bus, the I2C lines (SDA
+and SCL) are shared, while the MENB of each LMP91000 is connected to a dedicate GPIO port of the
+μcontroller.
+The μcontroller starts communication asserting one out of N MENB signals where N is the total number of
+LMP91000s connected to the I2C bus. Only the enabled device will acknowledge the I2C commands. After
+finishing communicating with this particular LMP91000, the microcontroller de-asserts the corresponding MENB
+and repeats the procedure for other LMP91000s. Figure 30 shows the typical connection when more than one
+LMP91000 is connected to the I2C bus.
+
+                        LMP91000                LMP91000                 LMP91000            LMP91000
+
+
+                       MENB   SCL   SDA        MENB   SCL   SDA         MENB   SCL   SDA    MENB   SCL   SDA
+
+
+
+
+                       GPIO 1                 GPIO 2                   GPIO 3              GPIO N          SCL
+                                                                  µC                                       SDA
+
+
+
+                                          Figure 30. More Than One LMP91000 on I2C Bus
+
+8.1.2 Smart Gas Sensor Analog Front-End
+The LMP91000 together with an external EEPROM represents the core of a SMART GAS SENSOR AFE. In the
+EEPROM it is possible to store the information related to the GAS sensor type, calibration and LMP91000's
+configuration (content of registers 10h, 11h, 12h). At startup the microcontroller reads the EEPROM's content
+and configures the LMP91000. A typical smart gas sensor AFE is shown in Figure 31. The connection of MENB
+to the hardware address pin A0 of the EEPROM allows the microcontroller to select the LMP91000 and its
+corresponding EEPROM when more than one smart gas sensor AFE is present on the I2C bus. Note: only
+EEPROM I2C addresses with A0=0 should be used in this configuration.
+
+
+
+
+24     Submit Documentation Feedback                                                                Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                            Product Folder Links: LMP91000
+                                                                                                                                                                 LMP91000
+www.ti.com                                                                                                       SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Application Information (continued)
+
+
+                                                                LMP91000                  I2C EEPROM
+
+
+                                                              MENB    SCL    SDA           A0   SCL     SDA
+
+
+
+
+                                                                                   MENB     SCL         SDA
+
+
+
+                                                      Figure 31. Smart Gas Sensor AFE
+
+8.1.3 Smart Gas Sensor AFES on I2C BUS
+The connection of Smart gas sensor AFEs on the I2C bus is the natural extension of the previous concepts. Also
+in this case the microcontroller starts communication asserting 1 out of N MENB signals where N is the total
+number of smart gas sensor AFE connected to the I2C bus. Only one of the devices (either LMP91000 or its
+corresponding EEPROM) in the smart gas sensor AFE enabled will acknowledge the I2C commands. When the
+communication with this particular module ends, the microcontroller de-asserts the corresponding MENB and
+repeats the procedure for other modules. Figure 32 shows the typical connection when several smart gas sensor
+AFEs are connected to the I2C bus.
+
+
+                   LMP91000          I2C EEPROM                  LMP91000                  I2C EEPROM                     LMP91000            I2C EEPROM
+
+
+                 MENB   SCL   SDA    A0   SCL   SDA            MENB    SCL   SDA           A0     SCL    SDA            MENB    SCL   SDA     A0     SCL   SDA
+
+
+
+
+      SMART SENSOR AFE                                SMART SENSOR AFE                                         SMART SENSOR AFE
+
+
+
+
+                                    GPIO 1                                                GPIO 2                                            GPIO N         SCL
+                                                                                                µC                                                         SDA
+
+
+
+                                                                     Figure 32. I2C Bus
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                                          Submit Documentation Feedback           25
+                                                            Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                          www.ti.com
+
+
+8.2 Typical Application
+The LMP91000 can be used in conjunction with environment sensors to build a battery power environment
+monitors such as an air quality data-loggers, or wirless sensors. In this application due to the monitored
+phenomena the micro-controller and the LMP9100 spend most of the time in idle state. In order to save power
+and enlarge the battery life, the LMP91000 can be put in deep sleep mode with Internal FET feature enabled. To
+optimize the current consumption of the entire system, the acquisitions and in general the activities of the micro
+can operate at set intervals with the TPL5000. The TPL5000 is a programmable timer with watch-dog feature.
+                                                                                                                       VOLTAGE
+                                                                                                                      REFERENCE
+                                                                                                                   VIN       VOUT
+
+                                                                                                                   GND
+
+
+
+                 VOUT VBAT_OK                    TPL5000                            µC                Rp                 LMP91000
+                                                                      Rp                             100k
+                VIN                        D0        PGOOD                               VDD                 Rp    VDD          VREF
+                                                                     100k
+                                                                                                            100k
+
+     +                                     D1          RSTn                 RST           SDA                      SCL              CE
+   Lithium                                                                                                                                 CE
+ ion battery   POWER MANAGEMENT            D2          WAKE                 GPIO          SCL                      SDA              RE          RE
+      -                                                                                                                                    WE
+                                           VDD         TCAL                 GPIO         ADC                       VOUT             WE
+
+                                                                                                                   GND
+                                                                                                                                              GAS
+                GND                        GND         DONE                 GPIO         GND                                   MENB
+                                                                                                                                            SENSOR
+                                                                            GPIO         GPIO
+
+                                                                            GPIO         GPIO
+
+
+
+                                                                 Button        Temp 29°C
+                                                                               CO 0PPM
+                                                                 Button
+                                                                               TIME xx:xx
+                                                                             Date xx/xx/xxxx
+                                                                 Button
+
+                                                                                   DISPLAY
+                                                              KEYBOARD
+
+                                                       Figure 33. Data-Logger
+
+8.2.1 Design Requirements
+The Design is driven by the low-current consumption constraint. The data are usually acquired on a rate that
+ranges between 1s to 10s. The highest necessity it the maximization of the battery life. The TPL5000 helps
+achieving that goal because it allows putting the micro-controller in its lowest power mode. Moreover the deep
+slep mode of the LMP91000 allows burning only some hundreds of nA.
+
+8.2.2 Detailed Design Procedure
+When the focal constraint is the battery, the selection of a low power voltage reference, a micro-controller and
+display is mandatory. The first step in the design is the calculation of the power consumption of each device in
+the different mode of operations. An example is the LMP91000; the device has gas measurement mode, sleep
+mode and micro-controller in low power mode which is normal operation. The different modes offer the possibility
+to select the appropriate timer interval which respect the application constraint and maximize the life of the
+battery.
+
+8.2.2.1 Sensor Test Procedure
+The LMP91000 has all the hardware and programmability features to implement some test procedures. The
+purpose of the test procedure is to:
+ a. test proper function of the sensor (status of health)
+ b. test proper connection of the sensor to the LMP91000
+The test procedure is very easy. The variable bias block is user programmable through the digital interface. A
+step voltage can be applied by the end user to the positive input of A1. As a consequence a transient current will
+start flowing into the sensor (to charge its internal capacitance) and it will be detected by the TIA. If the current
+transient is not detected, either a sensor fault or a connection problem is present. The slope and the aspect of
+the transient response can also be used to detect sensor aging (for example, a cell that is drying and no longer
+
+26         Submit Documentation Feedback                                                     Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                      Product Folder Links: LMP91000
+                                                                                                                                                                LMP91000
+www.ti.com                                                                                                       SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+Typical Application (continued)
+efficiently conducts the current). After it is verified that the sensor is working properly, the LMP91000 needs to be
+reset to its original configuration. It is not required to observe the full transient in order to contain the testing time.
+All the needed information are included in the transient slopes (both edges). Figure 34 shows an example of the
+test procedure, a Carbon Monoxide sensor is connected to the LMP91000, two pulses are then sequentially
+applied to the bias voltage:
+ 1. from 0 mV to 40 mV
+ 2. from 40 mV to –40 mV
+and finally the bias is set again at 0mV since this is the normal operation condition for this sensor.
+
+8.2.3 Application Curve
+
+                                                                                    LMP91000 OUTPUT
+                                                                                    TEST PULSE
+
+
+
+
+                                                    OUTPUTT VOLTTAGE (1V/DIV)
+                                                                                                                         INPUT PULSE (100mV/DIV)
+
+
+
+
+                                                                                          TIME (25ms/DIV)
+
+                                                 Figure 34. Test Procedure Example
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                                                                   Submit Documentation Feedback   27
+                                                                                Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                             www.ti.com
+
+
+9 Power Supply Recommendations
+
+9.1 Power Consumption
+The LMP91000 is intended for use in portable devices, so the power consumption is as low as possible in order
+to ensure a long battery life. The total power consumption for the LMP91000 is below 10 µA at 3.3 v average
+over time, (this excludes any current drawn from any pin). A typical usage of the LMP91000 is in a portable gas
+detector and its power consumption is summarized in Table 3. This has the following assumptions:
+• Power On only happens a few times over life, so its power consumption can be ignored.
+• Deep Sleep mode is not used.
+• The system is used about 8 hours a day, and 16 hours a day it is in Standby mode.
+• Temperature Measurement is done about once per minute.
+This results in an average power consumption of approximately 7.95 µA. This can potentially be further reduced,
+by using the Standby mode between gas measurements. It may even be possible, depending on the sensor
+used, to go into deep sleep for some time between measurements, further reducing the average power
+consumption.
+
+                                         Table 3. Power Consumption Scenario
+                                                                   3-Lead          Temperature        Temperature
+                               Deep Sleep         StandBy        Amperometric      Measurement        Measurement            Total
+                                                                    Cell             TIA OFF            TIA ON
+Current consumption
+(µA)
+typical value                      0.6               6.5               10              11.4                14.9
+Time ON
+(%)                                 0                60                39                0                   1
+Average
+(µA)                                0                3.9              3.9                0                 0.15               7.95
+Notes
+A1                                 OFF               ON               ON                ON                  ON
+TIA                                OFF               OFF              ON               OFF                  ON
+TEMP SENSOR                        OFF               OFF              OFF               ON                  ON
+I2C interface                      ON                ON               ON                ON                  ON
+
+
+
+
+28      Submit Documentation Feedback                                               Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                  Product Folder Links: LMP91000
+                                                                                                                           LMP91000
+www.ti.com                                                                               SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014
+
+
+10 Layout
+
+10.1 Layout Guidelines
+The most critical point when designing with electrocemical gas sensors and the LMP91000 is the connection of
+the sensor to the LMP91000. Particular attention is required in the layout of the RE, CE and WE traces which
+connect the sensor to the front-end. The traces needs to be short and far from hifh freqency signals, such as
+clock. A way to reduce the lenght of the traces is positioning the LMP91000 below the gas sensor, this is
+possible with cyclindrical electrochemical gas sensor or on the oppoite layer in case of solid gas sensor or low
+profile gas sensor. In case of uasge of external transimpeance gain resistance it needs to be placed close to the
+LMP91000, the terminal of the resistance conencted to C1 needs to be far from high frequency signals.
+
+10.2 Layout Example
+
+
+
+
+                               TOP LAYER                                                         BOTTOM LAYER
+
+                                                           Figure 35. Layout
+
+
+
+
+Copyright © 2011–2014, Texas Instruments Incorporated                                             Submit Documentation Feedback      29
+                                                        Product Folder Links: LMP91000
+LMP91000
+SNAS506I – JANUARY 2011 – REVISED DECEMBER 2014                                                                                www.ti.com
+
+
+11 Device and Documentation Support
+11.1 Trademarks
+WEBENCH is a registered trademark of Texas Instruments.
+All other trademarks are the property of their respective owners.
+11.2 Electrostatic Discharge Caution
+        These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+        during storage or handling to prevent electrostatic damage to the MOS gates.
+
+
+11.3 Glossary
+SLYZ022 — TI Glossary.
+   This glossary lists and explains terms, acronyms, and definitions.
+
+12 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+
+
+
+30     Submit Documentation Feedback                                                   Copyright © 2011–2014, Texas Instruments Incorporated
+
+                                                   Product Folder Links: LMP91000
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                    2-Sep-2026
+
+
+
+
+PACKAGING INFORMATION
+
+       Orderable part number          Status     Material type      Package | Pins      Package qty | Carrier        RoHS             Lead finish/              MSL rating/               Op temp (°C)          Part marking
+                                        (1)            (2)                                                             (3)            Ball material             Peak reflow                                           (6)
+                                                                                                                                            (4)                      (5)
+
+        LMP91000SDE/NOPB             Obsolete     Production       WSON (NHL) | 14                 -                    -                 Call TI                  Call TI                  -40 to 85              L91000
+        LMP91000SDX/NOPB              Active      Production       WSON (NHL) | 14       4500 | LARGE T&R             Yes                  SN              Level-3-260C-168 HR              -40 to 85              L91000
+      LMP91000SDX/NOPB.A              Active      Production       WSON (NHL) | 14       4500 | LARGE T&R             Yes                  SN              Level-3-260C-168 HR              -40 to 85              L91000
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 1
+                                                                              PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                   13-May-2024
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                     TAPE DIMENSIONS
+                                                                                      K0       P1
+
+
+
+                                                                                                                     B0 W
+                                       Reel
+                                     Diameter
+                                                                                   Cavity           A0
+                                                               A0   Dimension designed to accommodate the component width
+                                                               B0   Dimension designed to accommodate the component length
+                                                               K0   Dimension designed to accommodate the component thickness
+                                                               W    Overall width of the carrier tape
+                                                               P1   Pitch between successive cavity centers
+
+
+                                      Reel Width (W1)
+                              QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                    Sprocket Holes
+
+
+                                                Q1        Q2          Q1    Q2
+
+                                                Q3        Q4          Q3    Q4                  User Direction of Feed
+
+
+
+                                                           Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins             SPQ       Reel   Reel   A0                  B0         K0     P1     W     Pin1
+                               Type Drawing                            Diameter Width (mm)                (mm)       (mm)   (mm)   (mm) Quadrant
+                                                                         (mm) W1 (mm)
+  LMP91000SDX/NOPB            WSON     NHL           14        4500        330.0        12.4        4.3    4.3       1.3    8.0    12.0    Q1
+
+
+
+
+                                                                     Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              13-May-2024
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+
+
+
+
+                      W                                   L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+  LMP91000SDX/NOPB               WSON             NHL           14          4500      356.0        356.0         36.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                        MECHANICAL DATA
+NHL0014B
+
+
+
+
+                                SDA14B (Rev A)
+
+
+
+
+           www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2026, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+

@@ -1,0 +1,12099 @@
+ESP32-S31-WROOM-3
+ESP32-S31-WROOM-3U
+
+IN
+AR
+Y
+
+Datasheet Pre-release v0.7
+2.4 GHz Wi-Fi 6, Bluetooth® 5.4 (LE), Bluetooth® Classic, Zigbee and Thread (802.15.4) module
+Built around ESP32-S31 series of SoCs, RISC-V 32-bit dual-core microprocessor
+54 GPIOs, rich set of peripherals
+
+PR
+
+EL
+IM
+
+On-board PCB antenna or external antenna
+
+ESP32-S31-WROOM-3
+
+ESP32-S31-WROOM-3U
+
+www.espressif.com
+
+1 Module Overview
+
+1 Module Overview
+Note:
+Check the link or the QR code to make sure that you use the latest version of this document:
+https://espressif.com/documentation/esp32-s31-wroom-3_wroom-3u_datasheet_en.pdf
+
+1.1 Features
+Bluetooth®
+
+CPU and On-Chip Memory
+• ESP32-S31 embedded, RISC-V 32-bit dual-core
+
+Bluetooth LE
+
+microprocessor, up to 320 MHz
+
+• Full support for the Bluetooth 5.4 (LE) core
+
+• ULP-RISC-V coprocessor
+
+specification
+
+• 320 KB ROM
+
+• Bluetooth Mesh 1.1
+
+• 512 KB shared SRAM
+
+• LE Audio (Isochronous Channels, BIS and CIS)
+• Direction Finding (AoA/AoD)
+
+• 32 KB low-power SRAM
+
+• Periodic Advertising with Responses (PAwR)
+
+• Concurrent access to flash and PSRAM
+
+• LE Connection Subrating
+
+• PSRAM: Up to 32 MB (optional)
+
+• LE Power Control
+• Speed: 125 Kbps, 500 Kbps, 1 Mbps, 2 Mbps
+
+Wi-Fi
+
+• LE Advertising Extensions and Multiple
+
+• 1T1R in 2.4 GHz band
+
+Advertising Sets
+
+• Operating frequency: 2412 ~ 2484 MHz
+
+• Simultaneous Operation of Broadcaster,
+Observer, Central, and Peripheral Devices
+
+• Compliant with IEEE 802.11b/g/n/ax protocol
+• 20 MHz and 40 MHz bandwidth
+
+Bluetooth Classic
+
+• Data rate up to 150 Mbps
+
+• Data rates: Basic rate 1 Mbps, Enhanced data
+rate 2 Mbps, 3 Mbps
+
+• Supports key Wi-Fi 6 features such as OFDMA,
+
+• Asynchronous connection-oriented (ACL) links,
+
+MU-MIMO, and TWT
+
+synchronous connection-oriented (SCO) and
+
+• Four virtual Wi-Fi interfaces
+
+enhanced synchronous connection-oriented
+(eSCO) links
+
+• Supports Station mode, SoftAP mode, Station +
+SoftAP mode, and promiscuous mode
+
+• Channel Classification and adaptive frequency
+hopping (AFH)
+
+• Antenna diversity
+
+• Secure simple pairing (SSP)
+
+• 802.11mc FTM
+
+Espressif Systems
+
+• Secure Connections
+2
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+1 Module Overview
+
+Touch Sensor, Temperature Sensor, ADC
+
+IEEE 802.15.4
+
+Controller, DAC Controller, Analog Voltage
+• Compliant with IEEE 802.15.4-2015 protocol
+
+Comparator, General-Purpose Timer, System
+
+• OQPSK PHY in 2.4 GHz band
+
+Timer, Watchdog Timer
+
+• Data rate: 250 Kbps
+
+Integrated Components on Module
+
+• Thread 1.4
+
+• 40 MHz crystal oscillator
+
+• Zigbee 3.0
+
+• Up to 32 MB SPI flash (optional)
+
+• Matter
+• Application-layer protocols (HomeKit, MQTT,
+
+Antenna Options
+
+etc.)
+• ESP32-S31-WROOM-3: On-board PCB antenna
+
+Peripherals
+
+• ESP32-S31-WROOM-3U: External antenna via a
+connector or module pin (ANT2)
+
+• UART, SPI, I2C, I2S, Pulse Counter Controller,
+USB 2.0 High-Speed OTG, USB Serial/JTAG
+
+Operating Conditions
+
+Controller, Ethernet Media Access Controller,
+CAN FD Controller, SD/MMC Host Controller,
+
+• Operating voltage/Power supply: 3.0 ~ 3.6 V
+
+LED PWM Controller, Motor Control PWM,
+
+• Operating ambient temperature: –40 ~ 85 °C
+
+Remote Control Peripheral, Parallel IO Controller,
+
+1.2
+
+Series Comparison
+
+ESP32-S31-WROOM-3 and ESP32-S31-WROOM-3U modules are powerful, generic Wi-Fi, Bluetooth® 5.4 (LE),
+Bluetooth® Classic and IEEE 802.15.4 MCUs that have a rich set of peripherals. They are an ideal choice for a
+wide variety of application scenarios related to Internet of Things (IoT), such as embedded systems, smart
+home, wearable electronics, etc.
+ESP32-S31-WROOM-3 comes with a PCB antenna. ESP32-S31-WROOM-3U comes with a connector or
+module pin (ANT2) for an external antenna.
+The series comparison ordering information for the modules is as follows:
+Table 1-1. ESP32-S31-WROOM-3 (ANT) Series Comparison
+Part Number
+ESP32-S31-WROOM-3-N16R8V
+ESP32-S31-WROOM-3-N8R16V
+ESP32-S31-WROOM-3-N16R16V
+ESP32-S31-WROOM-3-N32R16V
+
+Flash3
+
+PSRAM3
+
+16 MB
+
+8 MB
+
+(Quad SPI)
+
+(Octal SPI)
+
+Embedded
+Chip
+
+Ambient
+Temp.1 (°C)
+
+Size2
+(mm)
+
+ESP32-S31NRV8
+
+8 MB
+(Quad SPI)
+16 MB
+
+16 MB
+
+(Quad SPI)
+
+(Octal SPI)
+
+–40 ~ 85
+ESP32-S31NRV16
+
+22.0 × 30.0
+× 3.5
+
+32 MB
+(Quad SPI)
+Cont’d on next page
+
+Espressif Systems
+
+3
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+1 Module Overview
+
+Table 1-1 – cont’d from previous page
+Part Number
+ESP32-S31-WROOM-3-N16R32V
+
+Flash3
+
+PSRAM3
+
+16 MB
+
+32 MB
+
+(Quad SPI)
+
+(Octal SPI)
+
+Embedded
+Chip
+
+Ambient
+Temp.1 (°C)
+
+Size2
+(mm)
+
+ESP32-S31NRV32
+
+1 Ambient temperature specifies the recommended temperature range of the environment immediately outside
+the Espressif module.
+2 For details, refer to Section 10.1 Module Dimensions.
+3 For more information on memory specifications, refer to Section 6.5 Memory Specifications.
+Table 1-2. ESP32-S31-WROOM-3U (CONN) Ordering Information4
+Part Number
+ESP32-S31-WROOM-3U-N16R16V
+
+Flash3
+
+PSRAM3
+
+16 MB
+
+16 MB
+
+(Quad SPI)
+
+(Octal SPI)
+
+Size2
+
+Chip
+
+Ambient
+Temp.1 (°C)
+
+ESP32-S31NRV16
+
+–40 ~ 85
+
+22.0 × 24 × 3.5
+
+Embedded
+
+(mm)
+
+4 Notes 1–3 in this table are the same as in Table 1-1.
+At the core of the modules is ESP32-S31, RISC-V 32-bit dual-core microprocessor that operates at up to 320
+MHz. You can power off the CPU and make use of the low-power coprocessor to constantly monitor the
+peripherals for changes or crossing of thresholds.
+Note:
+For more information on ESP32-S31, please refer to ESP32-S31 Series Datasheet.
+
+1.3 Applications
+• Smart Home
+
+• Generic Low-power IoT Sensor Hubs
+
+• Industrial Automation
+
+• Generic Low-power IoT Data Loggers
+
+• Health Care
+
+• Cameras for Video Streaming
+
+• Consumer Electronics
+
+• USB Devices
+
+• Smart Agriculture
+
+• Speech Recognition
+
+• POS Machines
+
+• Image Recognition
+
+• Service Robot
+
+• Wi-Fi + Bluetooth Networking Card
+
+• Audio Devices
+
+• Touch and Proximity Sensing
+
+Espressif Systems
+
+4
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+Contents
+
+Contents
+1
+
+Module Overview
+
+2
+
+1.1
+
+Features
+
+2
+
+1.2
+
+Series Comparison
+
+3
+
+1.3
+
+Applications
+
+4
+
+2
+
+Block Diagram
+
+11
+
+3
+
+Pin Definitions
+
+12
+
+3.1
+
+Pin Layout
+
+12
+
+3.2
+
+Pin Description
+
+14
+
+4
+
+Boot Configurations
+
+18
+
+4.1
+
+Chip Boot Mode Control
+
+19
+
+4.1.1
+
+20
+
+Secure Debugging in Joint Download Boot Mode
+
+4.2
+
+VDD_SPI Voltage Control
+
+21
+
+4.3
+
+ROM Messages Printing Control
+
+21
+
+4.4
+
+JTAG Signal Source Control
+
+22
+
+4.5
+
+Chip Power-up and Reset
+
+22
+
+5
+
+Peripherals
+
+24
+
+5.1
+
+Peripheral Overview
+
+24
+
+5.2
+
+Peripheral Description
+
+24
+
+5.2.1
+
+Image and Voice Processing
+
+24
+
+5.2.1.1
+
+JPEG Codec
+
+24
+
+5.2.1.2
+
+Pixel-Processing Accelerator (PPA)
+
+25
+
+5.2.1.3
+
+Audio Sample Rate Converter (ASRC)
+
+26
+
+5.2.1.4
+
+CORDIC Accelerator (CORDIC)
+
+27
+
+5.2.1.5
+
+LCD and Camera Controller (LCD_CAM)
+
+27
+
+5.2.2
+
+Connectivity Interface
+
+28
+
+5.2.2.1
+
+UART Controller (UART)
+
+28
+
+5.2.2.2
+
+SPI Controller (SPI)
+
+28
+
+5.2.2.3
+
+I2C Controller (I2C)
+
+30
+
+5.2.2.4
+
+I2S Controller (I2S)
+
+31
+
+5.2.2.5
+
+Pulse Count Controller (PCNT)
+
+32
+
+5.2.2.6
+
+USB 2.0 High-Speed OTG
+
+32
+
+5.2.2.7
+
+USB Serial/JTAG Controller (USB_SERIAL_JTAG)
+
+34
+
+5.2.2.8
+
+Ethernet Media Access Controller (EMAC)
+
+34
+
+5.2.2.9
+
+CAN FD Controller
+
+36
+
+5.2.2.10
+
+SD/MMC Host Controller (SDHOST)
+
+36
+
+5.2.2.11
+
+LED PWM Controller (LEDC)
+
+37
+
+5.2.2.12
+
+Motor Control PWM (MCPWM)
+
+37
+
+5.2.2.13
+
+Remote Control Peripheral (RMT)
+
+38
+
+5.2.2.14
+
+Parallel IO Controller (PARLIO)
+
+38
+
+5
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Espressif Systems
+
+Submit Documentation Feedback
+
+Contents
+
+5.2.2.15
+5.2.3
+
+BitScrambler
+
+39
+
+Analog Signal Processing
+
+40
+
+5.2.3.1
+
+Touch Sensor (TOUCH)
+
+40
+
+5.2.3.2
+
+Temperature Sensor (TSENS)
+
+41
+
+5.2.3.3
+
+SAR ADC Digital Controller (ADC)
+
+41
+
+5.2.3.4
+
+DAC Controller (DAC)
+
+42
+
+5.2.3.5
+
+Analog Voltage Comparator
+
+42
+
+6
+
+Electrical Characteristics
+
+44
+
+6.1
+
+Absolute Maximum Ratings
+
+44
+
+6.2
+
+Recommended Operating Conditions
+
+44
+
+6.3
+
+DC Characteristics (3.3 V, 25 °C)
+
+44
+
+6.4
+
+Current Consumption Characteristics
+
+45
+
+6.4.1
+
+Current Consumption in Active Mode
+
+45
+
+6.4.2
+
+Current Consumption in Other Modes
+
+46
+
+6.5
+
+Memory Specifications
+
+47
+
+7
+
+RF Characteristics
+
+49
+
+7.1
+
+Wi-Fi Radio
+
+49
+
+7.1.1
+
+Wi-Fi RF Transmitter (TX) Characteristics
+
+49
+
+7.1.2
+
+Wi-Fi RF Receiver (RX) Characteristics
+
+50
+
+7.2
+
+7.3
+
+7.4
+
+Bluetooth 5 (LE) Radio
+
+52
+
+7.2.1
+
+Bluetooth LE RF Transmitter (TX) Characteristics
+
+52
+
+7.2.2
+
+Bluetooth LE RF Receiver (RX) Characteristics
+
+54
+
+Bluetooth Classic Radio
+
+56
+
+7.3.1
+
+Bluetooth Classic RF Transmitter (TX) Characteristics
+
+56
+
+7.3.2
+
+Bluetooth Classic RF Receiver (RX) Characteristics
+
+57
+
+802.15.4 Radio
+
+58
+
+7.4.1
+
+802.15.4 RF Transmitter (TX) Characteristics
+
+58
+
+7.4.2
+
+802.15.4 RF Receiver (RX) Characteristics
+
+58
+
+8
+
+Module Schematics
+
+60
+
+9
+
+Peripheral Schematics
+
+62
+
+10 Physical Dimensions
+
+64
+
+10.1
+
+Module Dimensions
+
+64
+
+10.2
+
+Dimensions of External Antenna Connector
+
+65
+
+11 PCB Layout Recommendations
+
+67
+
+11.1
+
+PCB Land Pattern
+
+67
+
+11.2
+
+Module Placement for PCB Design
+
+68
+
+12 Product Handling
+
+69
+
+12.1
+
+Storage Conditions
+
+69
+
+12.2
+
+Electrostatic Discharge (ESD)
+
+69
+
+Espressif Systems
+
+6
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+Contents
+
+12.3
+
+Reflow Profile
+
+69
+
+12.4
+
+Ultrasonic Vibration
+
+70
+
+Related Documentation and Resources
+
+71
+
+Revision History
+
+72
+
+Espressif Systems
+
+7
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+List of Tables
+
+List of Tables
+1-1
+
+ESP32-S31-WROOM-3 (ANT) Series Comparison
+
+3
+
+1-2
+
+ESP32-S31-WROOM-3U (CONN) Ordering Information4
+
+4
+
+3-1
+
+ESP32-S31-WROOM-3 Pin Definitions
+
+14
+
+3-2 ESP32-S31-WROOM-3U Pin Definitions
+
+16
+
+4-1
+
+18
+
+Default Configuration of Strapping Pins
+
+4-2 Description of Timing Parameters for the Strapping Pins
+
+19
+
+4-3 Chip Boot Mode Control
+
+20
+
+4-4 VDD_SPI Voltage Control
+
+21
+
+4-5 UART0 ROM Message Printing Control
+
+21
+
+4-6 USB Serial/JTAG ROM Message Printing Control
+
+22
+
+4-7 JTAG Signal Source Control
+
+22
+
+4-8 Description of Timing Parameters for Power-up and Reset
+
+23
+
+6-1 Absolute Maximum Ratings
+
+44
+
+6-2 Recommended Operating Conditions
+
+44
+
+6-3 DC Characteristics (3.3 V, 25 °C)
+
+44
+
+6-4 Current Consumption for Wi-Fi (2.4 GHz) in Active Mode
+
+45
+
+6-5 Current Consumption for Bluetooth LE in Active Mode
+
+45
+
+6-6 Current Consumption for Bluetooth Classic in Active Mode
+
+45
+
+6-7 Current Consumption for 802.15.4 in Active Mode
+
+46
+
+6-8 Current Consumption in Modem-sleep Mode
+
+46
+
+6-8 Current Consumption in Modem-sleep Mode
+
+47
+
+6-9 Current Consumption in Low-Power Modes
+
+47
+
+6-10 Flash Specifications
+
+47
+
+6-11 PSRAM Specifications
+
+48
+
+7-1
+
+49
+
+2.4 GHz Wi-Fi RF Characteristics
+
+7-2 2.4 GHz TX Power with Spectral Mask and EVM Meeting 802.11 Standards
+7-3 2.4 GHz TX EVM Test1
+
+49
+
+7-4 2.4 GHz RX Sensitivity
+
+50
+
+7-5 2.4 GHz Maximum RX Level
+
+51
+
+7-6 2.4 GHz RX Adjacent Channel Rejection
+
+51
+
+7-7
+
+52
+
+Bluetooth LE RF Characteristics
+
+49
+
+7-8 Bluetooth LE - Transmitter Characteristics - 1 Mbps
+
+52
+
+7-9 Bluetooth LE - Transmitter Characteristics - 2 Mbps
+
+53
+
+7-10 Bluetooth LE - Transmitter Characteristics - 125 Kbps
+
+53
+
+7-11 Bluetooth LE - Transmitter Characteristics - 500 Kbps
+
+53
+
+7-12 Bluetooth LE - Receiver Characteristics - 1 Mbps
+
+54
+
+7-13 Bluetooth LE - Receiver Characteristics - 2 Mbps
+
+54
+
+7-14 Bluetooth LE - Receiver Characteristics - 125 Kbps
+
+55
+
+7-15 Bluetooth LE - Receiver Characteristics - 500 Kbps
+
+55
+
+7-16 Bluetooth Classic RF Characteristics
+
+56
+
+7-17 Bluetooth Classic - Transmitter Characteristics - Basic Rate (BR)
+
+56
+
+7-18 Bluetooth Classic - Transmitter Characteristics - Enhanced Data Rate (EDR)
+
+56
+
+7-19 Bluetooth Classic - Receiver Characteristics - Basic Rate (BR)
+
+57
+
+Espressif Systems
+
+8
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+List of Tables
+
+7-20 Bluetooth Classic - Receiver Characteristics - Enhanced Data Rate (EDR)
+
+57
+
+7-21 802.15.4 RF Characteristics
+
+58
+
+7-22 802.15.4 Transmitter Characteristics - 250 Kbps
+
+58
+
+7-23 802.15.4 Receiver Characteristics - 250 Kbps
+
+58
+
+Espressif Systems
+
+9
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+List of Figures
+
+List of Figures
+2-1
+
+ESP32-S31-WROOM-3 Block Diagram
+
+11
+
+2-2 ESP32-S31-WROOM-3U Block Diagram
+
+11
+
+3-1
+
+ESP32-S31-WROOM-3 Pin Layout (Top View)
+
+12
+
+3-2 ESP32-S31-WROOM-3U Pin Layout (Top View)
+
+13
+
+4-1
+
+19
+
+Visualization of Timing Parameters for the Strapping Pins
+
+4-2 Visualization of Timing Parameters for Power-up and Reset
+
+22
+
+8-1
+
+60
+
+ESP32-S31-WROOM-3 Schematics
+
+8-2 ESP32-S31-WROOM-3U Schematics
+
+61
+
+9-1
+
+ESP32-S31-WROOM-3 Peripheral Schematics
+
+62
+
+9-2 ESP32-S31-WROOM-3U Peripheral Schematics
+
+63
+
+10-1 ESP32-S31-WROOM-3 Physical Dimensions
+
+64
+
+10-2 ESP32-S31-WROOM-3U Physical Dimensions
+
+64
+
+10-3 Dimensions of External Antenna Connector
+
+65
+
+11-1 ESP32-S31-WROOM-3 Recommended PCB Land Pattern
+
+67
+
+11-2 ESP32-S31-WROOM-3U Recommended PCB Land Pattern
+
+68
+
+12-1 Reflow Profile
+
+69
+
+Espressif Systems
+
+10
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+GPIOs
+
+SPICS0
+SPICLK
+SPID
+SPIQ
+SPIHD
+SPIWP
+VDD_SPI
+
+PSRAM(opt.)
+
+2 Block GND
+Diagram
+
+QSPI Flash(opt.)
+
+2 Block Diagram
+
+40 MHz
+Crystal
+
+3V3
+
+ESP32-S31-WROOM-3
+Antenna
+
+EN
+
+ESP32-S31
+
+RF Matching
+GPIOs
+
+SPICS0
+SPICLK
+SPID
+SPIQ
+SPIHD
+SPIWP
+VDD_SPI
+
+PSRAM(opt.)
+
+GND
+
+QSPI Flash(opt.)
+
+Figure 2-1. ESP32-S31-WROOM-3 Block Diagram
+
+40 MHz
+Crystal
+
+3V3
+
+ESP32-S31-WROOM-3U
+
+Antenna2
+
+Antenna1
+EN
+
+ESP32-S31
+
+RF Matching
+GPIOs
+
+SPICS0
+SPICLK
+SPID
+SPIQ
+SPIHD
+SPIWP
+VDD_SPI
+
+PSRAM(opt.)
+
+GND
+
+QSPI Flash(opt.)
+
+Figure 2-2. ESP32-S31-WROOM-3U Block Diagram
+40 MHz
+Crystal
+
+3V3
+
+ESP32-S31-WROOM-3
+Antenna
+
+EN
+
+ESP32-S31
+
+RF Matching
+GPIOs
+
+GND
+
+SPICS0
+SPICLK
+SPID
+SPIQ
+SPIHD
+SPIWP
+VDD_SPI
+
+PSRAM(opt.)
+
+QSPI Flash(opt.)
+
+Espressif Systems
+
+11
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+3 Pin Definitions
+
+3
+
+Pin Definitions
+
+3.1
+
+Pin Layout
+
+The pin diagram below shows the approximate location of pins on the module. For the actual diagram drawn to
+scale, please refer to Figure 10.1 Module Dimensions.
+
+NC
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+Pin 90
+
+Pin 89
+
+Pin 88
+
+Pin 87
+
+Pin 86
+
+Pin 85
+
+Pin 84
+
+Pin 83
+
+Pin 82
+
+Pin 81
+
+Pin 80
+
+Pin 79
+
+Pin 78
+
+Pin 77
+
+Pin 76
+
+Pin 75
+
+Pin 74
+
+Pin 73
+
+GND
+
+Pin 91
+
+GND
+
+Pin 92
+
+GND
+
+GND
+Pin 99
+
+Pin 93
+
+GND
+
+Pin 94
+
+Keepout Zone
+
+GND
+
+Pin 1
+
+Pin 72
+
+GND
+
+GND
+
+Pin 2
+
+Pin 71
+
+IO61
+
+3V3
+
+Pin 3
+
+Pin 70
+
+IO60
+
+3V3
+
+Pin 4
+
+Pin 69
+
+RX0
+
+EN
+
+Pin 5
+
+Pin 68
+
+TX0
+
+IO2
+
+Pin 6
+
+Pin 67
+
+IO57
+
+IO3
+
+Pin 7
+
+Pin 66
+
+IO56
+
+IO0
+
+Pin 8
+
+Pin 65
+
+IO55
+
+IO1
+
+Pin 9
+
+Pin 64
+
+IO54
+
+IO4
+
+Pin 10
+
+Pin 63
+
+IO53
+
+IO5
+
+Pin 11
+
+Pin 62
+
+IO52
+
+IO6
+
+Pin 12
+
+IO7
+
+Pin 13
+
+IO8
+
+Pin 14
+
+IO9
+
+Pin 15
+
+IO10
+
+Pin 16
+
+IO11
+
+Pin 17
+
+IO12
+
+G
+
+Pin 98
+
+N
+D
+G
+
+G
+
+N
+D
+
+N
+D
+
+N
+D
+
+95
+
+D
+
+N
+
+N
+D
+
+G
+
+n
+Pi
+
+G
+
+G
+
+G
+
+G
+
+N
+D
+
+D
+N
+
+Pin 61
+
+IO51
+
+Pin 60
+
+IO50
+
+Pin 59
+
+IO49
+
+Pin 58
+
+IO48
+
+Pin 57
+
+IO47
+IO46
+
+Pin 18
+
+Pin 55
+
+IO45
+
+IO13
+
+Pin 19
+
+Pin 54
+
+IO44
+
+IO14
+
+Pin 20
+
+Pin 53
+
+IO43
+
+IO15
+
+Pin 21
+
+Pin 52
+
+IO42
+
+IO16
+
+Pin 22
+
+Pin 51
+
+IO40
+
+IO17
+
+Pin 23
+
+Pin 50
+
+IO39
+
+IO18
+
+Pin 24
+
+Pin 49
+
+IO38
+
+IO19
+
+Pin 25
+
+Pin 48
+
+GND
+
+GND
+
+Pin 96
+
+Pin 97
+
+GND
+
+Pin 47
+
+GND
+
+Pin 41
+
+USB_DM
+
+Pin 46
+
+Pin 40
+
+USB_DP
+
+IO37
+
+Pin 39
+
+NC
+
+Pin 45
+
+Pin 38
+
+NC
+
+IO36
+
+Pin 37
+
+NC
+
+Pin 44
+
+Pin 36
+
+NC
+
+IO35
+
+Pin 35
+
+NC
+
+Pin 43
+
+Pin 34
+
+NC
+
+IO34
+
+Pin 33
+
+NC
+
+Pin 42
+
+Pin 32
+
+IO33
+
+Pin 31
+
+SD_CLK
+
+Pin 29
+
+SD_D2
+
+SD_CMD
+
+Pin 28
+
+SD_D1
+
+Pin 30
+
+Pin 27
+
+SD_D3
+
+Pin 26
+
+GND
+
+SD_D0
+
+D
+
+N
+
+G
+
+Pin 56
+
+Figure 3-1. ESP32-S31-WROOM-3 Pin Layout (Top View)
+
+Pin Layout (Top View)
+
+Espressif Systems
+
+12
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+ANT2
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+GND
+
+Pin 90
+
+Pin 89
+
+Pin 88
+
+Pin 87
+
+Pin 86
+
+Pin 85
+
+Pin 84
+
+Pin 83
+
+Pin 82
+
+Pin 81
+
+Pin 80
+
+Pin 79
+
+Pin 78
+
+Pin 77
+
+Pin 76
+
+Pin 75
+
+Pin 74
+
+Pin 73
+
+GND
+
+Pin 91
+
+GND
+
+GND
+
+GND
+
+Pin 92
+
+Pin 99
+
+GND
+
+GND
+
+Pin 93
+
+ANT1
+
+Pin 94
+
+3 Pin Definitions
+
+Pin 98
+
+GND
+
+Pin 1
+
+Pin 72
+
+GND
+
+Pin 2
+
+Pin 71
+
+IO61
+
+3V3
+
+Pin 3
+
+Pin 70
+
+IO60
+
+3V3
+
+Pin 4
+
+Pin 69
+
+RX0
+
+EN
+
+Pin 5
+
+Pin 68
+
+TX0
+
+IO2
+
+Pin 6
+
+Pin 67
+
+IO57
+
+IO3
+
+Pin 7
+
+Pin 66
+
+IO56
+
+IO0
+
+Pin 8
+
+Pin 65
+
+IO55
+
+IO1
+
+Pin 9
+
+Pin 64
+
+IO54
+
+IO4
+
+Pin 10
+
+Pin 63
+
+IO53
+
+IO5
+
+Pin 11
+
+Pin 62
+
+IO52
+
+IO6
+
+Pin 12
+
+IO7
+
+Pin 13
+
+IO8
+
+Pin 14
+
+IO9
+
+Pin 15
+
+IO10
+
+Pin 16
+
+IO11
+
+Pin 17
+
+IO12
+
+G
+
+N
+D
+
+G
+
+N
+
+G
+
+N
+D
+
+D
+n
+
+G
+
+Pi
+
+D
+
+D
+
+D
+
+N
+
+N
+
+95
+
+N
+
+G
+
+G
+
+G
+
+G
+
+N
+
+N
+D
+
+D
+
+Pin 61
+
+IO51
+
+Pin 60
+
+IO50
+
+Pin 59
+
+IO49
+
+Pin 58
+
+IO48
+
+Pin 57
+
+IO47
+
+N
+G
+
+IO46
+
+Pin 18
+
+Pin 55
+
+IO45
+
+IO13
+
+Pin 19
+
+Pin 54
+
+IO44
+
+IO14
+
+Pin 20
+
+Pin 53
+
+IO43
+
+IO15
+
+Pin 21
+
+Pin 52
+
+IO42
+
+IO16
+
+Pin 22
+
+Pin 51
+
+IO40
+
+IO17
+
+Pin 23
+
+Pin 50
+
+IO39
+
+IO18
+
+Pin 24
+
+Pin 49
+
+IO38
+
+IO19
+
+Pin 25
+
+Pin 48
+
+GND
+
+GND
+
+Pin 96
+
+Pin 97
+
+GND
+
+Pin 37
+
+Pin 38
+
+Pin 39
+
+Pin 40
+
+Pin 41
+
+Pin 42
+
+Pin 43
+
+Pin 44
+
+Pin 45
+
+Pin 46
+
+Pin 47
+
+NC
+
+NC
+
+NC
+
+USB_DP
+
+USB_DM
+
+IO33
+
+IO34
+
+IO35
+
+IO36
+
+IO37
+
+GND
+
+Pin 35
+
+NC
+
+Pin 36
+
+Pin 34
+
+NC
+
+NC
+
+Pin 33
+
+SD_D3
+
+NC
+
+Pin 30
+
+SD_D2
+
+Pin 32
+
+Pin 29
+
+SD_D1
+
+Pin 31
+
+Pin 28
+
+SD_D0
+
+SD_CLK
+
+Pin 27
+
+SD_CMD
+
+Pin 26
+
+GND
+
+D
+
+Pin 56
+
+Figure 3-2. ESP32-S31-WROOM-3U Pin Layout (Top View)
+
+Note:
+“Keepout Zone” refers to the antenna clearance (keep-out) area. The pin diagram is applicable to ESP32-S31-WROOM3 and ESP32-S31-WROOM-3U, but the latter has no antenna keepout zone.
+To learn more about the keepout zone for module’s antenna on the base board, please refer to
+ESP32-S31 Hardware Design Guidelines > Section General Principles of PCB Layout for Modules.
+
+Espressif Systems
+
+13
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+3 Pin Definitions
+
+3.2
+
+Pin Description
+
+ESP32-S31-WROOM-3 and ESP32-S31-WROOM-3U modules each have 99 pins. See pin definitions in Table
+3-1 ESP32-S31-WROOM-3 Pin Definitions and Table 3-2 ESP32-S31-WROOM-3U Pin Definitions.
+For peripheral pin configurations, please refer to Section 5.2 Peripheral Description.
+Table 3-1. ESP32-S31-WROOM-3 Pin Definitions
+Name
+
+Pin No.
+
+Type1
+
+Function
+
+1, 2, 26, 47, 48,
+GND
+
+72 ~90, 92 ~99
+
+P
+
+Ground
+
+3V3
+
+3, 4
+
+P
+
+Power supply
+High: on, enables the chip.
+
+EN
+
+5
+
+I
+
+Low: off, the chip powers off.
+Note: Do not leave the EN pin floating.
+GPIO2, LP_GPIO2, LP_UART_DTRN, LP_SPI_CK, LP_PROBE_TOP_OUT2,
+
+IO2
+
+6
+
+I/O/T
+
+IO3
+
+7
+
+I/O/T
+
+IO0
+
+8
+
+I/O/T
+
+GPIO0, LP_GPIO0, XTAL_32K_N, LP_PROBE_TOP_OUT0
+
+IO1
+
+9
+
+I/O/T
+
+GPIO1, LP_GPIO1, XTAL_32K_P, LP_PROBE_TOP_OUT1
+
+IO4
+
+10
+
+I/O/T
+
+IO5
+
+11
+
+I/O/T
+
+IO6
+
+12
+
+I/O/T
+
+IO7
+
+13
+
+I/O/T
+
+IO8
+
+14
+
+I/O/T
+
+GPIO8, TOUCH_CH2, GMAC_PHY_TXD0, LCD_DATA0_OUT
+
+IO9
+
+15
+
+I/O/T
+
+GPIO9, TOUCH_CH3, GMAC_PHY_TXD1, LCD_DATA1_OUT, SPI2_HOLD
+
+IO10
+
+16
+
+I/O/T
+
+GPIO10, TOUCH_CH4, GMAC_PHY_TXD2, LCD_DATA2_OUT, SPI2_CS
+
+IO11
+
+17
+
+I/O/T
+
+GPIO11, TOUCH_CH5, GMAC_PHY_TXD3, LCD_DATA3_OUT, SPI2_D
+
+IO12
+
+18
+
+I/O/T
+
+GPIO12, TOUCH_CH6, GMAC_PHY_TXEN, LCD_DATA4_OUT, SPI2_CK
+
+IO13
+
+19
+
+I/O/T
+
+GPIO13, TOUCH_CH7, GMAC_RMII_CLK, LCD_DATA5_OUT, SPI2_Q
+
+IO14
+
+20
+
+I/O/T
+
+GPIO14, TOUCH_CH8, GMAC_RX_CLK, LCD_DATA6_OUT, SPI2_WP
+
+IO15
+
+21
+
+I/O/T
+
+GPIO15, TOUCH_CH9, GMAC_PHY_RXDV, LCD_DATA7_OUT, SPI2_IO4
+
+IO16
+
+22
+
+I/O/T
+
+GPIO16, TOUCH_CH10, GMAC_PHY_RXD3, LCD_DATA8_OUT, SPI2_IO5
+
+IO17
+
+23
+
+I/O/T
+
+GPIO17, TOUCH_CH11, GMAC_PHY_RXD2, LCD_DATA9_OUT, SPI2_IO6
+
+IO18
+
+24
+
+I/O/T
+
+GPIO18, TOUCH_CH12, GMAC_PHY_RXD1, LCD_DATA10_OUT, SPI2_IO7
+
+IO19
+
+25
+
+I/O/T
+
+GPIO19, TOUCH_CH13, GMAC_PHY_RXD0, LCD_DATA11_OUT, SPI2_DQS
+
+SD_D0
+
+27
+
+I/O/T
+
+SDIO_DATA0, GPIO20, SPI2_CK
+
+SD_D1
+
+28
+
+I/O/T
+
+SDIO_DATA1, GPIO21, SPI2_D
+
+SD_D2
+
+29
+
+I/O/T
+
+SDIO_DATA2, GPIO22, SPI2_Q
+
+SD_D3
+
+30
+
+I/O/T
+
+SDIO_DATA3, GPIO23, SPI2_CS
+
+LCD_DATA19_OUT
+GPIO3, LP_GPIO3, LP_UART_DSRN, LP_SPI_CS, LP_PROBE_TOP_OUT3,
+LCD_DATA20_OUT
+
+GPIO4, LP_GPIO4, LP_UART_RTSN, LP_SPI_D, LP_PROBE_TOP_OUT4,
+LCD_DATA21_OUT
+GPIO5, LP_GPIO5, LP_UART_CTSN, LP_SPI_Q, LP_PROBE_TOP_OUT5,
+LCD_DATA22_OUT
+GPIO6, LP_GPIO6, TOUCH_CH0, LP_UART_TXD, LP_I2C_SCL,
+LP_PROBE_TOP_OUT6
+GPIO7, LP_GPIO7, TOUCH_CH1, LP_UART_RXD, LP_I2C_SDA,
+LP_PROBE_TOP_OUT7, LCD_DATA23_OUT
+
+Cont’d on next page
+Espressif Systems
+
+14
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+3 Pin Definitions
+
+Table 3-1 – cont’d from previous page
+Name
+
+Pin No.
+
+Type1
+
+SD_CLK
+
+31
+
+I/O/T
+
+SDIO_CLK, GPIO24, SPI2_HOLD
+
+SD_CMD
+
+32
+
+I/O/T
+
+SDIO_CMD, GPIO25, SPI2_WP
+
+33 ~39
+
+-
+
+USB_DP
+
+40
+
+I/O/T
+
+USB_DP
+
+USB_DM
+
+41
+
+I/O/T
+
+USB_DM
+
+IO33
+
+42
+
+I/O/T
+
+GPIO33, USB1P1_N0, LCD_DATA12_OUT
+
+IO34
+
+43
+
+I/O/T
+
+GPIO34, USB1P1_P0, LCD_DATA13_OUT
+
+IO35
+
+44
+
+I/O/T
+
+GPIO35, REF_GMAC_CLK, LCD_DATA14_OUT, SD2_CDATA0
+
+IO362
+
+45
+
+I/O/T
+
+GPIO36, LCD_DATA15_OUT, SD2_CDATA1
+
+IO37
+
+46
+
+I/O/T
+
+GPIO37, LCD_DATA16_OUT, SD2_CDATA2, PAD_COMP0
+
+IO38
+
+49
+
+I/O/T
+
+GPIO38, LCD_DATA17_OUT, SD2_CDATA3, PAD_COMP1
+
+IO39
+
+50
+
+I/O/T
+
+GPIO39, LCD_DATA18_OUT, SD2_CCLK, PAD_COMP2
+
+IO40
+
+51
+
+I/O/T
+
+GPIO40, LCD_PCLK, SD2_CCMD, PAD_COMP3
+
+IO42
+
+52
+
+I/O/T
+
+GPIO42, ADC1_CH0_N
+
+IO43
+
+53
+
+I/O/T
+
+GPIO43, ADC1_CH0_P, LCD_H_ENABLE
+
+IO44
+
+54
+
+I/O/T
+
+GPIO44, ADC1_CH1_N, LCD_H_SYNC
+
+IO45
+
+55
+
+I/O/T
+
+GPIO45, ADC1_CH1_P, LCD_V_SYNC
+
+IO46
+
+56
+
+I/O/T
+
+GPIO46, ADC1_CH2_N, CAM_DATA0_IN
+
+IO47
+
+57
+
+I/O/T
+
+GPIO47, ADC1_CH2_P, CAM_DATA1_IN
+
+IO48
+
+58
+
+I/O/T
+
+GPIO48, ADC1_CH3_N, CAM_DATA2_IN
+
+IO49
+
+59
+
+I/O/T
+
+GPIO49, ADC1_CH3_P, CAM_DATA3_IN
+
+IO50
+
+60
+
+I/O/T
+
+GPIO50, ADC2_CH0_N, CAM_DATA4_IN
+
+IO51
+
+61
+
+I/O/T
+
+GPIO51, ADC2_CH0_P, CAM_DATA5_IN
+
+IO52
+
+62
+
+I/O/T
+
+GPIO52, ADC2_CH1_N, CAM_DATA6_IN, SPI2_CS
+
+IO53
+
+63
+
+I/O/T
+
+GPIO53, ADC2_CH1_P, CAM_DATA7_IN, SPI2_CK
+
+IO54
+
+64
+
+I/O/T
+
+MTDO, GPIO54, ADC2_CH2_N, CAM_PCLK, SPI2_D
+
+IO55
+
+65
+
+I/O/T
+
+MTCK, GPIO55, ADC2_CH2_P, CAM_XCLK, SPI2_Q
+
+IO56
+
+66
+
+I/O/T
+
+MTDI, GPIO56, ADC2_CH3_N, CAM_V_SYNC, SPI2_HOLD
+
+IO57
+
+67
+
+I/O/T
+
+MTMS, GPIO57, ADC2_CH3_P, CAM_H_SYNC, SPI2_WP
+
+TX0
+
+68
+
+I/O/T
+
+UART0_TXD, GPIO58
+
+RX0
+
+69
+
+I/O/T
+
+UART0_RXD, GPIO59
+
+IO60
+
+70
+
+I/O/T
+
+GPIO60
+
+IO61
+
+71
+
+I/O/T
+
+GPIO61
+
+NC
+
+91
+
+-
+
+NC
+
+Function
+
+NC
+
+NC
+
+1 P: power supply; I: input; O: output; T: high impedance.
+2 IO36 is pulled up internally within the module.
+
+Espressif Systems
+
+15
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+3 Pin Definitions
+
+Table 3-2. ESP32-S31-WROOM-3U Pin Definitions
+Name
+
+Pin No.
+
+Type1
+
+Function
+
+1, 2, 26, 47, 48,
+GND
+
+72 ~90, 92 ~99
+
+P
+
+Ground
+
+3V3
+
+3, 4
+
+P
+
+Power supply
+High: on, enables the chip.
+
+EN
+
+5
+
+I
+
+Low: off, the chip powers off.
+Note: Do not leave the EN pin floating.
+GPIO2, LP_GPIO2, LP_UART_DTRN, LP_SPI_CK, LP_PROBE_TOP_OUT2,
+
+IO2
+
+6
+
+I/O/T
+
+IO3
+
+7
+
+I/O/T
+
+IO0
+
+8
+
+I/O/T
+
+GPIO0, LP_GPIO0, XTAL_32K_N, LP_PROBE_TOP_OUT0
+
+IO1
+
+9
+
+I/O/T
+
+GPIO1, LP_GPIO1, XTAL_32K_P, LP_PROBE_TOP_OUT1
+
+IO4
+
+10
+
+I/O/T
+
+IO5
+
+11
+
+I/O/T
+
+IO6
+
+12
+
+I/O/T
+
+IO7
+
+13
+
+I/O/T
+
+IO8
+
+14
+
+I/O/T
+
+GPIO8, TOUCH_CH2, GMAC_PHY_TXD0, LCD_DATA0_OUT
+
+IO9
+
+15
+
+I/O/T
+
+GPIO9, TOUCH_CH3, GMAC_PHY_TXD1, LCD_DATA1_OUT, SPI2_HOLD
+
+IO10
+
+16
+
+I/O/T
+
+GPIO10, TOUCH_CH4, GMAC_PHY_TXD2, LCD_DATA2_OUT, SPI2_CS
+
+IO11
+
+17
+
+I/O/T
+
+GPIO11, TOUCH_CH5, GMAC_PHY_TXD3, LCD_DATA3_OUT, SPI2_D
+
+IO12
+
+18
+
+I/O/T
+
+GPIO12, TOUCH_CH6, GMAC_PHY_TXEN, LCD_DATA4_OUT, SPI2_CK
+
+IO13
+
+19
+
+I/O/T
+
+GPIO13, TOUCH_CH7, GMAC_RMII_CLK, LCD_DATA5_OUT, SPI2_Q
+
+IO14
+
+20
+
+I/O/T
+
+GPIO14, TOUCH_CH8, GMAC_RX_CLK, LCD_DATA6_OUT, SPI2_WP
+
+IO15
+
+21
+
+I/O/T
+
+GPIO15, TOUCH_CH9, GMAC_PHY_RXDV, LCD_DATA7_OUT, SPI2_IO4
+
+IO16
+
+22
+
+I/O/T
+
+GPIO16, TOUCH_CH10, GMAC_PHY_RXD3, LCD_DATA8_OUT, SPI2_IO5
+
+IO17
+
+23
+
+I/O/T
+
+GPIO17, TOUCH_CH11, GMAC_PHY_RXD2, LCD_DATA9_OUT, SPI2_IO6
+
+IO18
+
+24
+
+I/O/T
+
+GPIO18, TOUCH_CH12, GMAC_PHY_RXD1, LCD_DATA10_OUT, SPI2_IO7
+
+IO19
+
+25
+
+I/O/T
+
+GPIO19, TOUCH_CH13, GMAC_PHY_RXD0, LCD_DATA11_OUT, SPI2_DQS
+
+SD_D0
+
+27
+
+I/O/T
+
+SDIO_DATA0, GPIO20, SPI2_CK
+
+SD_D1
+
+28
+
+I/O/T
+
+SDIO_DATA1, GPIO21, SPI2_D
+
+SD_D2
+
+29
+
+I/O/T
+
+SDIO_DATA2, GPIO22, SPI2_Q
+
+SD_D3
+
+30
+
+I/O/T
+
+SDIO_DATA3, GPIO23, SPI2_CS
+
+SD_CLK
+
+31
+
+I/O/T
+
+SDIO_CLK, GPIO24, SPI2_HOLD
+
+SD_CMD
+
+32
+
+I/O/T
+
+SDIO_CMD, GPIO25, SPI2_WP
+
+33 ~39
+
+-
+
+USB_DP
+
+40
+
+I/O/T
+
+USB_DP
+
+USB_DM
+
+41
+
+I/O/T
+
+USB_DM
+
+NC
+
+LCD_DATA19_OUT
+GPIO3, LP_GPIO3, LP_UART_DSRN, LP_SPI_CS, LP_PROBE_TOP_OUT3,
+LCD_DATA20_OUT
+
+GPIO4, LP_GPIO4, LP_UART_RTSN, LP_SPI_D, LP_PROBE_TOP_OUT4,
+LCD_DATA21_OUT
+GPIO5, LP_GPIO5, LP_UART_CTSN, LP_SPI_Q, LP_PROBE_TOP_OUT5,
+LCD_DATA22_OUT
+GPIO6, LP_GPIO6, TOUCH_CH0, LP_UART_TXD, LP_I2C_SCL,
+LP_PROBE_TOP_OUT6
+GPIO7, LP_GPIO7, TOUCH_CH1, LP_UART_RXD, LP_I2C_SDA,
+LP_PROBE_TOP_OUT7, LCD_DATA23_OUT
+
+NC
+
+Cont’d on next page
+
+Espressif Systems
+
+16
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+3 Pin Definitions
+
+Table 3-2 – cont’d from previous page
+1
+Type
+Function
+
+Name
+
+Pin No.
+
+IO33
+
+42
+
+I/O/T
+
+GPIO33, USB1P1_N0, LCD_DATA12_OUT
+
+IO34
+
+43
+
+I/O/T
+
+GPIO34, USB1P1_P0, LCD_DATA13_OUT
+
+IO35
+
+44
+
+I/O/T
+
+GPIO35, REF_GMAC_CLK, LCD_DATA14_OUT, SD2_CDATA0
+
+IO362
+
+45
+
+I/O/T
+
+GPIO36, LCD_DATA15_OUT, SD2_CDATA1
+
+IO37
+
+46
+
+I/O/T
+
+GPIO37, LCD_DATA16_OUT, SD2_CDATA2, PAD_COMP0
+
+IO38
+
+49
+
+I/O/T
+
+GPIO38, LCD_DATA17_OUT, SD2_CDATA3, PAD_COMP1
+
+IO39
+
+50
+
+I/O/T
+
+GPIO39, LCD_DATA18_OUT, SD2_CCLK, PAD_COMP2
+
+IO40
+
+51
+
+I/O/T
+
+GPIO40, LCD_PCLK, SD2_CCMD, PAD_COMP3
+
+IO42
+
+52
+
+I/O/T
+
+GPIO42, ADC1_CH0_N
+
+IO43
+
+53
+
+I/O/T
+
+GPIO43, ADC1_CH0_P, LCD_H_ENABLE
+
+IO44
+
+54
+
+I/O/T
+
+GPIO44, ADC1_CH1_N, LCD_H_SYNC
+
+IO45
+
+55
+
+I/O/T
+
+GPIO45, ADC1_CH1_P, LCD_V_SYNC
+
+IO46
+
+56
+
+I/O/T
+
+GPIO46, ADC1_CH2_N, CAM_DATA0_IN
+
+IO47
+
+57
+
+I/O/T
+
+GPIO47, ADC1_CH2_P, CAM_DATA1_IN
+
+IO48
+
+58
+
+I/O/T
+
+GPIO48, ADC1_CH3_N, CAM_DATA2_IN
+
+IO49
+
+59
+
+I/O/T
+
+GPIO49, ADC1_CH3_P, CAM_DATA3_IN
+
+IO50
+
+60
+
+I/O/T
+
+GPIO50, ADC2_CH0_N, CAM_DATA4_IN
+
+IO51
+
+61
+
+I/O/T
+
+GPIO51, ADC2_CH0_P, CAM_DATA5_IN
+
+IO52
+
+62
+
+I/O/T
+
+GPIO52, ADC2_CH1_N, CAM_DATA6_IN, SPI2_CS
+
+IO53
+
+63
+
+I/O/T
+
+GPIO53, ADC2_CH1_P, CAM_DATA7_IN, SPI2_CK
+
+IO54
+
+64
+
+I/O/T
+
+MTDO, GPIO54, ADC2_CH2_N, CAM_PCLK, SPI2_D
+
+IO55
+
+65
+
+I/O/T
+
+MTCK, GPIO55, ADC2_CH2_P, CAM_XCLK, SPI2_Q
+
+IO56
+
+66
+
+I/O/T
+
+MTDI, GPIO56, ADC2_CH3_N, CAM_V_SYNC, SPI2_HOLD
+
+IO57
+
+67
+
+I/O/T
+
+MTMS, GPIO57, ADC2_CH3_P, CAM_H_SYNC, SPI2_WP
+
+TX0
+
+68
+
+I/O/T
+
+UART0_TXD, GPIO58
+
+RX0
+
+69
+
+I/O/T
+
+UART0_RXD, GPIO59
+
+IO60
+
+70
+
+I/O/T
+
+GPIO60
+
+IO61
+
+71
+
+I/O/T
+
+GPIO61
+
+ANT23
+
+91
+
+I/O
+
+RF input and output
+
+1 P: power supply; I: input; O: output; T: high impedance.
+2 IO36 is pulled up internally within the module.
+3 By default, ESP32-S31-WROOM-3U uses ANT1; ANT2 is disabled. To use ANT2, please contact us.
+
+Espressif Systems
+
+17
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+4 Boot Configurations
+Note:
+The content below is excerpted from ESP32-S31 Series Datasheet > Chapter Boot Configurations. For the strapping
+pin mapping between the chip and modules, please refer to Chapter 8 Module Schematics.
+
+The chip allows for configuring the following boot parameters through strapping pins and eFuse parameters at
+power-up or a hardware reset, without microcontroller interaction.
+• Chip boot mode
+– Strapping pin: GPIO60 and GPIO61
+• VDD_SPI voltage
+– Strapping pin: GPIO36
+– eFuse parameter: EFUSE_PMU_FLASH_POWER_SEL and EFUSE_PMU_FLASH_POWER_SEL_EN
+• ROM message printing
+– Strapping pin: GPIO60
+– eFuse parameter: EFUSE_UART_PRINT_CONTROL and
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+• JTAG signal source
+– Strapping pin: GPIO37
+– eFuse parameter: EFUSE_DIS_PAD_JTAG, EFUSE_DIS_USB_JTAG, and EFUSE_JTAG_SEL_ENABLE
+The default values of all the above eFuse parameters are 0, which means that they are not burnt. Given that
+eFuse is one-time programmable, once programmed to 1, it can never be reverted to 0.
+The default values of the strapping pins, namely the logic levels, are determined by the pins’ internal weak
+pull-up/pull-down resistors at reset if the pins are not connected to any circuit, or connected to an external
+high-impedance circuit.
+Table 4-1. Default Configuration of Strapping Pins
+Strapping Pin
+
+Default Configuration
+
+Bit Value
+
+GPIO36
+
+Floating
+
+–
+
+GPIO37
+
+Floating
+
+–
+
+GPIO60
+
+Weak pull-up
+
+1
+
+GPIO61
+
+Weak pull-up
+
+1
+
+To change the bit values, the strapping pins should be connected to external pull-down/pull-up resistances. If
+the ESP32-S31 is used as a device by a host MCU, the strapping pin voltage levels can also be controlled by
+the host MCU.
+All strapping pins have latches. At Chip Reset, the latches sample the bit values of their respective strapping
+pins and store them until the chip is powered down or shut down. The states of latches cannot be changed in
+
+Espressif Systems
+
+18
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+any other way. It makes the strapping pin values available during the entire chip operation, and the pins are
+freed up to be used as regular IO pins after reset.
+The timing of signals connected to the strapping pins should adhere to the setup time and hold time
+specifications in Table 4-2 and Figure 4-1.
+Table 4-2. Description of Timing Parameters for the Strapping Pins
+Parameter
+tSU
+
+Description
+
+Min (ms)
+
+Setup time is the time reserved for the power rails to stabilize before the CHIP_PU pin is pulled high to activate the chip.
+
+0
+
+Hold time is the time reserved for the chip to read the strapping
+tH
+
+pin values after CHIP_PU is already high and before these pins
+
+3
+
+start operating as regular IO pins.
+
+tSU
+
+tH
+
+VIH_nRST
+
+CHIP_PU
+
+VIH
+
+Strapping pin
+
+Figure 4-1. Visualization of Timing Parameters for the Strapping Pins
+
+4.1
+
+Chip Boot Mode Control
+
+GPIO60 and GPIO61 control the boot mode after the reset is released. See Table 4-3 Chip Boot Mode
+Control.
+
+Espressif Systems
+
+19
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+Table 4-3. Chip Boot Mode Control
+Boot Mode
+
+GPIO61
+
+GPIO60
+
+SPI Boot mode1
+
+1
+
+Any value
+
+Joint Download Boot mode 2
+
+0
+
+1
+
+Invalid combination3
+
+0
+
+0
+
+1 Bold marks the default value and configuration.
+2 Joint Download Boot mode supports the following
+download methods:
+• USB-Serial-JTAG Download Boot
+• USB-OTG Download Boot
+• UART Download Boot
+• GPSPI Download Boot
+3 Do not set both GPIO61 and GPIO60 to 0, or unexpected behavior will occur.
+
+In SPI Boot mode, the ROM bootloader loads and executes the program from SPI flash to boot the
+system.
+In Joint Download Boot mode, users can download binary files into flash using UART0, USB Serial/JTAG, USB
+2.0 High-Speed OTG, or the GPSPI slave interface. It is also possible to download binary files into SRAM and
+execute them from SRAM.
+
+4.1.1 Secure Debugging in Joint Download Boot Mode
+ESP32-S31 is the first chip to support the Secure Debug Controller (SDC).
+When all of the following conditions are met, the chip supports SDC-related commands in Joint Download
+Boot mode:
+• The chip has entered Joint Download Boot mode
+• eFuse field EFUSE_RMA_ENA is enabled (value 2’b01 or 2’b10)
+Note: SDC-related capabilities are not affected by eFuse bits EFUSE_DIS_DOWNLOAD_MODE and
+EFUSE_ENABLE_SECURITY_DOWNLOAD.
+Before using SDC, complete eFuse and certificate configuration as follows:
+1. Burn the SDC public-key hash into eFuse;
+2. In Joint Download Boot mode, transfer the SDC certificate to the chip via esptool; the ROM verifies the
+certificate in hardware.
+After successful certificate verification, the ROM temporarily enables the following debugging capabilities at
+the hardware level (even if the corresponding eFuse bits have been burned to disable them):
+• Software JTAG, even if EFUSE_SOFT_DIS_JTAG has been burned;
+• Download mode, even if EFUSE_DIS_DOWNLOAD_MODE has been burned;
+• Forced entry into SPI Boot mode for application software debugging.
+
+Espressif Systems
+
+20
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+The SDC authorization state is valid only for the current run. After power-on reset, the verification result is
+cleared; to debug again, repeat certificate transfer and verification.
+
+4.2
+
+VDD_SPI Voltage Control
+
+VDD_SPI can be sourced from either the internal or external power supply:
+• (Default) If register PMU_ACTIVE_VDD_SPI_PD_EN is low, power is supplied by the internal
+POWER_SWITCH
+• If register PMU_ACTIVE_VDD_SPI_PD_EN is high, power is supplied externally
+The actual VDD_SPI supply voltage level is jointly determined by EFUSE_PMU_FLASH_POWER_SEL, register
+PMU_ACTIVE_VDD_SPI_PD_EN, GPIO36, and EFUSE_PMU_FLASH_POWER_SEL_EN.
+Table 4-4. VDD_SPI Voltage Control
+Voltage Level1
+
+EFUSE_PMU_FLASH_POWER_SEL
+
+3.3 V
+1.8 V
+
+GPIO36
+
+EFUSE_PMU_FLASH_POWER_SEL_EN
+
+0
+
+1
+
+Ignored
+
+1
+
+Ignored
+
+1
+
+0
+
+0
+
+Ignored
+
+1
+
+Ignored
+
+0
+
+1 See ESP32-S31 Series Datasheet > Chapter Power Management.
+
+4.3
+
+ROM Messages Printing Control
+
+During the boot process, the messages by the ROM code can be printed to:
+• (Default) UART0 and USB Serial/JTAG controller
+• USB Serial/JTAG controller
+• UART0
+EFUSE_UART_PRINT_CONTROL and GPIO60 control ROM messages printing to UART0 as shown in Table 4-5
+UART0 ROM Message Printing Control.
+Table 4-5. UART0 ROM Message Printing Control
+UART0 ROM Code Printing
+
+EFUSE_UART_PRINT_CONTROL
+
+GPIO60
+
+0
+
+Ignored
+
+1
+
+0
+
+2
+
+1
+
+1
+
+1
+
+2
+
+0
+
+3
+
+Ignored
+
+Enabled
+
+Disabled
+
+1 Bold marks the default value and configuration.
+
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT controls the printing to USB Serial/JTAG controller as shown in
+Table 4-6 USB Serial/JTAG ROM Message Printing Control.
+
+Espressif Systems
+
+21
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+Table 4-6. USB Serial/JTAG ROM Message Printing Control
+USB Serial/JTAG ROM Code Printing
+
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+
+Enabled
+
+0
+
+Disabled
+
+1
+
+1 Bold marks the default value and configuration.
+
+4.4
+
+JTAG Signal Source Control
+
+The strapping pin GPIO37 can be used to control the source of JTAG signals during the early boot process.
+This pin does not have any internal pull resistors and the strapping value must be controlled by the external
+circuit that cannot be in a high impedance state.
+As Table 4-7 JTAG Signal Source Control shows, GPIO37 is used in combination with EFUSE_DIS_PAD_JTAG,
+EFUSE_DIS_USB_JTAG, and EFUSE_JTAG_SEL_ENABLE .
+Table 4-7. JTAG Signal Source Control
+JTAG Signal Source
+
+EFUSE_DIS_PAD_JTAG EFUSE_DIS_USB_JTAG EFUSE_JTAG_SEL_ENABLE GPIO37
+0
+
+0
+
+0
+
+Ignored
+
+0
+
+0
+
+1
+
+1
+
+1
+
+0
+
+Ignored
+
+Ignored
+
+JTAG pins 2
+
+0
+
+0
+
+1
+
+0
+
+0
+
+1
+
+Ignored
+
+Ignored
+
+JTAG is disabled
+
+1
+
+1
+
+Ignored
+
+Ignored
+
+USB Serial/JTAG Controller
+
+1 Bold marks the default value and configuration.
+2 JTAG pins refer to MTDI, MTCK, MTMS, and MTDO.
+
+4.5 Chip Power-up and Reset
+Once the power is supplied to the chip, its power rails need a short time to stabilize. After that, CHIP_PU – the
+pin used for power-up and reset – is pulled high to activate the chip. For information on CHIP_PU as well as
+power-up and reset timing, see Figure 4-2 and Table 4-8.
+tST BL
+
+tRST
+
+2.8 V
+VDDA1,VDDA2,
+VDDA3, VDDA4,
+VDDPST_1, VDDPST_2,
+VDDPST_3, VDDPST_4
+VIL_nRST
+
+CHIP_PU
+
+Figure 4-2. Visualization of Timing Parameters for Power-up and Reset
+
+Espressif Systems
+
+22
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+4 Boot Configurations
+
+Table 4-8. Description of Timing Parameters for Power-up and Reset
+Parameter
+
+Description
+
+Min (ms)
+
+Time reserved for the power rails of VDDA1, VDDA2, VDDA3,
+tST BL
+
+VDDA4, VDDPST_1, VDDPST_2, VDDPST_3, VDDPST_4 to stabi-
+
+1
+
+lize before the CHIP_PU pin is pulled high to activate the chip
+tRST
+
+Espressif Systems
+
+Time reserved for CHIP_PU to stay below VIL_nRST to reset the
+chip (see Table 6-3)
+
+23
+
+1
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+5 Peripherals
+5.1
+
+Peripheral Overview
+
+ESP32-S31 integrates a rich set of peripherals including UART, SPI, I2C, I2S, Pulse Counter Controller, USB 2.0
+High-Speed OTG, USB Serial/JTAG Controller, Ethernet Media Access Controller, CAN FD Controller, SD/MMC
+Host Controller, LED PWM Controller, Motor Control PWM, Remote Control Peripheral, Parallel IO Controller,
+Touch Sensor, Temperature Sensor, ADC Controller, DAC Controller, Analog Voltage Comparator,
+General-Purpose Timer, System Timer, Watchdog Timer, etc.
+Note:
+The content below is sourced from ESP32-S31 Series Datasheet > Section Peripherals. Some information may not be
+applicable to ESP32-S31-WROOM-3 and ESP32-S31-WROOM-3U as not all the IO signals are exposed on the module.
+
+5.2
+
+Peripheral Description
+
+This section describes the chip’s peripheral capabilities, covering connectivity interfaces and on-chip sensors
+that extend its functionality.
+
+5.2.1
+
+Image and Voice Processing
+
+This subsection describes the peripherals for image and voice processing.
+
+5.2.1.1
+
+JPEG Codec
+
+ESP32-S31’s JPEG codec is an image codec, which is based on the JPEG baseline standard, for compressing
+(encoding) and decompressing (decoding) images to reduce the bandwidth required to transmit images or
+the space required to store images, making it possible to process large-resolution images.
+Feature List
+When used as an encoder, the JPEG codec has the following features:
+• Integrated discrete cosine transform algorithm
+• Integrated canonical Huffman coding
+• RGB888, RGB565, YUV444, YUV422, YUV420 and GRAY as original input image formats
+• Supports converting (if needed) and compressing RGB888, RGB565, or YUV444 images into YUV444,
+YUV422, or YUV420 formats, and supports converting (if needed) and compressing YUV422 images into
+YUV422 or YUV420 formats. Compression is only available for YUV444, YUV422, and YUV420 formats
+• Four configurable quantization coefficient tables with 8-bit or 16-bit precision
+• Performance:
+– Still image compression: up to 4K resolution
+– Dynamic image compression: up to 720P@30fps (excluding header encoding time)
+
+Espressif Systems
+
+24
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• Automatically added stuffed zero byte
+• Automatically added EOI marker
+When used as a decoder, the JPEG codec has the following features:
+• Integrated inverse discrete cosine transform algorithm
+• Integrated Huffman decoding
+• Supported image formats for compressed bitstream decoding: YUV444, YUV422, YUV420, and GRAY.
+• Four configurable quantization coefficient tables with 8-bit or 16-bit precision
+• Two DC and two AC Huffman tables
+• Supports image decoding of any resolution. However, the resolution of the output decoded image
+differs from the format of the input image:
+– YUV444, GRAY: both the horizontal and vertical resolutions of the output decoded image are
+multiples of 8, i.e., 150 × 150 images with an output resolution of 152 × 152
+– YUV422: the horizontal resolution of the output decoded image is the multiples of 16 and the
+vertical resolution is multiples of 8, i.e., 150 × 150 images with an output resolution of 160 × 152
+– YUV420: both the horizontal and vertical resolutions of the output decoded image are multiples of
+16, i.e., 150 × 150 images with an output resolution of 160 × 160
+• Performance:
+– Still image decoding: up to 4K resolution
+– Dynamic image decoding: up to 720P@30fps (excluding header parsing time)
+Pin Assignment
+The JPEG Codec does not interact directly with IOs, so it has no pins assigned.
+
+5.2.1.2
+
+Pixel-Processing Accelerator (PPA)
+
+ESP32-S31 includes a pixel-processing accelerator (PPA) with scaling-rotation-mirror (SRM) and image
+blending (BLEND) functionalities.
+Feature List
+• Image rotation, scaling, and mirroring by SRM:
+– Input formats: ARGB8888, RGB888, RGB565, YUV422, YUV420, GRAY
+– Output formats: ARGB8888, RGB888, RGB565, YUV422, YUV420, GRAY
+– Counterclockwise rotation angles: 0°, 90°, 180°, 270°
+– Horizontal and vertical scaling with scaling factors of 4-bit integer part and 8-bit fractional part
+– Horizontal and vertical mirroring
+• Blending two layers of the same size and filling images with specific pixels by BLEND:
+– Foreground input formats: ARGB8888, RGB888, RGB565, L4, L8, A4, A8
+
+Espressif Systems
+
+25
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+– Background input formats: ARGB8888, RGB888, RGB565, YUV422, YUV420, GRAY, L4, L8
+– Output formats: ARGB8888, RGB888, RGB565, YUV422, YUV420, GRAY
+– Layer blending based on the Alpha channel. If layers lack an Alpha channel, it can be provided
+through register configuration.
+– Special color filtering by setting color-key ranges of foreground and background layers
+Pin Assignment
+The pixel-processing accelerator does not directly interact with IOs, so it has no pins assigned.
+
+5.2.1.3 Audio Sample Rate Converter (ASRC)
+Audio Sample Rate Converter (ASRC) is an accelerator-type audio processing module used for high-quality
+conversion of audio signals between different sample rates. It enables collaboration between devices with
+varying sample rate standards. This module typically interacts with on-chip or off-chip memory through a DMA
+interface to achieve efficient transmission and processing of audio data.
+Feature List
+• Supports conversion between 8 kHz, 16 kHz, 32 kHz, 44.1 kHz, and 48 kHz
+• Input and output signal width is 16 bits, using Q1.15 format
+• Sample rate conversion uses two integer resamplers and one fractional sample rate converter (FRC) in a
+cascade, with the cascade configurable via software:
+– The integer resampler’s conversion factor can be set to 2 or 12
+– The FRC supports conversion factors configurable between 0 and 2 (excluding 0 and 2)
+• Supports multiple channel modes, including:
+– Mono receive (Rx) / Mono transmit (Tx)
+– Stereo receive (Rx) / Stereo transmit (Tx), processed in parallel
+– Mono receive / Stereo transmit
+– Stereo receive / Mono transmit
+• Supports input data of any length, and generates EOF (End of Frame) flags based on output length
+• When two channels are used independently, each channel supports the following modes:
+– Mono input, mono output
+– Mono input, stereo output (both channels use the same data)
+– Stereo input, mono output (choose one channel for processing)
+• When both channels are used together, each channel can be configured as stereo input or output
+
+Espressif Systems
+
+26
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+5.2.1.4
+
+CORDIC Accelerator (CORDIC)
+
+ESP32-S31 includes a hardware CORDIC accelerator. Its core principle is to iteratively approach a target angle
+by executing a sequence of fixed-angle rotations associated with computation cycles, enabling mathematical
+operations such as trigonometric function calculations.
+Feature List
+• Supports q1.15 and q1.31 fixed-point formats
+• Supports circular, linear, and hyperbolic systems
+• Supports rotation mode and vectoring mode
+• Supported functions: sin, cos, sinh, cosh, atan(x), atan(y/x), atanh, modulus, square root, and natural
+logarithm
+• Configurable computation precision (number of operation cycles)
+• Supports polling-based result readout
+• Supports interrupt-based result readout
+• Supports direct DMA connection mode
+Pin Assignment
+The CORDIC accelerator does not need direct interaction with IO and therefore requires no dedicated pin
+assignment.
+
+5.2.1.5
+
+LCD and Camera Controller (LCD_CAM)
+
+The LCD and Camera controller (LCD_CAM) on the ESP32-S31, consisting of an independent LCD control
+module and a camera control module, is a versatile component designed to facilitate interfacing with both
+LCDs and cameras.
+Feature List
+• Operation modes:
+– LCD master TX mode
+– Camera slave RX mode
+– Camera master RX mode
+• Simultaneous connection to an external LCD and a camera
+• External LCD interface:
+– 8/16/24-bit parallel output modes
+– RGB, MOTO6800, and I8080 LCD formats
+– LCD data retrieved from internal memory or external memory via GDMA
+• External camera (DVP image sensor) interface:
+
+Espressif Systems
+
+27
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+– 8/16-bit parallel input modes
+– Camera data stored in internal or external memory via GDMA
+• Interrupt support
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2 Connectivity Interface
+This subsection describes the connectivity interfaces on the chip that enable communication and interaction
+with external devices and networks.
+
+5.2.2.1 UART Controller (UART)
+The UART controllers in ESP32-S31 are used for asynchronous serial data transmission and reception between
+the chip and external UART devices. ESP32-S31 includes four UART controllers in the main system and one
+low-power LP UART.
+Feature List
+• Programmable baud rates up to 5 MBaud
+• RAM shared by TX FIFOs and RX FIFOs
+• Support for various lengths of data bits and stop bits
+• Parity bit support
+• Special character AT_CMD detection
+• RS485 protocol support (not applicable to LP UART)
+• IrDA protocol support (not applicable to LP UART)
+• High-speed data communication using GDMA (not applicable to LP UART)
+• Receive timeout feature
+• UART as the wake-up source
+• Software and hardware flow control
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.2 SPI Controller (SPI)
+The Serial Peripheral Interface (SPI) is a synchronous serial interface commonly used for communicating with
+external peripherals. The ESP32-S31 chip integrates four SPI controllers:
+• MSPI controller, including two sub-controllers
+– FLASH MSPI controller
+
+Espressif Systems
+
+28
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+* FLASH MSPI SPI0
+* FLASH MSPI SPI1
+– PSRAM MSPI controller
+* PSRAM MSPI SPI0
+* PSRAM MSPI SPI1
+• General Purpose SPI2 (GP-SPI2)
+• General Purpose SPI3 (GP-SPI3)
+• Low-Power SPI (LP-SPI)
+Feature List
+GP-SPI has the following features:
+• Works as master or as slave
+• Half- and full-duplex communications
+• CPU- and DMA-controlled transfers
+• Various data modes
+– GP-SPI2
+* 1-bit SPI mode
+* 2-bit Dual SPI mode
+* 4-bit Quad SPI mode
+* QPI mode
+* 8-bit Octal SPI mode (available only when GP-SPI2 works as a master)
+* OPI mode (available only when GP-SPI2 works as a master)
+– GP-SPI3
+* 1-bit SPI mode
+* 2-bit Dual SPI mode
+* 4-bit Quad SPI mode
+* QPI mode
+• Configurable module clock frequency
+– Master: up to 80 MHz
+– Slave: up to 60 MHz
+• Configurable data length
+– CPU-controlled transfer as master or as slave: 1–64 bytes
+– DMA-controlled single transfer as master: 1–32 KB
+– DMA-controlled configurable segmented transfer as master: data length is unlimited
+Espressif Systems
+
+29
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+– DMA-controlled single transfer or segmented transfer as slave: data length is unlimited
+• Configurable bit read/write order
+• Independent interrupts for CPU-controlled transfer and DMA-controlled transfer
+• Configurable clock polarity and phase
+• Four SPI clock modes: mode 0–mode 3
+• Multiple CS lines as master
+– GP-SPI2: CS0–CS5
+– GP-SPI3: CS0–CS2
+• Able to communicate with SPI devices, such as a sensor, a screen controller, as well as a flash or RAM
+chip
+LP-SPI is a simplified version of GP-SPI and has a subset of GP-SPI’s features:
+• Works as a master or as a slave
+• Half- and full-duplex communications
+• CPU-controlled transfer
+• 1-bit SPI data mode
+• Configurable module clock frequency:
+– Master: up to 40 MHz
+– Slave: up to 40 MHz
+• Configurable data length:
+– CPU-controlled transfer as master or as slave: 1–64 bytes
+• Configurable bit read/write order
+• Interrupts for CPU-controlled transfer
+• Configurable clock polarity and phase
+• Four SPI clock modes: mode 0–mode 3
+• One CS line as master: CS0
+• Wake-up feature as slave (the only new feature compared with GP-SPI)
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.3 I2C Controller (I2C)
+ESP32-S31 has two HP_I2C bus interfaces and one LP_I2C bus interface. The HP_I2C interfaces can operate
+in either I2C master or slave mode, while the LP_I2C interface supports master mode only.
+
+Espressif Systems
+
+30
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+Feature List
+• Standard mode (100 Kbit/s)
+• Fast mode (400 Kbit/s)
+• Up to 800 Kbit/s (constrained by SCL and SDA pull-up strength)
+• 7-bit and 10-bit addressing mode
+• Dual address mode
+• 7-bit broadcast address
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.4
+
+I2S Controller (I2S)
+
+The I2S Controller in the ESP32-S31 chip provides a flexible communication interface for streaming digital data
+in multimedia applications, particularly digital audio applications.
+Feature List
+• Master mode and slave mode
+• Full-duplex and half-duplex communications
+• Separate TX and RX units that can work independently or simultaneously
+• A variety of audio standards supported:
+– TDM Philips standard
+– TDM MSB alignment standard
+– TDM PCM standard
+– PDM standard
+• Various TX/RX modes
+– TDM TX mode, up to 16 channels supported
+– TDM RX mode, up to 16 channels supported
+– PDM TX mode
+* Raw PDM data transmission
+* PCM-to-PDM data format conversion, up to 2 channels supported
+– PDM RX mode
+* Raw PDM data reception
+• Configurable clock source with frequency up to 96 MHz
+• Configurable high-precision sample clock with a variety of sampling frequencies supported
+• 8/16/24/32-bit data width
+Espressif Systems
+
+31
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• Synchronous counter in TX mode
+• ETM feature
+• Direct memory access
+• Standard I2S interface interrupts
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.5 Pulse Count Controller (PCNT)
+The Pulse Count controller (PCNT) in ESP32-S31 captures pulses and counts pulse edges in seven
+modes.
+Feature List
+• Four independent pulse counters (units) that count from 1 to 65535
+• Each unit consists of two independent channels sharing one pulse counter
+• All channels have input pulse signals (e.g., sig_ch0_un) with their corresponding control signals (e.g.,
+ctrl_ch0_un)
+• Independently filter glitches of input pulse signals (sig_ch0_un and sig_ch1_un) and control signals
+(ctrl_ch0_un and ctrl_ch1_un) on each unit
+• Each channel has the following parameters:
+1. Selection between counting on positive or negative edges of the input pulse signal
+2. Configuration to Increment, Decrement, or Disable counter mode for control of signal’s high and
+low states
+3. Step count alert triggered by setting the upcount/downcount step threshold
+4. Clearing of the pulse count controller value by setting the clear register or sending a clear signal
+through GPIO input
+5. Generation and recording of a corresponding event signal for each counter mode, with the ability to
+report it to the interrupt task
+• Maximum frequency of pulses: fAP B_CLK
+2
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.6 USB 2.0 High-Speed OTG
+The ESP32-S31 chip features a USB 2.0 High-Speed On-The-Go peripheral (OTG_HS) with an integrated
+transceiver. This OTG_HS complies with the USB 2.0 specification, OTG Revision 1.3, and OTG Revision 2.0
+specifications. The interface supports USB 2.0 High-Speed mode (480 Mbit/s), Full-Speed mode (12 Mbit/s),
+and Low-Speed mode (1.5 Mbit/s).
+Espressif Systems
+
+32
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• When OTG_HS operates in High-Speed or Full-Speed modes, it can be configured as either a Host or a
+Device.
+• When OTG_HS operates in Low-Speed mode, it can only be configured as a Host.
+Feature List
+General Features
+• USB 2.0 specification, OTG Revision 1.3 and OTG Revision 2.0 specifications
+• High-Speed, Full-Speed, and Low-Speed data rates
+• As a host and a device in High-Speed mode and Full-Speed mode
+• Dynamic FIFO (DFIFO) sizing, each device EP/host channel can dynamically allocate a maximum of 4 KB
+FIFO.
+• Up to 8 non-periodic transactions and 16 periodic transactions per microframe
+• Multiple modes of memory access
+– Scatter/Gather DMA mode
+– Buffer DMA mode
+– Slave Mode
+• Integrated UTMI High-Speed transceiver
+Device Mode Features
+• Endpoint 0 always present, bi-directional, consisting of EP0 IN and EP0 OUT
+• 15 additional endpoints 1–15, configurable as IN or OUT
+• Maximum of eight IN endpoints concurrently active at any time, including EP0 IN
+• All OUT endpoints share a single RX FIFO
+• Each IN endpoint has a dedicated TX FIFO
+Host Mode Features
+• 16 host channels
+• RX FIFO: shared by all periodic and non-periodic transactions
+• Two TX FIFO:
+– One shared by all non-periodic transactions
+– One shared by all periodic transactions
+• All of the above FIFOs share a 4 KB RAM.
+• The size of each FIFO is configurable, with a maximum of 4 KB.
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+Espressif Systems
+
+33
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+5.2.2.7 USB Serial/JTAG Controller (USB_SERIAL_JTAG)
+ESP32-S31 contains a USB Serial/JTAG controller. This unit can be used to program the SoC’s flash, read
+program output, as well as attach a debugger to the running program. All of these are possible for any
+computer with a USB host without any active external components.
+Feature List
+• USB 2.0 full speed compliant, capable of up to 12 Mbit/s transfer speed (note that this controller does
+not support the faster 480 Mbit/s high-speed transfer mode)
+• CDC-ACM virtual serial port and JTAG adapter functionality
+• programming the chip’s flash
+• CPU debugging with compact JTAG instructions
+• a full-speed USB PHY integrated in the chip
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.8
+
+Ethernet Media Access Controller (EMAC)
+
+By using the external Ethernet PHY (physical layer), ESP32-S31 can send and receive data via Ethernet MAC
+(Media Access Controller) according to the IEEE 802.3 standard.
+ESP32-S31 Ethernet MAC complies with the following standards:
+• IEEE 802.3-2002 for Ethernet MAC
+• IEEE 1588-2008 standard for precise networked clock synchronization
+• IEEE 802.3 standard Media Independent Interface (MII), Reduced Media Independent Interface (RMII),
+and Reduced Gigabit Media Independent Interface (RGMII)
+• IEEE 802.3az-2010 for Energy Efficient Ethernet
+• IEEE 802.1Q for VLAN frame format
+Feature List
+• Data rates of 10/100/1000 Mbit/s through an external PHY interface
+• Communication with an external Ethernet PHY through IEEE 802.3-compliant MII, RMII, or RGMII interface
+(only one can be used at a time)
+• Full-duplex and half-duplex modes
+– Carrier Sense Multiple Access or Collision Detection (CSMA/CD) protocol in half-duplex mode
+– IEEE 802.3x flow control in full-duplex mode
+– Optional forwarding of received pause control frame to the user application in full-duplex mode
+– Back-pressure flow control in half-duplex mode
+
+Espressif Systems
+
+34
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+– Automatic transmission of zero-quanta pause frame on deassertion of flow control input in
+full-duplex mode
+• Preamble and start-of-frame data (SFD) insertion in Transmit, and deletion in Receive paths
+• Automatic CRC and padding (all 0) generation controllable on a per-frame basis
+• Options for automatic padding generation for data below the minimum frame length
+• Programmable frame length supporting jumbo frames of up to 16 KB
+• Programmable inter-frame gap (IFG) from 40 to 96 bit times in steps of 8
+• Flexible address filtering modes:
+– Up to nine 48-bit perfect address filters with per-byte masking
+– Up to nine 48-bit source address (SA) comparisons with per-byte masking
+– Option to pass all multicast addressed frames
+– Promiscuous mode to pass all frames without filtering for network monitoring
+– Passes all incoming packets (as per filter) with a status report
+• Separate 32-bit status returned for transmission and reception packets
+• IEEE 802.1Q VLAN tag detection for reception frames
+• Separate transmission, reception, and control interfaces for the application
+• Management Data Input/Output (MDIO) interface for PHY device configuration and management
+• Checksum offload for received IPv4 and TCP packets encapsulated by the Ethernet frame
+• Checking IPv4 header checksum and TCP, UDP, or ICMP checksum encapsulated in IPv4 or IPv6
+datagrams
+• 64-bit timestamp for each transmitted and received frame (see IEEE 1588-2008)
+• Energy Efficient Ethernet support (see IEEE 802.3az-2010)
+• CRC replacement, SA insertion/replacement, and VLAN insertion/replacement/deletion in transmit
+frames
+• Two FIFOs: 1024-byte TX FIFO and 256-byte RX FIFO
+• Receive status vectors inserted into RX FIFO after the EOF (end of frame) transfer, allowing multiple-frame
+storage without requiring an additional FIFO for status
+• Option to forward good runt frames
+• Statistics generation with pulse signaling for dropped or corrupted frames due to RX FIFO overflow
+• Automatic re-transmission of collision frames
+• Frame discarding in cases of late collisions, excessive collisions, excessive deferrals, or underflow
+conditions
+• Software control for TX FIFO flushing
+
+Espressif Systems
+
+35
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.9
+
+CAN FD Controller
+
+The CAN FD is a multi-master multi-cast communication protocol. The CAN FD controller facilitates the
+communication based on this protocol. The CAN FD controllers integrated in ESP32-S31 are
+protocol-compatible with the CAN FD specification but have not been formally certified.
+Feature List
+• compliant with ISO11898-1:2015
+• RX buffer FIFO with 128 words (6 CAN FD frames with 64-byte data payloads, 21 CAN/CAN FD frames with
+8-byte data payloads)
+• 4 TX buffers (1 CAN FD frame in each TX buffer)
+• 32-bit APB interface
+• support of ISO and non-ISO CAN FD protocol
+• timestamping and time triggered transmission
+• three single-bit filters and one range filter
+• support interrupts
+• loopback, bus monitoring, ACK forbidden, self test, and restricted operation modes
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.10 SD/MMC Host Controller (SDHOST)
+ESP32-S31 has an SD/MMC Host Controller.
+Feature List
+• Supports two external cards
+• SD Memory Card Specifications v3.0 and v3.01
+• Secure Digital I/O (SDIO) v3.0
+• CE-ATA v1.1
+• MMC v4.41 and eMMC v4.5, v4.51
+• 1-bit and 4-bit bus width modes (8-bit mode not supported)
+ESP32-S31 SD/SDIO/MMC Host Controller can simultaneously support two SD/SDIO/MMC 4.41 cards, or
+support only one SD card operating at 1.8 V.
+
+Espressif Systems
+
+36
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.11 LED PWM Controller (LEDC)
+The LED PWM Controller is a peripheral designed to generate PWM signals for LED control. It has specialized
+features such as automatic duty cycle fading. However, the LED PWM Controller can also be used to generate
+PWM signals for other purposes.
+Feature List
+• Two independent LED PWM controllers, each with eight independent PWM generator channels (16
+channels in total)
+• Maximum PWM duty cycle resolution: 20 bits
+• Four independent timers per controller with 20-bit counters, fractional clock divider, and configurable
+overflow value
+• Adjustable phase of PWM signal output
+• PWM duty cycle dithering
+• Automatic duty cycle fading — gradual increase/decrease of a PWM’s duty cycle without interference
+from the processor. An interrupt will be generated upon fade completion
+• Up to 16 duty cycle ranges for each PWM generator to generate gamma curve signals; each range can
+be independently configured for fade direction (increase or decrease), fade amount (per-step duty
+change), fade count (number of steps per range), and fade frequency
+• PWM signal output in low-power mode (Light-sleep mode)
+• Event generation and task response related to the Event Task Matrix (ETM) peripheral
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.12 Motor Control PWM (MCPWM)
+ESP32-S31 integrates four Motor Control PWM (MCPWM) controllers (MCPWM0, MCPWM1, MCPWM2, and
+MCPWM3) that can be used to drive digital motors and smart light.
+Feature List
+• Each MCPWM has a clock divider (prescaler), three PWM timers, three PWM operators, an Event Task
+Matrix (ETM) module, a Fault Detection module, and a dedicated capture module. PWM timers are used
+to generate timing references. PWM operators generate desired waveform based on the timing
+references
+• A PWM operator can use the timing reference of any PWM timer
+• A PWM operator can use the same timing reference with other PWM operators
+
+Espressif Systems
+
+37
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• PWM operators can use different PWM timers’ values to produce independent PWM signals
+• PWM timers can be synchronized
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.13 Remote Control Peripheral (RMT)
+The Remote Control Peripheral (RMT) supports four channels of infrared remote transmission and four
+channels of infrared remote reception. By controlling pulse waveform through software, it supports various
+infrared and other single wire protocols.
+Feature List
+• Eight channels:
+– TX channels 0–3
+– RX channels 4–7
+– Eight channels share a 384 x 32-bit RAM
+• The transmitter supports:
+– Normal TX mode
+– Wrap TX mode
+– Continuous TX mode
+– Modulation on TX pulses
+– Multiple channels transmitting data simultaneously (programmable)
+– GDMA access supported by TX channel 3
+• The receiver supports:
+– Normal RX mode
+– Wrap RX mode
+– RX filtering
+– Demodulation on RX pulses
+– GDMA access supported by RX channel 7
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.14 Parallel IO Controller (PARLIO)
+ESP32-S31 contains a Parallel IO controller (PARLIO) capable of transferring data between external devices and
+internal memory on a parallel bus through General Direct Memory Access (GDMA).
+
+Espressif Systems
+
+38
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+Feature List
+• Various clock sources:
+– Including external IO clock PAD_CLK_TX/RX and internal system clock XTAL_CLK, PLL_F160M_CLK,
+and RC_FAST_CLK
+– Maximum IO clock frequency of 40 MHz
+– Integer and fractional clock frequency division
+• 1/2/4/8/16-bit configurable data bus width
+• Full-duplex communication with 16-bit data bus width
+• Bit reversal when data bus width is 1/2/4-bit
+• RX unit for receiving IO parallel data, which supports:
+– Output clock gating
+– RX unit input and output clock inverse
+– Various receive modes
+– Configurable GDMA SUC EOF generation
+– Configurable IO pin of external enable signal
+• TX unit for sending IO parallel data, which supports:
+– Output clock gating
+– TX unit input and output clock inverse
+– Configurable TX EOF generation
+– Valid signal output
+– Configurable bus idle value
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.2.15 BitScrambler
+The ESP32-S31 has an extensive amount of DMA-capable peripherals. These can move data from memory to
+an external device, and vice versa, without any interference from the CPU. This only works if the external
+device needs or emits the data in question in the same format as the software expects it: if not, the CPU
+needs to rewrite the format of the data. Examples include a need to swap bytes, reverse bytes, and shift the
+data left or right.
+Since bitwise operations can be relatively CPU-intensive and DMA is designed specifically to offload such
+work from the CPU, ESP32-S31 integrates two dedicated peripherals called BitScramblers. These modules are
+designed to transform data formats during transfers between memory and peripherals. One BitScrambler
+handles memory-to-peripheral (or memory-to-memory) transfers, while the other is dedicated to
+peripheral-to-memory transfers. While BitScramblers can handle the bitwise operations mentioned earlier, they
+
+Espressif Systems
+
+39
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+are in fact flexible, programmable state machines capable of performing more advanced transformations as
+well.
+Feature List
+• Two BitScramblers, one for RX (peripheral-to-memory), one for TX (memory-to-peripheral)
+• Support for memory-to-memory transfers
+• Processing up to 32 bits per DMA clock period
+• Data path controlled by a BitScrambler program stored in instruction memory
+• Input registers able to read 0, 8, 16, or 32 bits per clock cycle
+• Output registers:
+– Able to write 0, 8, 16, or 32 bits per clock cycle
+– Data sources for output register bits: 64 bits of input data, two counters, LUT RAM data, data output
+of last cycle, comparators
+– With some restrictions, each of the 32 output register bits can come from any bit on the data
+sources
+• An 8 x 257-bit instruction memory for storing eight instructions, controlling control flow, and the data path
+• 2048 bytes of lookup table (LUT) memory, configurable as various word widths
+Pin Assignment
+The BitScrambler does not directly interact with IOs, so it has no pins assigned.
+
+5.2.3
+
+Analog Signal Processing
+
+This subsection describes components on the chip that sense and process real-world data.
+
+5.2.3.1
+
+Touch Sensor (TOUCH)
+
+ESP32-S31 has 14 capacitive touch sensor units, each of which can be connected to an external touch panel
+via a touch pin (GPIO pin) to constitute a touch sensor system. The ESP32-S31 touch sensor system is mainly
+used in human-computer interactions to detect finger touch or proximity. It also supports frequency hopping
+sampling and features moisture resistance and waterproof design.
+Feature List
+• Detection of 14 capacitive touch pins
+• Sampling triggered by software or dedicated hardware timer
+• Two sampling methods:
+– Pulses from the touch pins used as clock signals to count the sampling period
+– Pulses from the touch pins used as digital signals; sample the rising edge of the digital signal with
+the system clock to count the sampling period
+
+Espressif Systems
+
+40
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• Scan mode, supporting sequential sampling of multiple touch pins by configuring the Touch FSM.
+• Timeout mechanism to monitor channel abnormality
+• Frequency hopping to increase the anti-interference of detection
+• Proximity sensing mode with up to three configurable channels
+• Configuration of individual touch sensors to operate normally in sleep mode
+• Wake-up by touch sensor
+• Moisture resistance
+• Waterproof design
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.3.2 Temperature Sensor (TSENS)
+ESP32-S31 provides a temperature sensor for real-time monitoring of temperature changes within the chip.
+The sensor converts analog voltage to digital values and provides compensation for temperature
+offsets.
+Feature List
+• Software-triggered temperature measurement, which once triggered, the sensor continuously measures
+temperature. Software can read the data at any time.
+• Hardware-triggered automatic temperature monitoring
+• Two automatic monitoring modes with interrupt generation
+• Configurable temperature offset based on the application scenario for improved accuracy
+• Configurable temperature measurement range
+• Support for Event Task Matrix (ETM)-related events and tasks
+
+5.2.3.3 SAR ADC Digital Controller (ADC)
+ESP32-S31 SAR ADC digital controller is the digital control block of the HP ADC subsystem. It manages two
+independent SAR ADCs (SAR1 and SAR2), including sampling triggers, timing control, data filtering, threshold
+monitoring, and DMA transfers. The block exposes register access to the CPU via the APB bus and supports
+three trigger sources: software trigger, periodic timer scan, and ETM event trigger. Conversion results are
+transferred to the system bus through an asynchronous FIFO.
+Feature List
+• Two independent SAR ADCs (SAR1 / SAR2) operating in parallel
+• Three trigger modes per SAR: SCAN (timer), SW (register write), ETM
+• Per-SAR pattern table with 16 patterns for sequential scanning of up to 16 channels, supporting both
+single-ended and differential inputs
+Espressif Systems
+
+41
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+• Per-SAR four-state SAR control FSM (IDLE → XPD → RSTB → READ) with continuous sampling mode
+• Two IIR low-pass filter channels with selectable factor 1 / 2 / 4 / 8 / 16 / 32 / 64
+• Two threshold comparators with per-channel monitoring and thres0 all-channel monitoring
+• DMA transfer path (asynchronous FIFO + EOF frame management); asynchronous FIFO depth is 4
+• Seven aggregated interrupt sources: SAR conversion done, threshold violation, FIFO overflow
+• ETM event input/output
+• Register clock gating
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.3.4
+
+DAC Controller (DAC)
+
+ESP32-S31 provides a digital-to-analog converter that converts digital signals into analog voltages and outputs
+them on two dedicated chip pads. The two channels connect to two pads respectively and can output
+independently without affecting each other.
+Feature List
+• Supports output value configuration by software via GDMA, or sine-wave output via an internal lookup
+table
+• Output voltage range: 0 V to 3.3 V
+• Supports maintaining output level in ultra-low-power mode
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+5.2.3.5
+
+Analog Voltage Comparator
+
+ESP32-S31 includes one analog voltage comparator with four dedicated pads. Three of these pads can be
+selected to compare their voltages against the remaining pad. Alternatively, any of the three pads can be
+compared against an internally adjustable stable reference voltage.
+Feature List
+• Reference voltage selectable between internal reference and external reference
+• Internal reference voltage range: 0 ~ 0.7 * VDDPST
+• Internal reference voltage supports hysteresis
+• ETM support
+• Interrupt output when the measured voltage crosses the reference voltage
+
+Espressif Systems
+
+42
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+5 Peripherals
+
+Pin Assignment
+For details, see ESP32-S31 Series Datasheet > Section Peripheral Pin Assignment.
+
+Espressif Systems
+
+43
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+6 Electrical Characteristics
+
+6 Electrical Characteristics
+The values presented in this section are preliminary and may change with the final release of this
+datasheet.
+
+6.1
+
+Absolute Maximum Ratings
+
+Stresses above those listed in Table 6-1 Absolute Maximum Ratings may cause permanent damage to the
+device. These are stress ratings only and functional operation of the device at these or any other conditions
+beyond those indicated under Table 6-2 Recommended Operating Conditions is not implied. Exposure to
+absolute-maximum-rated conditions for extended periods may affect device reliability.
+Table 6-1. Absolute Maximum Ratings
+
+6.2
+
+Symbol
+
+Parameter
+
+Min
+
+Max
+
+Unit
+
+VDD33
+
+Power supply voltage
+
+–0.3
+
+3.6
+
+V
+
+Recommended Operating Conditions
+Table 6-2. Recommended Operating Conditions
+Symbol
+
+Parameter
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+VDD33
+
+Power supply voltage
+
+3.0
+
+3.3
+
+3.6
+
+V
+
+IV DD
+
+Current delivered by external power supply
+
+0.6
+
+—
+
+—
+
+A
+
+TA
+
+Operating ambient temperature
+
+–40
+
+—
+
+85
+
+°C
+
+6.3 DC Characteristics (3.3 V, 25 °C)
+Table 6-3. DC Characteristics (3.3 V, 25 °C)
+Parameter
+
+Description
+
+CIN
+
+Pin capacitance
+
+VIH
+
+High-level input voltage
+
+Min
+
+Typ
+
+—
+0.75 × VDD 1
+
+Max
+
+Unit
+pF
+
+—
+
+—
+1
+VDD + 0.3
+
+V
+
+2
+
+V
+
+VIL
+
+Low-level input voltage
+
+–0.3
+
+—
+
+0.25 × VDD 1
+
+IIH
+
+High-level input current
+
+—
+
+—
+
+50
+
+nA
+
+Low-level input current
+
+—
+
+50
+
+nA
+
+—
+
+V
+
+IIL
+VOH
+
+2
+
+High-level output voltage
+
+—
+0.8 × VDD 1
+
+VOL
+
+2
+
+Low-level output voltage
+
+—
+
+—
+
+—
+0.1 × VDD 1
+
+—
+
+40
+
+—
+
+mA
+
+—
+
+28
+
+—
+
+mA
+
+IOH
+IOL
+
+High-level source current (VDD 1 = 3.3 V,
+VOH >= 2.64 V, PAD_DRIVER = 3)
+Low-level sink current (VDD 1 = 3.3 V, V
+
+OL =
+
+0.495 V, PAD_DRIVER = 3)
+
+V
+
+RP U
+
+Internal weak pull-up resistor
+
+—
+
+45
+
+—
+
+kΩ
+
+RP D
+
+Internal weak pull-down resistor
+
+—
+
+45
+
+—
+
+kΩ
+
+Cont’d on next page
+
+Espressif Systems
+
+44
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+6 Electrical Characteristics
+
+Table 6-3 – cont’d from previous page
+Parameter
+VIH_nRST
+VIL_nRST
+
+Description
+
+Min
+
+Chip reset release voltage (CHIP_PU voltage
+is within the specified range)
+
+Typ
+
+Max
+
+Unit
+
+0.75 × VDD 1
+
+—
+
+VDD 1 + 0.3
+
+V
+
+–0.3
+
+—
+
+0.15 × VDD 1
+
+V
+
+Chip reset voltage (CHIP_PU voltage is within
+the specified range)
+
+1 VDD – voltage from a power pin of a respective power domain.
+2V
+
+OH and VOL are measured using high-impedance load.
+
+6.4
+
+Current Consumption Characteristics
+
+6.4.1 Current Consumption in Active Mode
+The current consumption measurements are taken with a 3.3 V supply at 25 °C ambient temperature.
+TX current consumption is rated at a 100% duty cycle.
+RX current consumption is rated when the peripherals are disabled and the CPU idle.
+Table 6-4. Current Consumption for Wi-Fi (2.4 GHz) in Active Mode
+Work Mode
+
+RF Condition
+
+TX
+Active (RF working)
+
+RX
+
+Description
+
+Peak (mA)
+
+802.11b, 1 Mbps, DSSS @ 20 dBm
+
+375
+
+802.11g, 54 Mbps, OFDM @ 17 dBm
+
+295
+
+802.11n, HT20, MCS7 @ 17 dBm
+
+295
+
+802.11n, HT40, MCS7 @ 16 dBm
+
+285
+
+802.11ax, MCS9 @ 14 dBm
+
+270
+
+802.11b/g/n, HT20
+
+110
+
+802.11n, HT40
+
+120
+
+802.11ax, HE20
+
+113
+
+Table 6-5. Current Consumption for Bluetooth LE in Active Mode
+Work Mode
+
+RF Condition
+TX
+
+Active (RF working)
+RX
+
+Description
+
+Peak (mA)
+
+Bluetooth LE @ 19 dBm
+
+340
+
+Bluetooth LE @ 10 dBm
+
+230
+
+Bluetooth LE @ 0 dBm
+
+178
+
+Bluetooth LE @ –18.5 dBm
+
+120
+
+Bluetooth LE
+
+105
+
+Table 6-6. Current Consumption for Bluetooth Classic in Active Mode
+Work Mode
+
+Active (RF working)
+
+RF Condition
+
+TX
+
+Description
+
+Peak (mA)
+
+Bluetooth Classic @ 11 dBm
+
+230
+
+Bluetooth Classic @ 7 dBm
+
+187.4
+
+Bluetooth Classic @ 0 dBm
+
+170
+Cont’d on next page
+
+Espressif Systems
+
+45
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+6 Electrical Characteristics
+
+Table 6-6 – cont’d from previous page
+Work Mode
+
+RF Condition
+RX
+
+Description
+
+Peak (mA)
+
+Bluetooth Classic @ –18.5 dBm
+
+120
+
+Bluetooth Classic
+
+99.1
+
+Table 6-7. Current Consumption for 802.15.4 in Active Mode
+Work Mode
+
+RF Condition
+TX
+
+Active (RF working)
+RX
+
+Description
+
+Peak (mA)
+
+802.15.4 @ 18 dBm
+
+335
+
+802.15.4 @ 9 dBm
+
+228
+
+802.15.4 @ 0 dBm
+
+174
+
+802.15.4 @ –18.5 dBm
+
+121
+
+802.15.4
+
+101
+
+Note:
+The content below is excerpted from Section Power Consumption in Other Modes in ESP32-S31 Series Datasheet.
+
+6.4.2
+
+Current Consumption in Other Modes
+Table 6-8. Current Consumption in Modem-sleep Mode
+Typ (mA)
+
+CPU Frequency
+Mode
+
+(MHz)
+
+320
+
+240
+
+Modem-sleep2,3
+
+160
+
+80
+
+40
+
+Espressif Systems
+
+All Peripherals
+
+All Peripherals
+
+Clocks Disabled
+
+Clocks Enabled1
+
+Dual-core WAITI
+
+25
+
+75
+
+Dual-core CoreMark
+
+91
+
+147
+
+Description
+
+Core 0 WAITI, core 1 SIMD
+
+64
+
+114
+
+Core 0 CoreMark, core 1 SIMD
+
+100
+
+152
+
+Dual-core WAITI
+
+23
+
+72
+
+Dual-core CoreMark
+
+74
+
+126
+
+Core 0 WAITI, core 1 SIMD
+
+52
+
+102
+
+Core 0 CoreMark, core 1 SIMD
+
+80
+
+130
+
+Dual-core WAITI
+
+21
+
+70
+
+Dual-core CoreMark
+
+57
+
+107
+
+Core 0 WAITI, core 1 SIMD
+
+41
+
+90
+
+Core 0 CoreMark, core 1 SIMD
+
+59
+
+109
+
+Dual-core WAITI
+
+19
+
+68
+
+Dual-core CoreMark
+
+37
+
+86
+
+Core 0 WAITI, core 1 SIMD
+
+29
+
+78
+
+Core 0 CoreMark, core 1 SIMD
+
+38
+
+87
+
+Dual-core WAITI
+
+13
+
+56
+
+Dual-core CoreMark
+
+22
+
+65
+
+Core 0 WAITI, core 1 SIMD
+
+18
+
+61
+
+Core 0 CoreMark, core 1 SIMD
+
+23
+
+67
+
+46
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+6 Electrical Characteristics
+
+Table 6-8. Current Consumption in Modem-sleep Mode
+Typ (mA)
+
+CPU Frequency
+Mode
+
+(MHz)
+
+Description
+
+All Peripherals
+
+All Peripherals
+
+Clocks Disabled
+
+Clocks Enabled1
+
+1 In practice, the current consumption might be different depending on which peripherals are enabled.
+2 In Modem-sleep mode, Wi-Fi is clock gated.
+3 In Modem-sleep mode, the consumption might be higher when accessing flash.
+
+Table 6-9. Current Consumption in Low-Power Modes
+Mode
+Light-sleep1
+
+Description
+
+Typ (mA)
+
+All GPIOs are high-impedance, and all power supplies are enabled
+
+1
+
+All GPIOs are high-impedance, most of peripherals are disabled,
+and chip is connected through USB
+
+0.07
+
+All peripherals are disabled, and data is stored in HP memory
+
+0.05
+
+Deep-sleep
+
+LP timer and LP memory are powered on
+
+0.012
+
+Power off
+
+CHIP_PU is set to low level, the chip is powered off
+
+0.001
+
+1 The current in Light-sleep mode refers to the current measured when the PSRAM is not powered.
+In Light-sleep mode, if the PSRAM is powered on, the chip’s internal current increases by about
+0.17 mA, in addition to the current required for the PSRAM’s operating mode.
+
+6.5
+
+Memory Specifications
+
+The data below is sourced from the memory vendor datasheet. These values are guaranteed through design
+and/or characterization but are not fully tested in production. Devices are shipped with the memory
+erased.
+Table 6-10. Flash Specifications
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+Power supply voltage (1.8 V)
+
+1.65
+
+1.80
+
+2.00
+
+V
+
+Power supply voltage (3.3 V)
+
+2.7
+
+3.3
+
+3.6
+
+V
+
+FC
+
+Maximum clock frequency
+
+80
+
+—
+
+—
+
+MHz
+
+—
+
+Program/erase cycles
+
+100,000
+
+—
+
+—
+
+cycles
+
+TRET
+
+Data retention time
+
+20
+
+—
+
+—
+
+years
+
+TP P
+
+Page program time
+
+—
+
+0.8
+
+5
+
+ms
+
+TSE
+
+Sector erase time (4 KB)
+
+—
+
+70
+
+500
+
+ms
+
+TBE1
+
+Block erase time (32 KB)
+
+—
+
+0.2
+
+2
+
+s
+
+TBE2
+
+Block erase time (64 KB)
+
+—
+
+0.3
+
+3
+
+s
+
+Chip erase time (16 Mb)
+
+—
+
+7
+
+20
+
+s
+
+Chip erase time (32 Mb)
+
+—
+
+20
+
+60
+
+s
+
+Chip erase time (64 Mb)
+
+—
+
+25
+
+100
+
+s
+
+Chip erase time (128 Mb)
+
+—
+
+60
+
+200
+
+s
+
+Chip erase time (256 Mb)
+
+—
+
+70
+
+300
+
+s
+
+VCC
+
+TCE
+
+Espressif Systems
+
+47
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+6 Electrical Characteristics
+
+Table 6-11. PSRAM Specifications
+
+Espressif Systems
+
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+VCC
+
+Power supply voltage (1.8 V)
+
+1.62
+
+1.80
+
+1.98
+
+V
+
+FC
+
+Maximum clock frequency
+
+200
+
+—
+
+—
+
+MHz
+
+48
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+7 RF Characteristics
+This section contains tables with RF characteristics of the Espressif product.
+The RF data is measured at the antenna port, where RF cable is connected, including the front-end loss. The
+external antennas used for the tests on the modules with external antenna connectors have an impedance of
+50 Ω.
+Devices should operate in the center frequency range allocated by regional regulatory authorities. The target
+center frequency range and the target transmit power are configurable by software. See ESP RF Test Tool and
+Test Guide for instructions.
+Unless otherwise stated, the RF tests are conducted with a 3.3 V (±5%) supply at 25 ºC ambient temperature.
+
+7.1 Wi-Fi Radio
+Table 7-1. 2.4 GHz Wi-Fi RF Characteristics
+Name
+
+Description
+
+Center frequency range of operating channel
+
+2412 ~ 2484 MHz
+
+Wi-Fi wireless standard
+
+IEEE 802.11b/g/n/ax
+
+7.1.1 Wi-Fi RF Transmitter (TX) Characteristics
+Table 7-2. 2.4 GHz TX Power with Spectral Mask and EVM Meeting 802.11 Standards
+Min
+
+Typ
+
+Max
+
+(dBm)
+
+(dBm)
+
+(dBm)
+
+802.11b, 1 Mbps, DSSS
+
+—
+
+20.0
+
+—
+
+802.11b, 11 Mbps, CCK
+
+—
+
+20.0
+
+—
+
+802.11g, 6 Mbps, OFDM
+
+—
+
+19.0
+
+—
+
+802.11g, 54 Mbps, OFDM
+
+—
+
+17.0
+
+—
+
+802.11n, HT20, MCS0
+
+—
+
+19.0
+
+—
+
+802.11n, HT20, MCS7
+
+—
+
+17.0
+
+—
+
+802.11n, HT40, MCS0
+
+—
+
+18.0
+
+—
+
+802.11n, HT40, MCS7
+
+—
+
+16.0
+
+—
+
+802.11ax, HE20, MCS0
+
+—
+
+19.0
+
+—
+
+802.11ax, HE20, MCS9
+
+—
+
+14.0
+
+—
+
+Min
+
+Typ
+
+Limit
+
+(dB)
+
+(dB)
+
+(dB)
+
+802.11b, 1 Mbps, DSSS
+
+—
+
+–25.0
+
+–10.0
+
+802.11b, 11 Mbps, CCK
+
+—
+
+–25.0
+
+–10.0
+
+Rate
+
+Table 7-3. 2.4 GHz TX EVM Test1
+
+Rate
+
+Cont’d on next page
+
+Espressif Systems
+
+49
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-3 – cont’d from previous page
+Min
+
+Typ
+
+Limit
+
+(dB)
+
+(dB)
+
+(dB)
+
+802.11g, 6 Mbps, OFDM
+
+—
+
+–24.0
+
+–5.0
+
+802.11g, 54 Mbps, OFDM
+
+—
+
+–31.0
+
+–25.0
+
+802.11n, HT20, MCS0
+
+—
+
+–24.0
+
+–5.0
+
+802.11n, HT20, MCS7
+
+—
+
+–31.0
+
+–27.0
+
+802.11n, HT40, MCS0
+
+—
+
+–26.0
+
+–5.0
+
+802.11n, HT40, MCS7
+
+—
+
+–32.0
+
+–27.0
+
+802.11ax, HE20, MCS0
+
+—
+
+–24.0
+
+–5.0
+
+802.11ax, HE20, MCS9
+
+—
+
+–34.5
+
+–32.0
+
+Rate
+
+1 EVM is measured at the corresponding typical TX power provided in
+Table 7-2 2.4 GHz TX Power with Spectral Mask and EVM Meeting
+802.11 Standards above.
+
+7.1.2 Wi-Fi RF Receiver (RX) Characteristics
+For RX tests, the PER (packet error rate) limit is 8% for 802.11b, and 10% for 802.11g/n/ax.
+Table 7-4. 2.4 GHz RX Sensitivity
+Min
+
+Typ
+
+Max
+
+(dBm)
+
+(dBm)
+
+(dBm)
+
+802.11b, 1 Mbps, DSSS
+
+—
+
+–99.0
+
+—
+
+802.11b, 2 Mbps, DSSS
+
+—
+
+–96.0
+
+—
+
+802.11b, 5.5 Mbps, CCK
+
+—
+
+–93.0
+
+—
+
+802.11b, 11 Mbps, CCK
+
+—
+
+–89.0
+
+—
+
+802.11g, 6 Mbps, OFDM
+
+—
+
+–94.0
+
+—
+
+802.11g, 9 Mbps, OFDM
+
+—
+
+–92.5
+
+—
+
+802.11g, 12 Mbps, OFDM
+
+—
+
+–92.0
+
+—
+
+802.11g, 18 Mbps, OFDM
+
+—
+
+–89.0
+
+—
+
+802.11g, 24 Mbps, OFDM
+
+—
+
+–86.5
+
+—
+
+802.11g, 36 Mbps, OFDM
+
+—
+
+–82.5
+
+—
+
+802.11g, 48 Mbps, OFDM
+
+—
+
+–78.5
+
+—
+
+802.11g, 54 Mbps, OFDM
+
+—
+
+–77.0
+
+—
+
+802.11n, HT20, MCS0
+
+—
+
+–94.0
+
+—
+
+802.11n, HT20, MCS1
+
+—
+
+–91.5
+
+—
+
+802.11n, HT20, MCS2
+
+—
+
+–89.0
+
+—
+
+802.11n, HT20, MCS3
+
+—
+
+–86.0
+
+—
+
+802.11n, HT20, MCS4
+
+—
+
+–82.5
+
+—
+
+802.11n, HT20, MCS5
+
+—
+
+–78.0
+
+—
+
+802.11n, HT20, MCS6
+
+—
+
+–76.5
+
+—
+
+802.11n, HT20, MCS7
+
+—
+
+–74.5
+
+—
+
+802.11n, HT40, MCS0
+
+—
+
+–91.5
+
+—
+
+802.11n, HT40, MCS1
+
+—
+
+–89.5
+
+—
+
+Rate
+
+Cont’d on next page
+Espressif Systems
+
+50
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-4 – cont’d from previous page
+Min
+
+Typ
+
+Max
+
+(dBm)
+
+(dBm)
+
+(dBm)
+
+802.11n, HT40, MCS2
+
+—
+
+–86.5
+
+—
+
+802.11n, HT40, MCS3
+
+—
+
+–83.0
+
+—
+
+802.11n, HT40, MCS4
+
+—
+
+–80.0
+
+—
+
+802.11n, HT40, MCS5
+
+—
+
+–75.5
+
+—
+
+802.11n, HT40, MCS6
+
+—
+
+–74.0
+
+—
+
+802.11n, HT40, MCS7
+
+—
+
+–73.0
+
+—
+
+802.11ax, HE20, MCS0
+
+—
+
+–93.5
+
+—
+
+802.11ax, HE20, MCS1
+
+—
+
+–90.5
+
+—
+
+802.11ax, HE20, MCS2
+
+—
+
+–87.5
+
+—
+
+802.11ax, HE20, MCS3
+
+—
+
+–85.0
+
+—
+
+802.11ax, HE20, MCS4
+
+—
+
+–81.5
+
+—
+
+802.11ax, HE20, MCS5
+
+—
+
+–77.5
+
+—
+
+802.11ax, HE20, MCS6
+
+—
+
+–76.0
+
+—
+
+802.11ax, HE20, MCS7
+
+—
+
+–74.0
+
+—
+
+802.11ax, HE20, MCS8
+
+—
+
+–70.5
+
+—
+
+802.11ax, HE20, MCS9
+
+—
+
+–68.0
+
+—
+
+Rate
+
+Table 7-5. 2.4 GHz Maximum RX Level
+Min
+
+Typ
+
+Max
+
+(dBm)
+
+(dBm)
+
+(dBm)
+
+802.11b, 1 Mbps, DSSS
+
+—
+
+5
+
+—
+
+802.11b, 11 Mbps, CCK
+
+—
+
+5
+
+—
+
+802.11g, 6 Mbps, OFDM
+
+—
+
+5
+
+—
+
+802.11g, 54 Mbps, OFDM
+
+—
+
+0
+
+—
+
+802.11n, HT20, MCS0
+
+—
+
+5
+
+—
+
+802.11n, HT20, MCS7
+
+—
+
+0
+
+—
+
+802.11n, HT40, MCS0
+
+—
+
+5
+
+—
+
+802.11n, HT40, MCS7
+
+—
+
+0
+
+—
+
+802.11ax, HE20, MCS0
+
+—
+
+5
+
+—
+
+802.11ax, HE20, MCS9
+
+—
+
+0
+
+—
+
+Rate
+
+Table 7-6. 2.4 GHz RX Adjacent Channel Rejection
+
+Rate
+
+Min
+
+Typ
+
+Max
+
+(dB)
+
+(dB)
+
+(dB)
+
+802.11b, 1 Mbps, DSSS
+
+—
+
+43
+
+—
+
+802.11b, 11 Mbps, CCK
+
+—
+
+40
+
+—
+
+802.11g, 6 Mbps, OFDM
+
+—
+
+33
+
+—
+
+802.11g, 54 Mbps, OFDM
+
+—
+
+18
+
+—
+
+Cont’d on next page
+
+Espressif Systems
+
+51
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-6 – cont’d from previous page
+Min
+
+Typ
+
+Max
+
+(dB)
+
+(dB)
+
+(dB)
+
+802.11n, HT20, MCS0
+
+—
+
+30
+
+—
+
+802.11n, HT20, MCS7
+
+—
+
+15
+
+—
+
+802.11n, HT40, MCS0
+
+—
+
+23
+
+—
+
+802.11n, HT40, MCS7
+
+—
+
+10
+
+—
+
+802.11ax, HE20, MCS0
+
+—
+
+25
+
+—
+
+802.11ax, HE20, MCS9
+
+—
+
+2
+
+—
+
+Rate
+
+7.2 Bluetooth 5 (LE) Radio
+Table 7-7. Bluetooth LE RF Characteristics
+Name
+
+Description
+
+Center frequency range of operating channel
+
+2402 ~ 2480 MHz
+
+RF transmit power range
+
+–18.5 ~ 19 dBm
+
+7.2.1 Bluetooth LE RF Transmitter (TX) Characteristics
+Table 7-8. Bluetooth LE - Transmitter Characteristics - 1 Mbps
+Parameter
+
+Carrier frequency offset and drift
+
+Modulation characteristics
+
+Description
+
+Min
+
+Espressif Systems
+
+Max
+
+Unit
+
+Max. |fn |n=0, 1, 2, 3, ...k
+
+—
+
+0.5
+
+—
+
+kHz
+
+Max. |f0 − fn |n=2, 3, 4, ...k
+
+—
+
+1.0
+
+—
+
+kHz
+
+Max. |fn − fn−5 |n=6, 7, 8, ...k
+
+—
+
+1.0
+
+—
+
+kHz
+
+|f1 − f0 |
+
+—
+
+1.4
+
+—
+
+kHz
+
+∆ F 1avg
+
+—
+
+256.3
+
+—
+
+kHz
+
+—
+
+252.6
+
+—
+
+kHz
+
+∆ F 2avg /∆ F 1avg
+
+—
+
+0.95
+
+—
+
+—
+
+± 2 MHz offset
+
+—
+
+–29
+
+—
+
+dBm
+
+± 3 MHz offset
+
+—
+
+–38
+
+—
+
+dBm
+
+> ± 3 MHz offset
+
+—
+
+–44
+
+—
+
+dBm
+
+Min. ∆ F 2max (for at least
+99.9% of all ∆ F 2max )
+
+In-band emissions
+
+Typ
+
+52
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-9. Bluetooth LE - Transmitter Characteristics - 2 Mbps
+Parameter
+
+Description
+
+Carrier frequency offset and drift
+
+Modulation characteristics
+
+Min
+
+Max
+
+Unit
+
+Max. |fn |n=0, 1, 2, 3, ...k
+
+—
+
+0.5
+
+—
+
+kHz
+
+Max. |f0 − fn |n=2, 3, 4, ...k
+
+—
+
+1.3
+
+—
+
+kHz
+
+Max. |fn − fn−5 |n=6, 7, 8, ...k
+
+—
+
+0.9
+
+—
+
+kHz
+
+|f1 − f0 |
+
+—
+
+0.5
+
+—
+
+kHz
+
+∆ F 1avg
+
+—
+
+508.2
+
+—
+
+kHz
+
+—
+
+516.9
+
+—
+
+kHz
+
+∆ F 2avg /∆ F 1avg
+
+—
+
+0.97
+
+—
+
+—
+
+± 4 MHz offset
+
+—
+
+–43
+
+—
+
+dBm
+
+± 5 MHz offset
+
+—
+
+–45
+
+—
+
+dBm
+
+> ± 5 MHz offset
+
+—
+
+–48
+
+—
+
+dBm
+
+Min. ∆ F 2max (for at least
+99.9% of all ∆ F 2max )
+
+In-band emissions
+
+Typ
+
+Table 7-10. Bluetooth LE - Transmitter Characteristics - 125 Kbps
+Parameter
+
+Description
+
+Carrier frequency offset and drift
+
+Modulation characteristics
+
+Min
+
+Max
+
+Unit
+
+Max. |fn |n=0, 1, 2, 3, ...k
+
+—
+
+1.3
+
+—
+
+kHz
+
+Max. |f0 − fn |n=1, 2, 3, ...k
+
+—
+
+0.5
+
+—
+
+kHz
+
+|f0 − f3 |
+
+—
+
+0.1
+
+—
+
+kHz
+
+Max. |fn − fn−3 |n=7, 8, 9, ...k
+
+—
+
+0.6
+
+—
+
+kHz
+
+∆ F 1avg
+
+—
+
+255.7
+
+—
+
+kHz
+
+—
+
+261.9
+
+—
+
+kHz
+
+± 2 MHz offset
+
+—
+
+–26
+
+—
+
+dBm
+
+± 3 MHz offset
+
+—
+
+–36
+
+—
+
+dBm
+
+> ± 3 MHz offset
+
+—
+
+–40
+
+—
+
+dBm
+
+Min. ∆ F 1max (for at least
+99.9% of all ∆ F 1max )
+
+In-band emissions
+
+Typ
+
+Table 7-11. Bluetooth LE - Transmitter Characteristics - 500 Kbps
+Parameter
+
+Carrier frequency offset and drift
+
+Modulation characteristics
+
+Description
+
+Min
+
+Espressif Systems
+
+Max
+
+Unit
+
+Max. |fn |n=0, 1, 2, 3, ...k
+
+—
+
+0.7
+
+—
+
+kHz
+
+Max. |f0 − fn |n=1, 2, 3, ...k
+
+—
+
+0.5
+
+—
+
+kHz
+
+|f0 − f3 |
+
+—
+
+0.1
+
+—
+
+kHz
+
+Max. |fn − fn−3 |n=7, 8, 9, ...k
+
+—
+
+0.6
+
+—
+
+kHz
+
+∆ F 2avg
+
+—
+
+245.7
+
+—
+
+kHz
+
+—
+
+252.9
+
+—
+
+kHz
+
+± 2 MHz offset
+
+—
+
+–30
+
+—
+
+dBm
+
+± 3 MHz offset
+
+—
+
+–40
+
+—
+
+dBm
+
+> ± 3 MHz offset
+
+—
+
+–45
+
+—
+
+dBm
+
+Min. ∆ F 2max (for at least
+99.9% of all ∆ F 2max )
+
+In-band emissions
+
+Typ
+
+53
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+7.2.2
+
+Bluetooth LE RF Receiver (RX) Characteristics
+Table 7-12. Bluetooth LE - Receiver Characteristics - 1 Mbps
+
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+Sensitivity @30.8% PER
+
+—
+
+—
+
+–98.0
+
+—
+
+dBm
+
+Maximum received signal @30.8% PER
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+7
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+–2
+
+—
+
+dB
+
+F = F0 – 1 MHz
+
+—
+
+–4
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+–29
+
+—
+
+dB
+
+F = F0 – 2 MHz
+
+—
+
+–32
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+–30
+
+—
+
+dB
+
+F = F0 – 3 MHz
+
+—
+
+–43
+
+—
+
+dB
+
+F ≥ F0 + 4 MHz
+
+—
+
+–31
+
+—
+
+dB
+
+F ≤ F0 – 4 MHz
+
+—
+
+–46
+
+—
+
+dB
+
+—
+
+—
+
+–20
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+–31
+
+—
+
+dB
+
+image frequency
+
+F = Fimage – 1 MHz
+
+—
+
+–30
+
+—
+
+dB
+
+30 MHz ~ 2000 MHz
+
+—
+
+–25
+
+—
+
+dBm
+
+2003 MHz ~ 2399 MHz
+
+—
+
+–30
+
+—
+
+dBm
+
+2484 MHz ~ 2997 MHz
+
+—
+
+–30
+
+—
+
+dBm
+
+3000 MHz ~ 12.75 GHz
+
+—
+
+–25
+
+—
+
+dBm
+
+—
+
+—
+
+–43
+
+—
+
+dBm
+
+Co-channel
+
+Adjacent channel
+
+C/I and receiver
+selectivity performance
+
+Image frequency
+
+Out-of-band blocking performance
+
+Intermodulation
+
+Table 7-13. Bluetooth LE - Receiver Characteristics - 2 Mbps
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+Sensitivity @30.8% PER
+
+—
+
+—
+
+–94.0
+
+—
+
+dBm
+
+Maximum received signal @30.8% PER
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+9
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+–6
+
+—
+
+dB
+
+F = F0 – 2 MHz
+
+—
+
+–8
+
+—
+
+dB
+
+F = F0 + 4 MHz
+
+—
+
+–18
+
+—
+
+dB
+
+F = F0 – 4 MHz
+
+—
+
+–36
+
+—
+
+dB
+
+F = F0 + 6 MHz
+
+—
+
+–37
+
+—
+
+dB
+
+F = F0 – 6 MHz
+
+—
+
+–42
+
+—
+
+dB
+
+F ≥ F0 + 8 MHz
+
+—
+
+–45
+
+—
+
+dB
+
+F ≤ F0 – 8 MHz
+
+—
+
+–44
+
+—
+
+dB
+
+—
+
+—
+
+–18
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 2 MHz
+
+—
+
+–37
+
+—
+
+dB
+
+F = Fimage – 2 MHz
+
+—
+
+–6
+
+—
+
+dB
+
+30 MHz ~ 2000 MHz
+
+—
+
+–25
+
+—
+
+dBm
+
+2003 MHz ~ 2399 MHz
+
+—
+
+–30
+
+—
+
+dBm
+
+2484 MHz ~ 2997 MHz
+
+—
+
+–30
+
+—
+
+dBm
+
+Co-channel
+
+C/I and receiver
+
+Adjacent channel
+
+selectivity performance
+
+Image frequency
+image frequency
+Out-of-band blocking performance
+
+Cont’d on next page
+Espressif Systems
+
+54
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-13 – cont’d from previous page
+Parameter
+
+Description
+
+Intermodulation
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+3000 MHz ~ 12.75 GHz
+
+—
+
+–25
+
+—
+
+dBm
+
+—
+
+—
+
+–31
+
+—
+
+dBm
+
+Table 7-14. Bluetooth LE - Receiver Characteristics - 125 Kbps
+Parameter
+
+Description
+
+Sensitivity @30.8% PER
+Maximum received signal @30.8% PER
+Co-channel
+
+Adjacent channel
+
+C/I and receiver
+selectivity performance
+
+Image frequency
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+—
+
+—
+
+–105.0
+
+—
+
+dBm
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+2
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+–6
+
+—
+
+dB
+
+F = F0 – 1 MHz
+
+—
+
+–3
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+–26
+
+—
+
+dB
+
+F = F0 – 2 MHz
+
+—
+
+–37
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+–33
+
+—
+
+dB
+
+F = F0 – 3 MHz
+
+—
+
+–51
+
+—
+
+dB
+
+F ≥ F0 + 4 MHz
+
+—
+
+–33
+
+—
+
+dB
+
+F ≤ F0 – 4 MHz
+
+—
+
+–54
+
+—
+
+dB
+
+—
+
+—
+
+–28
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+–33
+
+—
+
+dB
+
+image frequency
+
+—
+
+–33
+
+—
+
+dB
+
+F = Fimage – 1 MHz
+
+Table 7-15. Bluetooth LE - Receiver Characteristics - 500 Kbps
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+Sensitivity @30.8% PER
+
+—
+
+—
+
+–101.0
+
+—
+
+dBm
+
+Maximum received signal @30.8% PER
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+4
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+–5
+
+—
+
+dB
+
+F = F0 – 1 MHz
+
+—
+
+–4
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+–31
+
+—
+
+dB
+
+F = F0 – 2 MHz
+
+—
+
+–42
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+–34
+
+—
+
+dB
+
+F = F0 – 3 MHz
+
+—
+
+–55
+
+—
+
+dB
+
+F ≥ F0 + 4 MHz
+
+—
+
+–32
+
+—
+
+dB
+
+F ≤ F0 – 4 MHz
+
+—
+
+–58
+
+—
+
+dB
+
+—
+
+—
+
+–24
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+–32
+
+—
+
+dB
+
+F = Fimage – 1 MHz
+
+—
+
+–34
+
+—
+
+dB
+
+Co-channel
+
+C/I and receiver
+
+Adjacent channel
+
+selectivity performance
+
+Image frequency
+image frequency
+
+Espressif Systems
+
+55
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+7.3 Bluetooth Classic Radio
+Table 7-16. Bluetooth Classic RF Characteristics
+Name
+
+Description
+
+Center frequency range of operating channel
+
+2402 ~ 2480 MHz
+
+RF transmit power range
+
+–18.5 ~ 11 dBm
+
+7.3.1 Bluetooth Classic RF Transmitter (TX) Characteristics
+Table 7-17. Bluetooth Classic - Transmitter Characteristics - Basic Rate (BR)
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+20 dB bandwidth
+
+—
+
+—
+
+0.8
+
+—
+
+MHz
+
+F = F0 ± 2 MHz
+
+—
+
+−32.0
+
+—
+
+dBm
+
+F = F0 ± 3 MHz
+
+—
+
+−45.0
+
+—
+
+dBm
+
+F = F0 ± > 3 MHz
+
+—
+
+−49.0
+
+—
+
+dBm
+
+∆ F 1avg
+
+—
+
+155.0
+
+—
+
+kHz
+
+—
+
+160.0
+
+—
+
+kHz
+
+∆ F 2avg /∆ F 1avg
+
+—
+
+0.96
+
+—
+
+—
+
+ICFT
+
+—
+
+—
+
+1.0
+
+—
+
+kHz
+
+Drift rate
+
+—
+
+—
+
+0.5
+
+—
+
+Drift (DH1)
+
+—
+
+—
+
+0.5
+
+—
+
+kHz
+
+Drift (DH5)
+
+—
+
+—
+
+0.5
+
+—
+
+kHz
+
+Adjacent channel transmit power
+
+Modulation characteristics
+
+Min. ∆ F 2max (for at least
+99.9% of all ∆ F 2max )
+
+kHz/50 µs
+
+Table 7-18. Bluetooth Classic - Transmitter Characteristics - Enhanced Data Rate (EDR)
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+π/4 DQPSK max w0
+
+—
+
+—
+
+−2.0
+
+—
+
+kHz
+
+π/4 DQPSK max wi
+
+—
+
+—
+
+−15.0
+
+—
+
+kHz
+
+π/4 DQPSK max |wi + w0 |
+
+—
+
+—
+
+−17.0
+
+—
+
+kHz
+
+8DPSK max w0
+
+—
+
+—
+
+−4.0
+
+—
+
+kHz
+
+8DPSK max wi
+
+—
+
+—
+
+−17.0
+
+—
+
+kHz
+
+8DPSK max |wi + w0 |
+
+—
+
+—
+
+−21.0
+
+—
+
+kHz
+
+RMS DEVM
+
+—
+
+7.0
+
+—
+
+%
+
+99% DEVM
+
+—
+
+0.1
+
+—
+
+%
+
+Peak DEVM
+
+—
+
+11.0
+
+—
+
+%
+
+RMS DEVM
+
+—
+
+7.0
+
+—
+
+%
+
+99% DEVM
+
+—
+
+0.1
+
+—
+
+%
+
+Peak DEVM
+
+—
+
+12.0
+
+—
+
+%
+
+F = F0 ± 1 MHz
+
+—
+
+−35
+
+—
+
+dBm
+
+F = F0 ± 2 MHz
+
+—
+
+−25
+
+—
+
+dBm
+
+π/4 DQPSK modulation accuracy
+
+8DPSK modulation accuracy
+
+In-band emissions
+
+Espressif Systems
+
+Cont’d on next page
+
+56
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-18 – cont’d from previous page
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+F = F0 ± 3 MHz
+
+—
+
+−39
+
+—
+
+dBm
+
+F = F0 ± > 3 MHz
+
+—
+
+−43
+
+—
+
+dBm
+
+7.3.2 Bluetooth Classic RF Receiver (RX) Characteristics
+Table 7-19. Bluetooth Classic - Receiver Characteristics - Basic Rate (BR)
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+Sensitivity with dirty transmit off @0.1% BER
+
+—
+
+—
+
+−94.0
+
+—
+
+dBm
+
+Maximum received signal @0.1% BER
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+8
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+−7
+
+—
+
+dB
+
+F = F0 − 1 MHz
+
+—
+
+−8
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+−30
+
+—
+
+dB
+
+F = F0 − 2 MHz
+
+—
+
+−27
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+−36
+
+—
+
+dB
+
+F = F0 − 3 MHz
+
+—
+
+−40
+
+—
+
+dB
+
+—
+
+—
+
+−29
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+−40
+
+—
+
+dB
+
+F = Fimage − 1 MHz
+
+—
+
+−36
+
+—
+
+dB
+
+30 MHz ~ 2000 MHz
+
+—
+
+−5
+
+—
+
+dBm
+
+Out-of-band blocking
+
+2003 MHz ~ 2399 MHz
+
+—
+
+−22
+
+—
+
+dBm
+
+performance
+
+2484 MHz ~ 2997 MHz
+
+—
+
+−22
+
+—
+
+dBm
+
+3000 MHz ~ 12.75 GHz
+
+—
+
+−5
+
+—
+
+dBm
+
+—
+
+—
+
+−37
+
+—
+
+dBm
+
+Co-channel
+
+C/I and receiver
+
+Adjacent channel
+
+selectivity
+performance
+Image frequency
+image frequency
+
+Intermodulation
+
+Table 7-20. Bluetooth Classic - Receiver Characteristics - Enhanced Data Rate (EDR)
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+π/4 DQPSK
+Sensitivity with dirty transmit off @0.01% BER
+
+—
+
+—
+
+−94.0
+
+—
+
+dBm
+
+Maximum received signal @0.01% BER
+
+—
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+10
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+−10
+
+—
+
+dB
+
+F = F0 − 1 MHz
+
+—
+
+−11
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+−36
+
+—
+
+dB
+
+F = F0 − 2 MHz
+
+—
+
+−28
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+−35
+
+—
+
+dB
+
+F = F0 − 3 MHz
+
+—
+
+−40
+
+—
+
+dB
+
+—
+
+—
+
+−27
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+−40
+
+—
+
+dB
+
+F = Fimage − 1 MHz
+
+—
+
+−35
+
+—
+
+dB
+
+Co-channel
+
+C/I and receiver
+
+Adjacent channel
+
+selectivity
+performance
+Image frequency
+image frequency
+
+Cont’d on next page
+
+Espressif Systems
+
+57
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-20 – cont’d from previous page
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+8DPSK
+Sensitivity with dirty transmit off @0.01% BER
+
+—
+
+—
+
+−87.0
+
+—
+
+dBm
+
+Maximum received signal @0.01% BER
+
+—
+
+—
+
+2
+
+—
+
+dBm
+
+F = F0 MHz
+
+—
+
+18
+
+—
+
+dB
+
+F = F0 + 1 MHz
+
+—
+
+−3
+
+—
+
+dB
+
+F = F0 − 1 MHz
+
+—
+
+−4
+
+—
+
+dB
+
+F = F0 + 2 MHz
+
+—
+
+−28
+
+—
+
+dB
+
+F = F0 − 2 MHz
+
+—
+
+−21
+
+—
+
+dB
+
+F = F0 + 3 MHz
+
+—
+
+−33
+
+—
+
+dB
+
+F = F0 − 3 MHz
+
+—
+
+−37
+
+—
+
+dB
+
+—
+
+Co-channel
+
+C/I and receiver
+
+Adjacent channel
+
+selectivity
+performance
+
+—
+
+−20
+
+—
+
+dB
+
+Adjacent channel to F = Fimage + 1 MHz
+
+—
+
+−33
+
+—
+
+dB
+
+F = Fimage − 1 MHz
+
+—
+
+−33
+
+—
+
+dB
+
+Image frequency
+image frequency
+
+7.4
+
+802.15.4 Radio
+Table 7-21. 802.15.4 RF Characteristics
+Name
+
+Description
+
+Center frequency range of operating channel
+
+2405 ~ 2480 MHz
+
+1 Zigbee in the 2.4 GHz range supports 16 channels at 5 MHz spacing from
+channel 11 to channel 26.
+
+7.4.1 802.15.4 RF Transmitter (TX) Characteristics
+Table 7-22. 802.15.4 Transmitter Characteristics - 250 Kbps
+Parameter
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+RF transmit power range
+
+–18.5
+
+—
+
+18.0
+
+dBm
+
+—
+
+24%
+
+—
+
+—
+
+EVM
+
+7.4.2
+
+802.15.4 RF Receiver (RX) Characteristics
+Table 7-23. 802.15.4 Receiver Characteristics - 250 Kbps
+
+Parameter
+
+Description
+
+Sensitivity @1% PER
+
+—
+
+—
+
+Maximum received signal @1% PER
+
+—
+
+Adjacent channel
+Relative jamming level
+
+Espressif Systems
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+–102.0
+
+—
+
+dBm
+
+—
+
+8
+
+—
+
+dBm
+
+F = F0 + 5 MHz
+
+—
+
+–30
+
+—
+
+dB
+
+F = F0 – 5 MHz
+
+—
+
+–40
+
+—
+
+dB
+
+Cont’d on next page
+
+58
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+7 RF Characteristics
+
+Table 7-23 – cont’d from previous page
+Parameter
+
+Description
+Alternate channel
+
+Espressif Systems
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+F = F0 + 10 MHz
+
+—
+
+–52
+
+—
+
+dB
+
+F = F0 – 10 MHz
+
+—
+
+–53
+
+—
+
+dB
+
+59
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+8 Module Schematics
+
+This is the reference design of the module.
+
+Y1
+
+1
+
+2
+
+XIN
+
+TBD
+
+GND
+
+C1
+
+GND
+
+3
+
+GND
+
+GND XOUT
+
+GND
+
+4
+
+Espressif Systems
+
+8 Module Schematics
+
+40MHz
+
+GND
+
+C2
+TBD
+
+The values of C1 and C2 vary with
+the selection of the crystal.
+The value of L3 varies with the
+actual PCB board. L3 could be a
+resistor or inductor.
+
+VREF_ADC
+IO49
+IO48
+
+VDD33
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+
+GND
+
+XTAL_P
+XTAL_N
+
+VDD33
+
+C25
+0.1uF
+
+10nF
+
+1uF
+GND
+2.0nH(0.1nH)_600mA
+
+10uF
+
+1uF
+
+GND
+
+0.1uF
+
+GND
+
+0.1uF
+
+GND
+
+GND
+
+Single-ended 50ohm
+
+ANT1
+
+1
+2
+
+RF_ANT L5
+
+GND
+
+TBD RF1
+
+C7
+
+TBD RF L1
+
+TBD
+
+ANT
+
+C9
+
+C8
+
+L2
+
+C4
+
+C3
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+GND
+
+GND
+
+GND
+
+GND
+
+EN
+IO0
+IO1
+IO2
+IO3
+IO4
+IO5
+
+GND
+
+The values of C3, L1, C4, C7, L2, C8, L5 and C9
+vary with the actual PCB board.
+C19
+
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+VREF_TOUCH
+IO12
+IO13
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+ANT
+VDDA3
+VDDA4
+CHIP_PU
+XTAL_32K_N/GPIO0
+XTAL_32K_P/GPIO1
+GPIO2
+GPIO3
+GPIO4
+GPIO5
+VDDPST_1
+GPIO6
+GPIO7
+GPIO8
+GPIO9
+GPIO10
+GPIO11
+VREF_TOUCH
+GPIO12
+GPIO13
+
+C11
+
+GND
+0.47uF
+GND
+
+VDD_PSRAM_1P8
+
+C21
+
+C20
+
+1uF
+
+0.1uF
+
+GND
+
+GND
+C22
+0.1uF
+
+QFN80
+
+GND
+
+1: 3.3V flash;
+0: 1.8V flash;
+R10
+R11
+
+GPIO47
+GPIO46
+GPIO45
+GPIO44
+GPIO43
+GPIO42
+VDDPST_3
+GPIO40
+GPIO39
+GPIO38
+GPIO37
+GPIO36
+GPIO35
+GPIO34
+GPIO33
+USB_DM
+USB_DP
+VCCA/VDDPST_2
+SPID
+SPICLK
+
+U1
+
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+
+VDD33
+
+10K
+10K(NC)
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+
+R8
+R9
+
+IO40
+IO39
+IO38
+IO37
+IO36
+IO35
+IO34
+IO33
+USB_DM
+USB_DP
+
+0
+0
+
+VDD33
+
+C24
+0.1uF
+GND
+VDD33
+
+0.1uF
+GND
+ESP32-S31
+R5
+R4
+R3
+R2
+R1
+
+0
+0
+0
+0
+0
+
+SPID
+SPICLK
+SPIHD
+SPIWP
+SPIQ
+SPICS
+
+VDD_SPI
+
+C13
+1uF
+
+NC: No component.
+
+VDD_SPI
+GND
+
+GND
+C14
+R7
+0.1uF
+
+6
+
+SPIHD
+
+7
+
+/CS
+
+9
+
+SPICLK
+
+8
+1
+
+VDD
+
+GND
+SPICS
+
+EPAD
+
+GND
+
+10K(NC)
+
+CLK
+/HOLD
+U2
+
+DI
+DO
+/WP
+
+FLASH
+
+GND
+
+Figure 8-1. ESP32-S31-WROOM-3 Schematics
+
+GND
+
+C23
+
+GND
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+GND
+
+VDD_LDO_1P8
+
+0.1uF
+
+C18
+
+80
+79
+78
+77
+76
+75
+74
+73
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+
+C17
+
+GND
+
+VDD33
+
+97
+
+C16
+
+R6
+
+L4
+C15
+
+81
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+
+GND
+
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+
+0.1uF
+
+ESP32-S31-WROOM-3 (Pin-out)
+
+C12
+
+L3
+
+GND
+
+4
+
+GND
+
+VDD33
+
+VDDA2
+XTAL_P
+XTAL_N
+VDDA1
+GPIO61
+GPIO60
+U0RXD
+U0TXD
+MTMS
+MTDI
+MTCK
+MTDO
+GPIO53
+GPIO52
+GPIO51
+GPIO50
+VDDPST_4
+VREF_ADC
+GPIO49
+GPIO48
+
+GND
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+GND
+
+98
+
+GPIO14
+GPIO15
+GPIO16
+GPIO17
+GPIO18
+GPIO19
+SDIO_DATA0
+SDIO_DATA1
+SDIO_DATA2
+VDD_PSRAM_1P8_1
+SDIO_DATA3
+SDIO_CLK
+SDIO_CMD
+VDD_PSRAM_1P8_2
+VDD_LDO_1P8
+SPICS
+SPIQ
+SPIWP
+VDD_SPI
+SPIHD
+
+GND
+
+499
+
+C5
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+
+GND
+
+ESP32-S31-WROOM-3
+
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+
+96
+
+EPAD
+GND
+GND
+GND
+NC
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+GND
+
+GND
+GND
+3V3
+3V3
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+GND
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+NC
+NC
+NC
+NC
+NC
+NC
+NC
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+GND
+
+GND
+
+10uF(NC)
+
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+GND
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+
+C10
+D1
+ESD
+
+60
+
+Submit Documentation Feedback
+
+VDD33
+
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+
+99
+VDD33
+
+TBD
+
+GND
+C6
+
+5
+
+SPID
+
+2
+
+SPIQ
+
+3
+
+SPIWP
+
+3
+
+Y1
+
+1
+
+2
+
+XIN
+
+TBD
+
+GND XOUT
+
+C1
+
+GND
+
+GND
+
+4
+
+GND
+
+40MHz
+
+GND
+
+C2
+TBD
+
+The values of C1 and C2 vary with
+the selection of the crystal.
+The value of L3 varies with the
+actual PCB board. L3 could be a
+resistor or inductor.
+
+VREF_ADC
+IO49
+IO48
+
+VDD33
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+
+GND
+
+XTAL_P
+XTAL_N
+
+ANT2
+
+VDD33
+
+C25
+0.1uF
+
+C16
+
+C17
+
+C18
+
+10uF
+
+1uF
+
+0.1uF
+
+0.1uF
+
+R6
+GND
+
+GND
+ANT2
+
+R13
+
+GND
+
+GND
+
+GND
+
+0(NC)
+
+Single-ended 50ohm
+ANT1 R12
+
+ANT1
+CONN
+
+GND
+VDD33
+
+97
+
+0
+
+RF_ANT C8 TBD RF1 C7
+
+GND
+
+TBD RF L1
+
+ANT
+
+TBD
+
+L5
+
+L2
+
+C4
+
+C3
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+GND
+
+GND
+
+EN
+IO0
+IO1
+IO2
+IO3
+IO4
+IO5
+
+GND
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+VREF_TOUCH
+IO12
+IO13
+
+The values of C3, L1, C4, C7, L2, C8 and L5
+vary with the actual PCB board.
+C19
+
+GND
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+ANT
+VDDA3
+VDDA4
+CHIP_PU
+XTAL_32K_N/GPIO0
+XTAL_32K_P/GPIO1
+GPIO2
+GPIO3
+GPIO4
+GPIO5
+VDDPST_1
+GPIO6
+GPIO7
+GPIO8
+GPIO9
+GPIO10
+GPIO11
+VREF_TOUCH
+GPIO12
+GPIO13
+
+C11
+
+GND
+0.47uF
+
+VDD_LDO_1P8
+
+GND
+
+VDD_PSRAM_1P8
+
+C21
+1uF
+GND
+
+0.1uF
+
+80
+79
+78
+77
+76
+75
+74
+73
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+
+C15
+
+81
+
+2.0nH(0.1nH)_600mA
+
+GND
+
+L4
+
+VDDA2
+XTAL_P
+XTAL_N
+VDDA1
+GPIO61
+GPIO60
+U0RXD
+U0TXD
+MTMS
+MTDI
+MTCK
+MTDO
+GPIO53
+GPIO52
+GPIO51
+GPIO50
+VDDPST_4
+VREF_ADC
+GPIO49
+GPIO48
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+
+QFN80
+
+GND
+
+1: 3.3V flash;
+0: 1.8V flash;
+R10
+R11
+
+GPIO47
+GPIO46
+GPIO45
+GPIO44
+GPIO43
+GPIO42
+VDDPST_3
+GPIO40
+GPIO39
+GPIO38
+GPIO37
+GPIO36
+GPIO35
+GPIO34
+GPIO33
+USB_DM
+USB_DP
+VCCA/VDDPST_2
+SPID
+SPICLK
+
+U1
+
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+
+R8
+R9
+
+0.1uF
+GND
+C22
+0.1uF
+
+IO40
+IO39
+IO38
+IO37
+IO36
+IO35
+IO34
+IO33
+USB_DM
+USB_DP
+
+0
+0
+
+C24
+0.1uF
+GND
+VDD33
+
+0.1uF
+GND
+ESP32-S31
+R5
+R4
+R3
+R2
+R1
+
+SPID
+SPICLK
+SPIHD
+SPIWP
+SPIQ
+SPICS
+
+0
+0
+0
+0
+0
+
+VDD_SPI
+
+C13
+1uF
+VDD_SPI
+
+NC: No component.
+
+GND
+
+C14
+R7
+0.1uF
+GND
+SPICS
+
+1
+
+SPICLK
+
+6
+
+SPIHD
+
+7
+
+/CS
+
+9
+
+GND
+
+10K(NC)
+
+8
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+GND
+
+CLK
+/HOLD
+U2
+
+DI
+DO
+/WP
+
+FLASH
+
+GND
+
+Figure 8-2. ESP32-S31-WROOM-3U Schematics
+
+GND
+
+VDD33
+
+C23
+
+C20
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+
+VDD33
+
+10K
+10K(NC)
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+
+VDD
+
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+
+C12
+L3
+
+GND
+
+0.1uF
+
+ESP32-S31-WROOM-3U (Pin-out)
+
+499
+
+1uF
+
+GND
+
+EPAD
+
+GND
+
+VDD33
+
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+
+GND
+
+GND
+U3
+
+61
+
+Submit Documentation Feedback
+
+96
+
+ESP32-S31-WROOM-3U
+
+GND
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+GND
+
+98
+
+4
+
+GND
+
+10nF
+GND
+
+GPIO14
+GPIO15
+GPIO16
+GPIO17
+GPIO18
+GPIO19
+SDIO_DATA0
+SDIO_DATA1
+SDIO_DATA2
+VDD_PSRAM_1P8_1
+SDIO_DATA3
+SDIO_CLK
+SDIO_CMD
+VDD_PSRAM_1P8_2
+VDD_LDO_1P8
+SPICS
+SPIQ
+SPIWP
+VDD_SPI
+SPIHD
+
+GND
+
+10uF(NC)
+
+GND
+GND
+3V3
+3V3
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+C5
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+
+D1
+ESD
+
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+GND
+
+EPAD
+GND
+GND
+GND
+ANT2
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+C10
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+GND
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+NC
+NC
+NC
+NC
+NC
+NC
+NC
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+GND
+
+VDD33
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+
+99
+VDD33
+
+TBD
+
+GND
+C6
+
+5
+
+SPID
+
+2
+
+SPIQ
+
+3
+
+SPIWP
+
+8 Module Schematics
+
+Espressif Systems
+
+GND
+
+9 Peripheral Schematics
+
+9
+
+Peripheral Schematics
+
+This is the typical application circuit of the module connected with peripheral components (for example,
+power supply, antenna, reset button, JTAG interface, and UART interface).
+12pF(NC)
+
+GND
+
+R5
+
+X1
+32.768KHz(NC)
+
+1
+
+C5
+
+GND
+
+0(NC) IO0
+
+R4
+
+0(NC) IO1
+
+JP3
+1
+2
+
+12pF(NC)
+
+NC: No component.
+
+VDD33
+
+R1
+TBD
+
+SW1
+C4
+
+C1
+
+C2
+
+22uF
+
+0.1uF
+
+GND
+R2
+
+0
+
+0.1uF
+C3
+TBD
+
+GND
+
+GND
+
+99
+
+VDD33
+
+GND
+
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+GND
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+EPAD
+GND
+GND
+GND
+NC
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+
+C6
+
+GND
+GND
+3V3
+3V3
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+96
+
+GND
+
+GND
+GND
+GND
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+GND
+GND
+
+98
+VDD33
+
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+
+JP4
+1
+2
+3
+4
+
+1
+2
+3
+4
+UART
+
+GND
+JP5
+TMS
+TDI
+TCK
+TDO
+
+1
+2
+3
+4
+
+1
+2
+3
+4
+JTAG
+
+97
+
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+
+GND
+
+JP1
+2
+1
+
+1
+2
+
+Boot Option
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+
+U1
+
+ESP32-S31-WROOM-3
+
+GND
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+NC
+NC
+NC
+NC
+NC
+NC
+NC
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+GND
+
+GND
+
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+
+2
+
+NC
+
+X1: ESR
+= Max. 70 KΩ
+
+R3
+
+JP2
+2
+1
+
+USB OTG
+
+USB_D+
+USB_D-
+
+R8
+R9
+
+C9
+
+C10
+
+C7
+
+C8
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+GND
+
+TBD
+TBD
+
+GND
+
+R6
+R7
+
+USB DBG D+
+USB DBG D-
+
+TBD
+TBD
+
+GND
+
+2
+1
+
+2
+1
+USB
+
+GND
+
+Figure 9-1. ESP32-S31-WROOM-3 Peripheral Schematics
+
+Espressif Systems
+
+62
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+9 Peripheral Schematics
+
+RF : Single-ended 50ohm.
+ANT2
+
+L1
+C11
+TBD
+
+12pF(NC)
+R3
+
+0(NC) IO0
+
+R4
+
+0(NC) IO1
+
+GND
+
+GND
+JP3
+1
+2
+
+12pF(NC)
+
+NC: No component.
+
+VDD33
+
+R1
+TBD
+
+SW1
+C4
+
+C1
+
+C2
+
+22uF
+
+0.1uF
+
+GND
+R2
+
+0
+
+0.1uF
+C3
+TBD
+
+GND
+
+GND
+
+99
+
+VDD33
+
+GND
+
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+GND
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+GND
+GND
+3V3
+3V3
+EN
+IO2
+IO3
+IO0
+IO1
+IO4
+IO5
+IO6
+IO7
+IO8
+IO9
+IO10
+IO11
+IO12
+IO13
+IO14
+IO15
+IO16
+IO17
+IO18
+IO19
+
+96
+
+GND
+
+ESP32-S31-WROOM-3U
+
+GND
+GND
+GND
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+GND
+GND
+
+98
+VDD33
+
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+56
+55
+54
+53
+52
+51
+50
+49
+48
+
+IO61
+IO60
+RX0
+TX0
+IO57
+IO56
+IO55
+IO54
+IO53
+IO52
+IO51
+IO50
+IO49
+IO48
+IO47
+IO46
+IO45
+IO44
+IO43
+IO42
+IO40
+IO39
+IO38
+
+JP4
+1
+2
+3
+4
+
+UART
+JP5
+TMS
+TDI
+TCK
+TDO
+
+1
+2
+3
+4
+
+1
+2
+3
+4
+JTAG
+
+97
+
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+USB
+
+1
+2
+3
+4
+
+GND
+
+GND
+
+JP1
+2
+1
+
+1
+2
+
+Boot Option
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+
+U1
+
+EPAD
+GND
+GND
+GND
+ANT2
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+GND
+
+C6
+
+GND
+SD_D0
+SD_D1
+SD_D2
+SD_D3
+SD_CLK
+SD_CMD
+NC
+NC
+NC
+NC
+NC
+NC
+NC
+USB_DP
+USB_DM
+IO33
+IO34
+IO35
+IO36
+IO37
+GND
+
+GND
+
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+
+2
+
+NC
+
+X1: ESR
+= Max. 70 KΩ
+
+C12
+TBD
+
+GND
+R5
+
+X1
+32.768KHz(NC)
+
+1
+
+C5
+
+GND
+
+RF_ANT
+
+TBD
+
+JP2
+2
+1
+
+USB_D+
+USB_D-
+
+R8
+R9
+
+C9
+
+C10
+
+C7
+
+C8
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+GND
+
+TBD
+TBD
+
+GND
+
+R6
+R7
+
+USB DBG D+
+USB DBG D-
+
+TBD
+TBD
+
+GND
+
+2
+1
+
+2
+1
+USB
+
+GND
+
+Figure 9-2. ESP32-S31-WROOM-3U Peripheral Schematics
+• Soldering the EPAD to the ground of the base board is not a must, however, it can optimize thermal
+performance. If you choose to solder it, please apply the correct amount of soldering paste. Too much
+soldering paste may increase the gap between the module and the baseboard. As a result, the adhesion
+between other pins and the baseboard may be poor.
+• To ensure that the power supply to the ESP32-S31 chip is stable during power-up, it is advised to add an
+RC delay circuit at the EN pin. The recommended setting for the RC delay circuit is usually R = 10 kΩ and
+C = 1 µF. However, specific parameters should be adjusted based on the power-up timing of the module
+and the power-up and reset sequence timing of the chip. For ESP32-S31’s power-up and reset
+sequence timing diagram, please refer Section 4.5 Chip Power-up and Reset.
+
+Espressif Systems
+
+63
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+10 Physical Dimensions
+
+10 Physical Dimensions
+10.1 Module Dimensions
+Unit: mm
+
+3.5±0.15
+22±0.2
+
+1
+Antenna Area
+
+94 x 0.4
+
+4 x 0.8
+
+0.85
+
+1.
+8
+55
+0.
+
+22.6
+
+23
+
+3
+1.
+
+24
+
+94 x 0.8
+
+3
+
+30±0.2
+
+4 x 0.8
+
+1.
+
+21
+
+20.4
+
+6
+
+Antenna Area
+
+6.
+
+0.85
+
+0.7
+
+0.5
+
+55
+
+0.
+
+0.5
+
+5
+
+8
+
+1.
+
+.5
+
+5
+
+6.
+
+Ø0
+
+0.85
+
+0.7
+17.85
+20.6
+
+Top view
+
+Side view
+
+Bottom view
+
+Figure 10-1. ESP32-S31-WROOM-3 Physical Dimensions
+
+Unit: mm
+
+22±0.2
+
+3.5±0.15
+4 x 0.8
+
+94 x 0.4
+
+1.
+
+1.
+3
+
+1.
+8
+55
+0.
+
+23
+
+20.4
+
+0.85
+
+94 x 0.8
+
+3
+
+22.6
+
+21
+
+18.8
+
+24±0.2
+
+2.3
+
+16.6
+
+24
+
+1
+
+4 x 0.8
+
+2
+
+5
+6.
+
+0.85
+
+0.5
+
+55
+
+0.
+
+0.7
+
+8
+
+1.
+
+5
+6.
+0.7
+
+0.5
+
+0.85
+17.85
+20.6
+
+Top view
+
+Side view
+
+Bottom view
+
+Figure 10-2. ESP32-S31-WROOM-3U Physical Dimensions
+Note:
+For information about tape, reel, and product marking, please refer to ESP32-S31 Module Packaging Information.
+
+Espressif Systems
+
+64
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+10 Physical Dimensions
+
+10.2
+
+Dimensions of External Antenna Connector
+
+ESP32-S31-WROOM-3U uses the first generation external antenna connector as shown in Figure 10-3
+Dimensions of External Antenna Connector. This connector is compatible with the following
+connectors:
+• U.FL Series connector from Hirose
+• MHF I connector from I-PEX
+• AMC connector from Amphenol
+
+Unit: mm
+
+Figure 10-3. Dimensions of External Antenna Connector
+
+Espressif Systems
+
+65
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+10 Physical Dimensions
+
+The external antenna used for ESP32-S31-WROOM-3U during certification testing is the first generation
+monopole antenna, with material code TFPD05H08750011.
+The module does not include an external antenna upon shipment. If needed, select a suitable external
+antenna based on the product’s usage environment and performance requirements.
+It is recommended to select an antenna that meets the following requirements:
+• 2.4 GHz band
+• 50 Ω impedance
+• The maximum gain does not exceed 2.33 dBi, the gain of the antenna used for certification
+• The connector matches the specifications shown in Figure 10-3 Dimensions of External Antenna
+Connector
+Note:
+• If you use an external antenna of a different type or gain, additional testing, such as EMC, may be required beyond
+the existing antenna test reports for Espressif modules. Specific requirements depend on the certification type.
+• If RF function is enabled, make sure an antenna is connected. Operation without an antenna may result in
+unstable behavior or potential damage to the RF circuit.
+
+Espressif Systems
+
+66
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+11 PCB Layout Recommendations
+
+11
+
+PCB Layout Recommendations
+
+11.1
+
+PCB Land Pattern
+
+This section provides the following resources for your reference:
+• Figures for recommended PCB land patterns with all the dimensions needed for PCB design. See Figure
+11-1 ESP32-S31-WROOM-3 Recommended PCB Land Pattern and Figure 11-2 ESP32-S31-WROOM-3U
+Recommended PCB Land Pattern.
+Unit: mm
+: Via for thermal pad
+: Pad
+
+22
+Pin 1
+
+Antenna Area
+
+94 x 0.4
+
+4 x 0.8
+
+1.
+
+30
+
+4 x 0.8
+
+3
+1.
+0.
+
+1.
+
+24
+
+8
+55
+
+20.4
+
+22.6
+
+0.85
+
+94 x 0.8
+
+3
+
+0.85
+
+6.
+5
+
+55
+
+0.
+
+0.7
+
+8
+
+1.
+
+5
+6.
+0.7
+
+0.85
+17.85
+20.6
+
+Figure 11-1. ESP32-S31-WROOM-3 Recommended PCB Land Pattern
+
+Espressif Systems
+
+67
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+11 PCB Layout Recommendations
+
+Unit: mm
+: Via for thermal pad
+: Pad
+Pin 1
+
+22
+
+94 x 0.4
+
+4 x 0.8
+
+4 x 0.8
+
+1.
+3
+55
+0.
+
+0.85
+
+8
+
+1.
+
+0.7
+
+24
+
+1.
+8
+0.
+55
+
+20.4
+
+22.6
+
+0.85
+
+94 x 0.8
+
+3
+1.
+5
+6.
+0.7
+
+5
+6.
+
+0.85
+17.85
+20.6
+
+Figure 11-2. ESP32-S31-WROOM-3U Recommended PCB Land Pattern
+
+11.2
+
+Module Placement for PCB Design
+
+If module-on-board design is adopted, attention should be paid while positioning the module on the base
+board. The interference of the base board on the module’s antenna performance should be minimized.
+For details about module placement for PCB design, please refer to ESP32-S31 Hardware Design Guidelines >
+Section General Principles of PCB Layout for Modules.
+
+Espressif Systems
+
+68
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+12 Product Handling
+
+12 Product Handling
+12.1 Storage Conditions
+The products sealed in moisture barrier bags (MBB) should be stored in a non-condensing atmospheric
+environment of < 40 °C and 90%RH. The module is rated at the moisture sensitivity level (MSL) of 3.
+After unpacking, the module must be soldered within 168 hours with the factory conditions 25±5 °C and
+60%RH. If the above conditions are not met, the module needs to be baked.
+
+12.2 Electrostatic Discharge (ESD)
+• Human body model (HBM): ±2000 V
+• Charged-device model (CDM): ±500 V
+
+12.3 Reflow Profile
+Solder the module in a single reflow.
+Peak temperature: 235 – 250 °C
+Peak time: 30 – 70 s
+Soldering time: ＞ 30 s
+Solder: Sn-Ag-Cu (SAC305) lead-free solder
+
+Temperature (°C)
+250
+230
+217
+200
+180
+150
+
+100
+
+50
+
+Ramp-up
+
+Preheating
+
+Soldering
+
+Cooling
+
+25
+
+25 – 150 °C
+60 – 90 s
+1 – 3 °C/s
+
+150 – 200 °C
+60 – 120 s
+
+＞ 217 °C
+60 – 90 s
+
+＜ 180 °C
+–5 ~ –1 °C/s
+
+0
+
+50
+
+Time (s)
+100
+
+150
+
+200
+
+250
+
+Figure 12-1. Reflow Profile
+
+Espressif Systems
+
+69
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+12 Product Handling
+
+12.4
+
+Ultrasonic Vibration
+
+Avoid exposing Espressif modules to vibration from ultrasonic equipment, such as ultrasonic welders or
+ultrasonic cleaners. This vibration may induce resonance in the in-module crystal and lead to its malfunction or
+even failure. As a consequence, the module may stop working or its performance may deteriorate.
+
+Espressif Systems
+
+70
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+Related Documentation and Resources
+
+Related Documentation and Resources
+Related Documentation
+• ESP32-S31 Series Datasheet- Specifications of the ESP32-S31 hardware.
+• ESP32-S31 Hardware Design Guidelines – Guidelines on how to integrate the ESP32-S31 into your hardware product.
+
+• ESP32-S31 Series SoC Errata – Descriptions of known errors in ESP32-S31 series of SoCs.
+• Certificates
+https://documentation.espressif.com/en/documentList?t=Certificate&eol=false
+• ESP32-S31 Product/Process Change Notifications (PCN)
+https://documentation.espressif.com/en/documentList?t=PCN&s=ESP32-S31
+• ESP32-S31 Advisories – Information on security, bugs, compatibility, component reliability.
+https://documentation.espressif.com/en/documentList?t=Advisory&s=ESP32-S31
+• Documentation Updates and Update Notification Subscription
+https://documentation.espressif.com/en/documentList?eol=false
+
+Developer Zone
+• ESP-IDF Programming Guide for ESP32-S31 – Extensive documentation for the ESP-IDF development framework.
+• ESP-IDF and other development frameworks on GitHub.
+https://github.com/espressif
+• ESP32 BBS Forum – Engineer-to-Engineer (E2E) Community for Espressif products where you can post questions,
+share knowledge, explore ideas, and help solve problems with fellow engineers.
+
+https://esp32.com/
+• ESP-FAQ – A summary document of frequently asked questions released by Espressif.
+https://espressif.com/projects/esp-faq/en/latest/index.html
+• The ESP Journal – Best Practices, Articles, and Notes from Espressif folks.
+https://blog.espressif.com/
+• See the tabs SDKs and Demos, Apps, Tools, AT Firmware.
+https://espressif.com/en/support/download/sdks-demos
+
+Products
+• ESP32-S31 Series SoCs – Browse through all ESP32-S31 SoCs.
+https://espressif.com/en/products/socs?id=ESP32-S31
+• ESP32-S31 Series Modules – Browse through all ESP32-S31-based modules.
+https://espressif.com/en/products/modules?id=ESP32-S31
+• ESP32-S31 Series DevKits – Browse through all ESP32-S31-based devkits.
+https://espressif.com/en/products/devkits?id=ESP32-S31
+• ESP Product Selector – Find an Espressif hardware product suitable for your needs by comparing or applying filters.
+https://products.espressif.com/#/product-selector?language=en
+
+Contact Us
+• See the tabs Sales Questions, Technical Enquiries, Circuit Schematic & PCB Design Review, Get Samples
+(Online stores), Become Our Supplier, Comments & Suggestions.
+https://espressif.com/en/contact-us/sales-questions
+
+Espressif Systems
+
+71
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+Revision History
+
+Revision History
+Date
+
+Version
+
+Release notes
+
+2026-09-03
+
+v0.7
+
+Table 6-11 PSRAM Specifications, and updated the minimum of the maximum
+
+Chapter 6.5 Memory Specifications: Removed the 3.3 V supply voltage from
+clock frequency to 200 MHz
+2026-08-20
+
+v0.6
+
+Added ESP32-S31-WROOM-3U module-related information
+
+2026-07-21
+
+v0.5
+
+Added Chapter 7 RF Characteristics
+
+2026-05-21
+
+v0.1
+
+Draft
+
+Espressif Systems
+
+72
+
+ESP32-S31-WROOM-3 & WROOM-3U Datasheet v0.7
+PRELIMINARY
+
+Submit Documentation Feedback
+
+Disclaimer and Copyright Notice
+Information in this document, including URL references, is subject to change without notice.
+ALL THIRD PARTY’S INFORMATION IN THIS DOCUMENT IS PROVIDED AS IS WITH NO WARRANTIES TO ITS AUTHENTICITY AND
+ACCURACY.
+NO WARRANTY IS PROVIDED TO THIS DOCUMENT FOR ITS MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY PARTICULAR
+PURPOSE, NOR DOES ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR SAMPLE.
+All liability, including liability for infringement of any proprietary rights, relating to use of information in this document is disclaimed. No
+licenses express or implied, by estoppel or otherwise, to any intellectual property rights are granted herein.
+The Wi-Fi Alliance Member logo is a trademark of the Wi-Fi Alliance. The Bluetooth logo is a registered trademark of Bluetooth SIG.
+All trade names, trademarks and registered trademarks mentioned in this document are property of their respective owners, and are
+hereby acknowledged.
+Copyright © 2026 Espressif Systems (Shanghai) Co., Ltd. All rights reserved.
+www.espressif.com
+
+

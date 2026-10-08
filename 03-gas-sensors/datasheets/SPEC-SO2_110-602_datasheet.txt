@@ -1,0 +1,174 @@
+                                                   3SP_SO2_20 C Package 110-602
+                                                                                                                January 2017
+
+
+                       15x15 SO2 Sensor 20 ppm C Package 110-602
+
+
+
+
+BENEFITS                                                          APPLICATIONS
+• Small Size with Low Profile (20x20x4 mm)                        • Air Quality Monitoring
+• Long Life (10 years expected life)                              • Industrial Safety
+• Fast Response (< 15 seconds)                                    • Air Purification Control
+• Low Power Consumption
+• Individually Calibrated (NIST Traceable)
+• ROHS Compliant
+
+DESCRIPTION
+SPEC’s printed sensors offer the performance of the best quality electrochemical sensors at a fraction of
+the price. SPEC’s printed sensors are also ultra-thin, offering easy integration into wireless, portable, and
+networked solutions. These sensors are ideal for health, environmental, industrial and residential
+monitoring, because of their high performance, low cost and small size.
+
+ Measurement Range                                               0 to 20 ppm
+ Resolution                                                      < 20 ppb (instrumentation dependent)
+ Repeatability                                                   < +/- 3 % of reading
+ Response Time                                                   < 15 seconds typical
+ Sensitivity @ 200 mV bias                                       25 +/- 10 nA/ppm
+ Expected Operating Life                                         > 5 years (10 years @ 23+/-3C; 40+/-10% RH)
+ Operating Temperature Range                                     -30 to 50 C (-20 to 40 C continuous)
+ Operating Humidity Range – non-condensing                       0 to 100% RH (15 to 95% continuous)
+ Power Consumption                                               10 to 50 uW (circuit & ambient SO2 dependent)
+
+
+PRODUCTION DATA information is current as of publication date.
+Products conform to specifications per the terms of the SPEC                            Copyright © 2011-2017, SPEC Sensors LLC
+Sensors standard warranty. Production processing does not
+necessarily include testing of all parameters.
+                                                   3SP_SO2_20 C Package 110-602
+                                                                                                        January 2017
+CROSS SENSITIVITY
+ Gas/Vapor                                              Concentration   Typical Response PPM SO2
+ Methane                                                500 ppm         0.7
+ Ammonia                                                100 ppm         < 0.2
+ Nitrogen Dioxide                                       10 ppm          1.4
+ Hydrogen Sulfide                                       25 ppm          142.3
+ Carbon Monoxide                                        400 ppm         7.3
+ Ozone                                                  5 ppm           -3.3
+ Sulfur Dioxide                                         20 ppm          20
+ Nitric Oxide (NO)                                      50 ppm          90.5
+ Chlorine                                               10 ppm          -2.8
+ n-Heptane                                              500 ppm         -0.7
+
+TEMPERATURE EFFECT
+Temperature fluctuations have a predictable, easily compensated effect on the sensor signal. The figures
+at below shows the typical Temperature dependency the output and baseline of 3SP_SO2_20 sensors
+under constant humidity of 40-50 % RH. This is a very uniform and repeatable effect, easily
+compensated for in hardware or software.
+
+
+
+
+PRODUCTION DATA information is current as of publication date.
+Products conform to specifications per the terms of the SPEC                    Copyright © 2011-2017, SPEC Sensors LLC
+Sensors standard warranty. Production processing does not
+necessarily include testing of all parameters.
+                                                   3SP_SO2_20 C Package 110-602
+                                                                                                        January 2017
+IMPORTANT PRECAUTIONS
+All sensor designs are made for air monitoring @ 1 atm +/- 0.2 atm. Because applications of use and
+device implementation are outside our control, SPEC Sensors cannot guarantee performance in a given
+device or application, and disclaims any and all liability therefore. Customers should test under their
+own conditions to ensure the sensors are suitable for their requirements.
+Contact the factory to discuss specific concerns that might damage the sensor performance or life.
+    Condensation and Water (1)
+    Salt Water Contamination (1)
+    High Temperature Operation (> 70C) for more than 1 month
+    Low Humidity Operation (< 15% RH) for more than 3 months
+    High Bias voltage
+    Highly contaminated air over a prolonged period
+    High levels of particles or soot (unless proper filtering is provided)
+      (1) Use of porous PTFE membrane or filter cap may address this concern)
+
+MARKING INFORMATION
+Sensors have serial numbers printed with individual NIST Traceable calibration data printed on each
+sensor. (CO version shown)
+
+
+
+
+PRODUCTION DATA information is current as of publication date.
+Products conform to specifications per the terms of the SPEC                    Copyright © 2011-2017, SPEC Sensors LLC
+Sensors standard warranty. Production processing does not
+necessarily include testing of all parameters.
+                                                   3SP_SO2_20 C Package 110-602
+                                                                                            January 2017
+DIMENSIONS
+
+
+
+
+PCB LAYOUT GUIDELINES
+
+
+
+
+PRODUCTION DATA information is current as of publication date.
+Products conform to specifications per the terms of the SPEC        Copyright © 2011-2017, SPEC Sensors LLC
+Sensors standard warranty. Production processing does not
+necessarily include testing of all parameters.
+                                                   3SP_SO2_20 C Package 110-602
+                                                                                                                  January 2017
+
+SENSOR STORAGE, HANDLING AND SOLDERING
+This information embodies various general recommendations concerning the storage, handling, and manual soldering
+conditions for SPEC SENSORS CSPEC Modules. It is only applicable for modules guaranteed by SPEC SENSORS
+stated in SPEC SENSORS Sensor Specification Sheet. Moreover, SPEC SENSORS' modules are NOT warranted
+and should NOT be used in high temperature soldering (reflow) or pre-tinning baths.
+
+Sensor & Module Handling
+Handle sensors with care. Take precautions, including but not limited to the following:
+
+A. DO NOT apply excessive pressure to the top or bottom of the sensor module.
+B. Whenever possible, handle or make contact with the sensor module from the sides of the PCB or substrate.
+C. Light vacuum pressure is possible during handling, DO NOT apply vacuum over gas sensor port.
+D. If the sealed sensor package is opened, DO NOT re-seal using vacuum or nitrogen gas. DO NOT reseal with
+   desiccant.
+E. DO NOT obstruct the gas sensor port by making direct contact with any tape, apparatus, weights, etc.
+F. DO NOT use silicone or other conformal coatings around the sensor or gas port-holes.
+G. Operators are requested to wear powder free antistatic gloves.
+
+Manufacturing Assembly Floor Environment
+SPEC SENSORS recommends that the manufacturing assembly floor environment be maintained at controlled
+conditions:
+
+A. Temperature: 18 - 26°C
+B. Relative Humidity: 40 to 60%
+C. Pressure: 1.0 ± 0.2 atm
+
+Sensor & Module Storage Conditions
+The shelf life for sealed, packaged components is 12 months from the pack seal date, when stored in the factory-
+sealed bag under the following conditions:
+
+A. Temperature: 5 to 25 °C
+B. Relative Humidity: 20 to 80%
+C. Pressure: 1.0 ± 0.2 atm
+D. Storage Time: 12 months
+
+When moving from Storage Conditions to the Manufacturing Assembly Floor Environment, the sensors should be
+allowed to equilibrate at the new conditions for at least 24 hours prior to manufacturing.
+
+Module Attach Soldering Process
+Hand solder only. Keep the soldering iron or solder process tool away from the sensor. The sensor should not see
+pre-heat temperatures above 70 °C. There have been suggested cases where a heat sink cover over the sensor may
+be applicable to protect the sensor during processing. No Application notes to this approach available. Only to be
+used as reference only.
+
+A. DO NOT heat sensor above 70 °C
+B. Hand or peripheral process type approach
+C. Use solder wire alloy with the lowest possible eutectic temperature
+D. Use lowest possible soldering iron temperature
+E. Contact the host board with the soldering iron at a 45° angle on the solder pad
+F. Keep the soldering iron away from the top and bottom of the sensor module
+G. DO NOT place in reflow, wave or IR reflow type processes
+H. DO NOT place mounted board In a wash
+
+
+
+
+PRODUCTION DATA information is current as of publication date.
+Products conform to specifications per the terms of the SPEC                              Copyright © 2011-2017, SPEC Sensors LLC
+Sensors standard warranty. Production processing does not
+necessarily include testing of all parameters.
+

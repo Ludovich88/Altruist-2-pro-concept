@@ -1,0 +1,215 @@
+                                                                                   MiCS-2614
+                                                      Data Sheet                   1087 rev 6
+
+
+
+
+The MiCS-2614 is a compact MOS sensor.
+
+
+
+The MiCS-2614 is a robust MEMS sensor for ozone
+detection; suitable also for gas leak detection and
+outdoor air quality monitoring.
+
+
+
+
+   Features
+                                                                       10
+   • Smallest footprint for compact designs
+   (5 x 7 x 1.55 mm)
+   • Robust MEMS sensor for harsh environments
+   • High-volume manufacturing for low-cost                             1
+
+
+                                                       RS / R100ppb
+   applications
+   • Short lead-times
+
+                                                                       0.1
+
+
+
+
+                                                                      0.01
+                                                                             10              100                1000
+                                                                                          O 3 [ppb]
+   Detectable gases
+   • Ozone               O3         10 – 1000ppb                       Continuous power ON, 25°C, 50% RH
+
+
+
+
+For more information please contact:
+info.em@sgxsensortech.com
+
+SGX Sensortech, Courtils 1
+CH-2035 Corcelles-Cormondrèche
+Switzerland
+
+www.sgxsensortech.com
+
+                                                                                                           Page 1 of 5
+                                                                                MiCS-2614
+                                                           Data Sheet           1087 rev 6
+
+
+
+     Performance sensor
+     Characteristic
+                                               Symbol         Typ        Min         Max         Unit
+     RED sensor
+     Sensing resistance in air (see note 1)       R0          11           3          60         kΩ
+     Typical O3 detection range                   FS                      10         1000        ppb
+     Sensitivity factor (see note 2)              SR           2          1.5          4          -
+
+
+
+
+Notes:
+1. Sensing resistance in air R0 is measured under controlled ambient conditions, i.e. synthetic air at 23
+     ±5°C and 50 ± 10% RH. Sampling test.
+
+2.    Sensitivity factor is defined as Rs at 100 ppb of O3 divided by Rs at 50 ppb of O3. Test conditions are
+      25 ± 2°C and 50 ± 5% RH. Indicative values only. Sampling test.
+
+
+
+IMPORTANT PRECAUTIONS:
+Read the following instructions carefully before using the MiCS-2614 described here to avoid erroneous
+readings and to prevent the device from permanent damage.
+•    The sensor must be reflow soldered in a neutral atmosphere, without soldering flux vapours.
+•    The sensor must not be exposed to high concentrations of organic solvents, silicone vapours or
+     cigarette-smoke in order to avoid poisoning the sensitive layer.
+•    Heater voltage above the specified maximum rating will destroy the sensor due to overheating.
+•    This sensor is to be placed in a filtered package that protects it against water and dust projections.
+•    SGX sensortech strongly recommends using ESD protection equipment to handle the sensor.
+
+
+
+
+                                                                                                      Page 2 of 5
+                                                                                    MiCS-2614
+                                                              Data Sheet            1087 rev 6
+
+
+
+
+MiCS-2614 with recommended supply circuit (top view)          MiCS-2614 with measurement circuit (top view)
+ Power circuit and measurement circuit
+R1 is 82 Ω. This resistor is necessary to obtain the right    The voltage measured on the load resistor is directly linked
+temperature on the heater while using a single 5V power       to the resistance of the sensor respectively. RLOAD must be
+supply. The resulting voltage is typically VH = 2.35V.        820 Ω at the lowest in order not to damage the sensitive
+                                                              layer.
+
+
+
+
+  Parameter                                 Symbol            Typ          Min             Max          Unit
+  Heating power                                PH                 80        66               95         mW
+  Heating voltage                              VH             2.35           -               -            V
+  Heating current                               IH                34         -               -          mA
+  Heating resistance
+                                               RH                 68        58               78          Ω
+  at nominal power
+
+
+
+
+  Rating                                                  Symbol                 Value / Range                Unit
+  Maximum heater power dissipation                           PH                       95                      mW
+  Maximum sensitive layer power dissipation                  Ps                       1                       mW
+  Voltage supplyHeating current                           Vsupply                  4.9 – 5.1                   V
+  Relative humidity range                                    RH                     5 – 95                    %RH
+  Ambient operating temperature                            Tamb                    -40 – 70                    °C
+  Storage temperature range                                Tsto                    -40 – 50                    °C
+  Storage humidity range                                  RHsto                     5 - 95                    %RH
+
+
+
+
+                                                                                                               Page 3 of 5
+                                                                       MiCS-2614
+                                                     Data Sheet        1087 rev 6
+
+
+
+
+Package outline dimensions
+The package is compatible with SMD assembly process.
+
+
+
+
+            Pin   Connection
+Operating Aconditions
+             B
+
+             C    Rh1
+             D    Rs1
+             E
+             F    Rh2
+
+             G    Rs2
+
+             H
+
+             J
+
+             K                                                 MiCS-2614 configuration (bottom view)
+
+
+
+Sensor configuration
+The silicon gas sensor structure consists of an accurately micro machined diaphragm with an
+embedded heating resistor and the sensing layer on top.
+The internal connections are shown above.
+
+
+
+
+                                                                                                 Page 4 of 5
+                                                                                                      MiCS-2614
+                                                                              Data Sheet              1087 rev 6
+
+
+
+
+    Power circuit
+    The two resistors (82 ohm for RED and 51+82
+    Packaging
+    ohm for OX) are necessary to obtain the right
+    The sensors are
+    temperatures  onpackaged   in a tape andheaters
+                      the two independent    reel for
+    expedition.
+    while using a 5V power supply.
+    The sensors are placed in a carrier type. The
+    dimensions of the cavity are 5.5 x 7.5 x 2.55 mm
+    (the tolerance is +/- 0.2 mm).
+    The outside dimension of the reel is either 178
+    +- mm (for a maximum of 700 sensors ) or 330
+    + 0.25 / -4 mm (for a maximum of 2000
+    sensors).
+
+
+
+
+For more information please contact:
+info.em@sgxsensortech.com
+
+SGX Sensortech, Courtils 1
+CH-2035 Corcelles-Cormondrèche
+Switzerland
+
+www.sgxsensortech.com
+
+
+
+Whilst SGX sensortech has taken care to ensure the accuracy of the information contained herein it accepts no responsibility for the consequences
+of any use thereof and also reserves the right to change the specification of goods without notice. SGX sensortech accepts no liability beyond the set
+out in its standard conditions of sale in respect of infringement of third party patents arising from the use of tubes or other devices in accordance
+with information contained herein.
+                                                                                                                                    Page 5 of 5
+

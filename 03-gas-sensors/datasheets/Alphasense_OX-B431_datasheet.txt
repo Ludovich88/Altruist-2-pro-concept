@@ -1,0 +1,786 @@
+Technical Specifications Version 1.1
+
+
+    OX-B431/OX-B431+ Oxidising Gas Sensor – Ozone + Nitrogen Dioxide
+    The OX-B431 sensor is a PPB sensor that is designed for environmental air quality applications with best-in-class baseline
+    stability. This product is available in our standard format (OX-B431) and with our patented Integrated Smart Technology
+    (OX-B431+) that has an IST board with a memory chip and temperature sensor integrated in the sensor. The + sensors store
+    specific calibration, specification, and identification data on every sensor allowing plug and play operation. The on-board
+    temperature sensor improves the accuracy and simplicity of temperature compensation algorithms.
+
+
+    OX-B431 Oxidising Gas Sensor – Ozone + Nitrogen Dioxide – 4-Electrode
+
+
+
+
+              Top View                                           Bottom View                                                     Side View
+
+
+
+    OX-B431+ Oxidising Gas Sensor – Ozone + Nitrogen Dioxide – 4-Electrode
+    (with Integrated Smart Technology)
+
+
+
+
+              Top View                                           Bottom View                                                        IST Board
+
+
+
+
+           Side View
+                                                              Dimensions are in millimetres (± 0.15 mm).
+
+
+T: +44 (0)1376 556700   E: sensors.alphasense@ametek.com   W: www.alphasense.com         For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                         other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+    Sensor Data - O3
+    Specification O3 Sensing
+
+    Performance                          Sensitivity               nA/ppm at 1ppm O3                                                           -225 to -750
+                                         Response time             t90 (s) from zero to 1ppm O3                                                < 80
+                                         Zero current              nA in zero air at 20°C                                                      -80 to +80
+                                         Noise*                    ±2 standard deviations (ppb equivalent)                                     15
+                                         Range                     ppm O3 limit of performance warranty                                        20
+                                         Linearity                 ppm error at full scale, linear at zero and 20ppm O3                        < ± 0.5
+                                         Overgas limit             maximum ppm for stable response to gas pulse                                50
+                                         *
+                                          Tested with Alphasense ISB low noise circuit
+
+
+    Lifetime                             Zero drift                    ppb equivalent change/year in lab air                                   0 to 20
+                                         Sensitivity drift             % change/year in lab air, monthly test                                  < -20 to -40
+                                         Operating life                months until 50% original signal (24-month warranted)                   > 24
+
+
+    Environmental                        Sensitivity @ -20°C           % (output @ -20°C/output @ 20°C) @ 2ppm O3                              70 to 90
+                                         Sensitivity @ 40°C            % (output @ 40°C/output @ 20°C) @ 2ppm O3                               95 to 125
+                                         Zero @ -20°C                  nA                                                                      0 to 25
+                                         Zero @ 40°C                   nA                                                                      5 to 100
+
+
+    Cross Sensitivity                    H2S           sensitivity     % measured gas @ 5ppm                     H2S                           < -80
+                                         NO            sensitivity     % measured gas @ 5ppm                     NO                            <5
+                                         Cl2           sensitivity     % measured gas @ 5ppm                     Cl2                           < 100
+                                         SO2           sensitivity     % measured gas @ 5ppm                     SO2                           < -3
+                                         CO            sensitivity     % measured gas @ 5ppm                     CO                            < -3
+                                         C2H4          sensitivity     % measured gas @ 100ppm                   C2H4                          < 0.1
+                                         NH3           sensitivity     % measured gas @ 20ppm                    NH3                           < 0.1
+                                         H2            sensitivity     % measured gas @ 100ppm                   H2                            < 0.1
+                                         CO2           sensitivity     % measured gas @ 5% volume                CO2                           < 0.1
+                                         Halothane     sensitivity     % measured gas @ 100ppm                   Halothane                     < 0.1
+
+
+    Key Specifications                   Temperature range             °C                                                                      -30 to 40
+                                         Pressure range                kPa                                                                     80 to 120
+                                         Humidity range                % rh continuous                                                         15 to 85
+                                         Storage period                months @ 3 to 20°C (stored in sealed pot)                               6
+                                         Load resistor                 � (AFE circuit is recommended)                                          33 to 100
+                                         Weight                        g                                                                       < 13
+
+
+
+
+T: +44 (0)1376 556700   E: sensors.alphasense@ametek.com     W: www.alphasense.com     For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                       other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+                           Technical Specifications Version 1.1
+                                                                                                 OX-B431 Performance Data
+                                                       Figure 1 Sensitivity Temperature Dependence To 1ppm O3
+                                                       Figure 2 Sensitivity temperature dependence to 1ppm O3
+
+                                                                                                 OX-B431 Performance Data                           110
+
+                                                                                                                                                    105
+                                                                                                                                                                                         Figure 2 shows the
+                                                                                                                                                                                         temperature dependence of
+                                                                                                                                                    100                                  sensitivity at 1ppm O3.
+
+
+
+
+                                              %  output to 20O
+                                                         (referenced to 20OC)
+                                            Figure 2 Sensitivity temperature
+                                                                                                 OX-B431 Performance Data
+                                                                             dependence to 1ppm O3                                                                                        This data is taken from a
+
+
+
+
+TT
+ ecechnical Specif  ica tion
+                                                                                 95
+                                                                                                                                 110                                                      typical batch
+                                                                                                                                                                                         Figure          ofshows
+                                                                                                                                                                                                            sensors. the
+                                                                                                                                   90                                                         Figure21 shows   the temperature dependence of
+
+
+
+
+    hnical
+    Tec hnical
+           Specif
+               Specif
+                  ica tion
+                       ica tion
+                                                                                                                                                                                         temperature dependence of
+
+
+
+
+                                                                          (referenced to 20OC)
+                                                                                                                                 105
+
+
+
+
+                                  % output (referenced         C)% output
+                                                                                                                                   85                                                         sensitivity at 1ppm O3.
+                                                       Figure 2                                        Sensitivity temperature dependence to 1ppm O3
+                                                                                                                                 100                                                     sensitivity at 1ppm O3.
+                                                                                                                                   80
+                                                                                                                                  110                                                         This data is taken from a typical batch of sensors.
+                                                                                                                                  95                                                      Figure
+                                                                                                                                                                                         This  data 2is taken
+                                                                                                                                                                                                           showsfromthea
+                                                                                                                                   75
+                                                                                                                                  105
+                                                                                                                                  90
+                                                                                                                                                                                          temperature
+                                                                                                                                                                                         typical         dependence of
+                                                                                                                                                                                                 batch of sensors.
+                                                                                                                                   70
+                                                                                                                                  100                                                     sensitivity at 1ppm O3.
+                                                                                                                                  85
+                                                                                                                                   65
+                                                                                                                                   95
+                                                                                                                                  80
+                                                                                                                                                                                         This data is taken from a
+                                                                                                                                   60
+                                                                                                                                   90
+                                                                                                                                                                                         typical batch of sensors.
+                                                                                           -30         -20    -10     0      10   75 20    30     40                                50
+                                                                                                                                   Temperature (oC)85
+                                                                                                                                                    70
+                                                                                                                                                      80
+                                                      Figure 3 Zero temperature dependence
+                                                                                        65
+                                                                                                                                                     75
+                                                                                                                         200                        60                                  Figure 3 shows the variation
+                                                                                -30                    -20        -10          0          10         7020          30       40      50
+                                                                                                                         180                                                            in zero output of the working
+                                                                                                                                   Temperature ( C)
+                                                                                                                                                o
+                                                                                                                                                                                        electrode caused by changes
+                                                       Figure 2 Zero Temperature
+                                                                            160  Dependence
+                                                                                          65
+                                                                                                                                                                                        in temperature, expressed as
+                                          Figure 3 Zero temperature
+                                                               140  dependence
+                                                                             60
+                                                                                                                                                                                        nA.
+
+
+
+
+                                  Zero current Zero
+                                               (nA) current (nA)Zero current (nA)
+                                                                           200 0        10 -30      20 -20         -10                                             30       40      50
+                                                                            120                                                                                                        Figure 3 shows the variation
+                                                                                  Temperature (oC)
+                                                                           180                                                                                                          This
+                                                                                                                                                                                       in  zerodata
+                                                                                                                                                                                                outputis oftaken
+                                                                                                                                                                                                             the from
+                                                                                                                                                                                                                  workinga
+                                                                            100                                                                                                         typical batch    of sensors.
+                                                      Figure 3 Zero temperature   dependence                                                                                           electrode   caused     by changes
+                                                                           160
+                                                                             80                                                                                                        in temperature, expressed as
+                                                                            200
+                                                                           140                                                                                                          Contact
+                                                                                                                                                                                        Figure 3Alphasense
+                                                                                                                                                                                                   shows the for      futher
+                                                                                                                                                                                                                  variation
+                                                                             60                                                                                                        nA.
+                                                                            180                                                                                                         information
+                                                                                                                                                                                             Figure
+                                                                                                                                                                                        in zero      2 onof
+                                                                                                                                                                                                 output showszero
+                                                                                                                                                                                                              thethecurrent
+                                                                                                                                                                                                                      variation in zero output of the
+                                                                                                                                                                                                                   working
+                                                                           120                                                                                                          correction.
+                                                                             40                                                                                                         electrode
+                                                                                                                                                                                       This   data
+                                                                                                                                                                                             workingcaused
+                                                                                                                                                                                                     is       by from
+                                                                                                                                                                                                          taken
+                                                                                                                                                                                                        electrode changes a by changes in
+                                                                                                                                                                                                                      caused
+                                                                            160
+                                                                           100                                                                                                          in temperature,
+                                                                                                                                                                                       typical              expressed as
+                                                                                                                                                                                                batch of sensors.
+                                                                             20
+                                                                            140
+                                                                                                                                                                                             temperature,      expressed as nA.
+                                                                            80                                                                                                          nA.
+                                                                              0                                                                                                        Contact
+                                                                                                                                                                                             ThisAlphasense
+                                                                                                                                                                                                  data is taken  forfrom
+                                                                                                                                                                                                                     futhera typical batch of sensors.
+                                                                            120
+                                                        -30    -20     -10  60 0        10          20                                                             30       40      50 This    data is
+                                                                                                                                                                                       information     ontaken
+                                                                                                                                                                                                            zero from
+                                                                                                                                                                                                                   currenta
+                                                                            100                                                                                                              Contact
+                                                                                                                                                                                        typical        Alphasense
+                                                                                                                                                                                                batch of
+                                                                                                                                                                                       correction.          sensors. for further information on zero
+                                                                            40 Temperature (oC)
+                                                                             80                                                                                                              current correction.
+                                                                            20                                                                                                          Contact Alphasense for futher
+                                                                             60                                                                                                         information on zero current
+                                                      Figure 4 Response from 0 200 ppb to 0 ppb O3
+                                                       -30340 -20     -10    40 0      10          20                                                              30      40      50 correction.
+                                                                                                                                                                                        Figure 4 shows response from
+                                                                                                 330                      20 Temperature (oC)                                           200ppb O3 to 0ppb O3.
+                                                         200ppb                                  320
+                                                                        0
+                                                310                                                                                                                                      Use of Alphasense AFE circuit
+                                            Figure 4 -20
+                                              -30   Response  -10150ppb
+                                                             300
+                                                                 from 0  200 ppb 10
+                                                                                 to 0 ppb20O                                             3
+                                                                                                                                                                   30       40      50
+                                                                                                                                                                                     reduces noise to 15ppb, with
+
+
+
+
+                                               Output
+
+
+
+                                                 (mV)for ISB (mV)
+                                                            340                                        Temperature (oC)                                                              the    opportunity           of digital
+                                                             290                                                                                                                    Figure 4 shows          response       from
+                                                       Figure 3 Response from 200ppb to 0ppb O
+                                                            330
+                                                             280
+                                                                                                     110ppb
+                                                                                                                                       3                                             smooting
+                                                                                                                                                                                    200ppb       O  totoreduce
+                                                                                                                                                                                                         0ppb     noise
+                                                                                                                                                                                                                  O   .    even
+                                                                                                              90ppb                                                                                 3               3
+                                                            320
+                                                       Figure        4 Response 200ppb      from 200 ppb to 70ppb           0 ppb O3                                                 further.
+
+
+
+
+                                  Output for ISB              Output for ISB (mV)
+                                                             270
+                                                            310
+                                                             260                                                                       50ppb                                        Use of Alphasense AFE circuit
+                                                             340
+                                                            300                           150ppb                                                  30ppb                              Offset
+                                                                                                                                                                                    reduces4 noise
+                                                                                                                                                                                     Figure       voltage
+                                                                                                                                                                                                  shows     to is
+                                                                                                                                                                                                             response
+                                                                                                                                                                                                                15ppb,  duewith
+                                                                                                                                                                                                                            fromto
+                                                             250
+                                                             330
+                                                            290
+                                                                                                                                                             20ppb                   intentional
+                                                                                                                                                                                     200ppb
+                                                                                                                                                                                    the           O
+                                                                                                                                                                                           opportunity to    ISBof
+                                                                                                                                                                                                          0ppb    O    . circuit
+                                                                                                                                                                                                                        digital
+                                                             240                                                                                                                                     3               3
+                                                             320
+                                                            280                  200ppb             110ppb                                                                           electronictooffset.
+                                                                                                                                                                                    smooting           reduce noise even
+                                                             230
+                                                             310                                             90ppb                                                                   Use of Alphasense AFE circuit
+                                                                                                                                                                                    further.
+                                                            270
+                                                             220                           150ppb                         70ppb                                                      reduces       noise     to 15ppb,       with from 200ppb O
+                                                             300
+                                                            260                                                                       50ppb                                                Figure       3 shows     response                        3
+                                                             210
+                                                             290                                                                                30ppb                                the
+                                                                                                                                                                                    Offset  opportunity
+                                                                                                                                                                                                  voltage isofdue        digital
+                                                                                                                                                                                                                               to
+                                                            250                                      110ppb                                                                                 to 0ppb O3.
+                                                             200
+                                                             280                                                                                            20ppb                    smooting
+                                                                                                                                                                                    intentional     to reduce
+                                                                                                                                                                                                            ISB noise      even
+                                                                                                                                                                                                                        circuit
+                                                            240 0                  1000            2000       90ppb3000                 4000              5000             6000
+                                                             270                                                                                                                           Use ofoffset.
+                                                                                                                                                                                     further.
+                                                                                                                                                                                    electronic         Alphasense ISB circuit reduces noise to 15ppb,
+                                                            230                                                 Time (s)   70ppb
+                                                             260                                                                       50ppb                                               with    the    opportunity of digital smoothing
+                                                            220                                                                                   30ppb                              Offset voltage is due to
+                                                             250
+                                                            210
+                                                       In the
+                                                                                                                                                             20ppb                         to  reduce noise
+                                                                                                                                                                                     intentional
+                                                              interest of continued product improvement, we reserve the right to change design features and specifications without prior
+                                                                                                                                                                                                                     evenin
+                                                                                                                                                                                                             ISBcontained
+                                                                                                                                                                                           notification. The data
+                                                                                                                                                                                                                              further.
+                                                                                                                                                                                                                         circuit
+                                                                                                                                                                                                                               this
+                                                             240 is for guidance only. Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the informa-
+                                                       document
+                                                            200
+                                                       tion contained within. ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19
+                                                                                                                                                                                     electronic
+                                                                                                                                                                                           Offset     offset.
+                                                                                                                                                                                                       voltage     is  due   to   intentional ISB circuit
+                                                             230 0                1000            2000              3000               4000              5000             6000
+                                                             220                                               Time (s)                                                                    electronic        offset.
+                                                                                                 210
+                                                                                                 200
+                                            In the interest of continued product improvement, we reserve the right to change design features and specifications without prior notification. The data contained in this
+                                            document is 0 for guidance only.
+                                                                        1000Alphasense Ltd
+                                                                                        2000              3000
+                                                                                           accepts no liability              4000 losses, injury
+                                                                                                                for any consequential        5000or damage resulting
+                                                                                                                                                               6000 from the use of this document or the informa-
+                                            tion contained within. ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19
+                                                                                                                                         Time (s)
+
+
+                                                       In the interest of continued product improvement, we reserve the right to change design features and specifications without prior notification. The data contained in this
+                                                       document is for guidance only. Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the informa-
+                                                       tion contained within. ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19
+
+
+
+
+                           T: +44 (0)1376 556700                                                             E: sensors.alphasense@ametek.com              W: www.alphasense.com   For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                                                                                                                   other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+    Sensor Data - NO2
+
+    The OX-B431 detects both ozone and nitrogen dioxide (O3 + NO2). The NO2-B43F measures only nitrogen dioxide, filtering out ozone. Using
+    these sensors together allows you to calculate the O3 concentration by subtracting the corrected NO2-B43F concentration from the
+    corrected OX-B431 concentration.
+    Before subtracting to determine ozone concentration, ensure that the signals from the two sensors have been corrected for electronic zero
+    offset, sensor zero offset and temperature dependence, and sensitivity (nA/ppm) calibration and temperature dependence.
+
+
+
+    Specification NO2 Sensing
+
+
+    Performance                          Sensitivity to NO2        nA/ppm at 2ppm NO2                                                            -250 to -750
+                                         Response time             t90 (s) from zero to 2ppm NO2                                                 < 80
+                                         Zero current              nA in zero air at 20°C                                                        -80 to +80
+                                         Noise*                    ±2 standard deviations (ppb equivalent)                                       15
+                                         Range                     ppm NO2 limit of performance warranty                                         20
+                                         Linearity                 ppm error at full scale, linear at zero and 20ppm NO2                         < ± 0.5
+                                         Overgas limit             maximum ppm for stable response to gas pulse                                  50
+                                         *
+                                          Tested with Alphasense ISB low noise circuit
+
+
+    Lifetime                             Zero drift                    ppb equivalent change/year in lab air                                     0 to 20
+                                         Sensitivity drift             % change/year in lab air, monthly test                                    < -20 to -40
+                                         Operating life                months until 50% original signal (24-month warranted)                     > 24
+
+
+    Environmental                        Sensitivity @ -20°C           % (output @ -20°C/output @ 20°C) @ 2ppm NO2                               70 to 90
+                                         Sensitivity @ 40°C            % (output @ 50°C/output @ 20°C) @ 2ppm NO2                                95 to 110
+                                         Zero @ -20°C                  nA                                                                        0 to 25
+                                         Zero @ 40°C                   nA                                                                        5 to 50
+
+
+    Cross Sensitivity                    H2S           sensitivity     % measured gas @ 5ppm                       H2S                           < -80
+                                         NO            sensitivity     % measured gas @ 5ppm                       NO                            <5
+                                         Cl2           sensitivity     % measured gas @ 5ppm                       Cl2                           < 100
+                                         SO2           sensitivity     % measured gas @ 5ppm                       SO2                           < -3
+                                         CO            sensitivity     % measured gas @ 5ppm                       CO                            < -3
+                                         C2H4          sensitivity     % measured gas @ 100ppm                     C2H4                          < 0.1
+                                         NH3           sensitivity     % measured gas @ 20ppm                      NH3                           < 0.1
+                                         H2            sensitivity     % measured gas @ 100ppm                     H2                            < 0.1
+                                         CO2           sensitivity     % measured gas @ 5% volume                  CO2                           < 0.1
+                                         Halothane     sensitivity     % measured gas @ 100ppm                     Halothane                     < 0.1
+
+
+    Key Specifications                   Temperature range             °C                                                                        -30 to 40
+                                         Pressure range                kPa                                                                       80 to 120
+                                         Humidity range                % rh continuous                                                           15 to 85
+                                         Weight                        g
+
+
+
+
+T: +44 (0)1376 556700   E: sensors.alphasense@ametek.com     W: www.alphasense.com       For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                         other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+                          Technical Specifications Version 1.1
+                                                                                                   OX-B431 Performance Data
+                                                     Figure 4 Sensitivity temperature dependence to 2ppm NO2
+                                                      Figure 5 Sensitivity temperature dependence to 2ppm NO2
+
+                                                                                                  OX-B431 Performance Data                                      130
+
+                                                                                                                                                                120
+                                                                                                                                                                                                             Figure 5 shows the
+                                                                                                                                                                                                             temperature dependence of
+                                                                                                                                                                                                             sensitivity at 2ppm NO2.
+
+
+
+
+                                                 % output (referenced
+
+
+
+
+                                                                  % to
+                                                                        20 C)
+                                                                                                                                                                110
+                                                                                                                                                                                                              This data is taken from a
+
+
+
+
+  Technical Specif ica tion
+                                          Figure 5 Sensitivity temperature dependence to 2ppm NO2
+
+                                                                                                   OX-B431 Performance Data                                     100
+                                                                                                                                                               130
+                                                                                                                                                                                                              typical batch of sensors.
+                                                                                                                                                                                                             FigureFigure5 4 shows
+                                                                                                                                                                                                                              showsthe the
+                                                                                                                                                                                                                                        temperature dependence of
+
+
+
+
+Technical
+    Technical
+          Specif
+              Specif
+                 ication
+                      ica tion
+                                 % output (referenced to 20OC)      output (referenced to 20OC)
+                                                                                                                                                                                                             temperature dependence of
+                                                                                                                                                                 90
+                                                                                                                                                               120                                                 sensitivity at 2ppm NO2.
+                                                                                                                                                                                                             sensitivity at 2ppm NO2.
+                                 O
+                                                                                                                                                                 80                                                This data is taken from a typical batch of sensors.
+                                                      Figure 5 Sensitivity temperature dependence
+                                                                                         110      to 2ppm NO2                                                                                                This data is taken from a
+                                                                                                                                                                 70
+                                                                                                                                                                130
+                                                                                                                                                               100                                           typical
+                                                                                                                                                                                                              Figurebatch 5 of shows
+                                                                                                                                                                                                                               sensors. the
+                                                                                                                                                                                                              temperature dependence of
+                                                                                                                                                                 60
+                                                                                                                                                                120
+                                                                                                                                                                90                                            sensitivity at 2ppm NO2.
+                                                                                                                                                                 50
+                                                                                                                                                                110
+                                                                                                                                                                80
+                                                                                                  -30        -20             -10         0              10            20          30          40       50    This data is taken from a
+                                                                                                                                               Temperature (oC)
+                                                                                                                                                             100
+                                                                                                                                                             70
+                                                                                                                                                                                                             typical batch of sensors.
+
+                                                     Figure 6 Response to 50ppb NO2                                                                              90
+                                                                                                                                                                60
+
+                                                                                                  225                                                            80
+                                                                                                                                                                50                                           Figure 6 shows the fast
+                                                                                                  -30        -20         -10             0           10            20             30          40      50
+                                                                                                   220                                                                                                       response and good baseline
+                                                                                                                                                              o 70
+                                                                                                                                               Temperature ( C)
+                                                     Figure 5 Response to 50ppb NO2                                                                                                                          recovery of the OX-B431 to
+                                                       215                                                                                                       60                                          50ppb NO2.
+                                         Figure 6 Response to 50ppb NO2
+                                                                                                   210                                                           50
+                                                                                                  225
+                                                                                                                                                                                                           Figure 6 shows the fast
+
+
+
+
+                                                Output from ISB (mV)
+                                                                                                  -30        -20             -10         0              10            20          30          40       50
+                                                                                                   205
+                                                                                                  220                                          Temperature (oC)                                            response and good baseline
+                                                        200                                                                                                                                                recovery of the OX-B431 to
+                                                     Figure 6 Response to 50ppb NO
+                                                       215                                                                                                                                                 50ppb NO2.
+
+
+
+
+                                 Output from ISB (mV)            Output from ISB (mV)
+                                                                                                                                                        2
+                                                                                                   195
+                                                                                                   225
+                                                                                                  210                                                                                                           Figure 5 shows the fast response and good baseline
+                                                                                                                                                                                                            Figure 6 shows the fast
+                                                                                                   190                                                                                                          recovery of the OX-B431 to 50ppb NO2.
+                                                                                                   220
+                                                                                                  205                                                                                                       response and good baseline
+                                                                                                   185
+                                                                                                                                                                                                            recovery of the OX-B431 to
+                                                                                                                                                                                                      1800 50ppb NO2.
+                                                                                                   215
+                                                                                                  200
+                                                                                                         0     200           400       600         800        1000         1200        1400    1600
+
+                                                                                                   210
+                                                                                                  195
+                                                                                                                                             Temperature (oC)
+
+
+                                                             Figure
+                                                                205
+                                                               190  7 Response from 200 ppb to 0 ppb NO2
+                                                                                                  300
+                                                                                                   200
+                                                                                                  185
+                                                                                                         0    200            400       600        800        1000          1200        1400   1600    1800
+                                                                                                                                                                                                             Figure 7 shows response from
+                                                                                                  290
+                                                                                                  195                                        Temperature (oC)                                                200ppb NO2 to 0ppb NO2.
+                                                                                                  280
+                                                                                                  190
+                                                                                                                   200 ppb
+                                                                                                                                                                                                           Use of Alphasense AFE circuit
+                                                 Figure
+                                                   270
+                                                        7 Response from 200 ppb to 0 ppb NO2                                                                                                               reduces noise to 15ppb, with
+                                                                                                  185
+                                                                                                  300                                                                                                      the opportunity of digital
+
+                                             Output (mV)
+                                                                                                   260 0       200           150 ppb
+                                                                                                                             400       600         800        1000         1200        1400    1600   1800 Figure 7 shows response from
+                                                                                                                                             Temperature (oC)
+                                                                                                                                                                                                           smooting to reduce noise to
+                                                                                                  290                                                                                                      200ppb NO2 to 0ppb NO2.
+                                                     Figure 6 Response from100
+                                                                            200ppb to 0ppb NO2     250                                                                                                     less than ± 5ppb.
+                                                                               ppb
+                                                       280
+                                                             Figure 7 Response  from 200 ppb  to 0 ppb NO2                                                                              Use of Alphasense AFE circuit
+                                                               240      200 ppb           80ppb
+                                                                                                                                                                                         Offset voltage is due to
+                                                                                                  270                                                                                   reduces noise to 15ppb, with
+                                                                                                   300                                                       60ppb                       intentional ISB circuit
+                                                                                                   230
+                                                                                                                                                                                        the
+                                                                                                                                                                                         Figure  opportunity
+                                                                                                                                                                                                     7 shows           of digital
+                                                                                                                                                                                                                    response       from
+                                                                                                                                                                                         electronic        offset.
+
+                                 Output (mV)
+                                                                                        150 ppb                                        40ppb
+                                                          260
+                                                           290
+                                                           220                                                                                                                          smootingNO
+                                                                                                                                                                                         200ppb           to2 to
+                                                                                                                                                                                                              reduce
+                                                                                                                                                                                                                   0ppb NOnoise 2
+                                                                                                                                                                                                                                  . to
+                                                                                                                                                    20 ppb
+                                                          250
+                                                           280
+                                                                                                                                                               10 ppb                   less than ± 5ppb.
+                                                           210
+                                                                                200 ppb
+                                                                                                   100 ppb                                                                               Use of Alphasense AFE circuit
+                                                          240
+                                                           270
+                                                                                                                 80ppb
+                                                                                                                                                                                        Offset
+                                                                                                                                                                                         reducesvoltage               is due with
+                                                                                                                                                                                                        noise to 15ppb,              to
+                                                           200                                                                                                                                   Figure 6 shows response from 200ppb NO2 to
+                                                                 0                1000             2000
+                                                                                                                           60ppb
+                                                                                                                        3000              4000               5000                6000   intentional
+                                                                                                                                                                                         the      opportunity      ISB   of  circuit
+                                                                                                                                                                                                                              digital
+
+                                             Output (mV)
+                                                          230                            150 ppb
+                                                           260
+                                                                                                                    Time (s)          40ppb                                                      0ppb to
+                                                                                                                                                                                        electronic
+                                                                                                                                                                                         smooting          NO
+                                                                                                                                                                                                          offset. .
+                                                                                                                                                                                                                reduce noise to
+                                                                                                                                                                                                                 2
+                                                          220
+                                                           250                                                                                     20 ppb
+                                                                                                                                                              10 ppb
+                                                                                                                                                                                         less     than
+                                                                                                                                                                                                 Use    of±  5ppb.
+                                                                                                                                                                                                            Alphasense           ISB circuit reduces noise to 15ppb,
+                                                                                                    100 ppb
+                                                      For210further information on the performance                       of this sensor, on other sensors in the range or any other subject, please
+                                                           240
+                                                      contact
+                                                                                                                  80ppb
+                                                                   Alphasense Ltd. For Application Notes visit “www.alphasense.com”.                                                     Offset voltage is due oftodigital smoothing
+                                                                                                                                                                                                 with    the    opportunity
+                                                          200
+                                                      In the                                                                60ppb                                                                to
+                                                                                                                                                                                         intentional
+                                                             interest of continued product improvement, we reserve the right to change design features and specifications without prior notification.
+                                                           230
+                                                                                                                                                                                                      reduce
+                                                                                                                                                                                                      The          noisein this
+                                                                                                                                                                                                                    ISB
+                                                                                                                                                                                                          data contained   to document
+                                                                                                                                                                                                                                less
+                                                                                                                                                                                                                              circuit than ± 5ppb.
+                                                      is for guidance only. Alphasense
+                                                                0                1000 Ltd accepts no liability for any 3000
+                                                                                                  2000                consequential losses, injury or damage5000
+                                                                                                                                         4000
+                                                                                                                                       40ppb                 resulting from the use
+                                                                                                                                                                                         electronic
+                                                                                                                                                                               6000of this                 offset.
+                                                                                                                                                                                           document or the information contained within.
+                                                      ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19
+                                                           220                                                     Time (s)                                                                      Offset voltage is due to intentional ISB circuit
+                                                                                                                                                    20 ppb
+                                                                                                                                                               10 ppb
+                                                                                                                                                                                                 electronic offset.
+                                          For 210
+                                               further information on the performance of this sensor, on other sensors in the range or any other subject, please
+                                          contact
+                                              200
+                                                   Alphasense Ltd. For Application Notes visit “www.alphasense.com”.
+                                          In the interest
+                                                      0 of continued product
+                                                                      1000 improvement, 2000 we reserve the right
+                                                                                                              3000to change design
+                                                                                                                                4000 features and specifications
+                                                                                                                                                    5000         without6000
+                                                                                                                                                                         prior notification. The data contained in this document
+                                          is for guidance only. Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the information contained within.
+                                          ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19                     Time (s)
+
+                                                      For further information on the performance of this sensor, on other sensors in the range or any other subject, please
+                                                      contact Alphasense Ltd. For Application Notes visit “www.alphasense.com”.
+                                                      In the interest of continued product improvement, we reserve the right to change design features and specifications without prior notification. The data contained in this document
+                                                      is for guidance only. Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the information contained within.
+                                                      ( ©ALPHASENSE LTD ) Doc. Ref. OX-B431/JUL19
+
+
+
+
+                          T: +44 (0)1376 556700                                                                    E: sensors.alphasense@ametek.com                   W: www.alphasense.com            For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                                                                                                                                       other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+     IST Board Data
+
+     Interface                                      Communication Bus                                          Compatible with the 400 kHz I²C protocol
+                                                    Max. Bus Speed                                             Up to 1 MHz
+                                                    Input Logic Levels                                         High (Recessive) < 2.3 V | Low (Dominant) < 0.2 V
+                                                    Absolute Max. Input Signal                                 3.6 V
+
+
+
+
+     Electrical                                     Supply Voltage Range                                       1.7 V to 3.6 V
+                                                    Supply current – Stand-By                                  < 5 μA
+                                                    Supply current – Operating                                 < 0.15 mA (temperature reading only)
+                                                                                                               < 2.15 mA (temperature reading + memory reading/writing)
+                                                    Power Supply Conditioning                                  Built-In 100 nF decoupling capacitor
+                                                    ESD Protection                                             4 kV (human body model) - Enhanced ESD / Latch-Up protection
+                                                    Bus Pins Input Capacitance                                 15 pF max.
+
+
+
+
+                                                                                                               –40 °C to +85 °C
+     Performance                                    Operational Temperature
+                                                    Temperature Sensor Accuracy                                ±1°C (-0°C to +70°C)
+                                                    Memory Data Retention                                      > 200 years
+                                                    Memory Write Cycles                                        > 4,000,000
+
+
+
+
+     Data & Communication                          Memory IC & I2C Address                                    M24128X-FCU | Device Address: R - 0xA0 / W – 0xA1
+                                                   Temperature IC & I2C Address                               MAX31875R0TZS+T | Device Address: R - 0x90 / W – 0x91
+                                                   Product Data Start Address                                 0x0900
+                                                   Calibration Data Start Address                             0x0B00
+                                                   User Data Area                                             0x0D00 – 0x18FF (3,072 Bytes)
+                                                   CRC Polynomial                                             0x 01 04C1 1DB7
+                                                   Digital Signature Algorithm                                SHA-256
+
+
+
+
+     Factory-populated data                                                                                                                         15,000+ locations
+
+
+     Product Data                                   Calibration                                     Sensor Specification                            Customer Specific
+     Data Format Version                            Calibration Data Units                          Over-gas limit                                  Custom Parameters
+     Customer (OEM) ID                              Zero (clean dry air) Output                     Concentration Range                             Re-Calibration Due Date
+     Product ID                                     Calibration Span                                Temperature Range Low                           Operational Limits:
+     Type of Sensor / Target Gas                    Calibration Output                              Temperature Range High                          Low | High | STEL | TWA
+     Sensor Serial Number                           Sensitivity                                     Humidity Range Low                              Next Bump Test Due Date
+     End of Storage Period Date                     Calibration Date                                Humidity Range High                             User Data Area
+     Sensor Replacement Date                        Calibration Data Checksum                       Pressure Range Low
+     Product Data Checksum                          Calibration Data Signature                      Pressure Range High
+     Alphasense Digital Signature                                                                   Specification Checksum
+     Customer Digital Signature
+
+
+
+
+NOTE: All sensors are tested at ambient environmental conditions, with 47 ohm load resistor, unless otherwise stated. As applications of use are outside our control, the information provided is given
+without legal responsibility. Customers should test under their own conditions, to ensure that the sensors are suitable for their own requirements.
+At the end of the product’s life, do not dispose of any electronic sensor, component or instrument in the domestic waste, but contact the instrument manufacturer, Alphasense or its distributor for disposal
+instructions. NOTE: all sensors are tested at ambient environmental conditions unless otherwise stated. As applications of use are outside our control, the information provided is given without legal
+responsibility. Customers should test under their own conditions, to ensure that the sensors are suitable for their own requirements.
+In the interest of continued product improvement, we reserve the right to change design features and specifications without prior notification. The data contained in this document is for guidance only.
+Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the information contained within.(©ALPHASENSE LTD) Doc. Ref. OX-B431/FEB24
+
+
+T: +44 (0)1376 556700       E: sensors.alphasense@ametek.com              W: www.alphasense.com              For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                                             other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+

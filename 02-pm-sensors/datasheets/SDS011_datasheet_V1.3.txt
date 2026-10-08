@@ -1,0 +1,357 @@
+Nova Fitness Co., Ltd.                     SDS011 sensor
+
+
+
+
+   Laser PM2.5 Sensor
+      specification
+          Product model: SDS011
+                Version: V1.3
+
+
+
+
+                  Nova Fitness Co., Ltd.
+                         2015-10-9
+        Nova Fitness Co., Ltd.                                                            SDS011 sensor
+
+
+                                             Contents
+
+
+
+OVERVIEW................................................................................................ 1
+
+CHARACTERISTICS ................................................................................ 1
+
+SCOPE OF APPLICATION ....................................................................... 2
+
+WORKING PRINCIPLE ............................................................................ 2
+
+TECHNICAL PARAMETERS ................................................................... 2
+
+POWER REQUIREMENT ......................................................................... 3
+
+ABOUT SERVICE LIFE ............................................................................ 4
+
+PRODUCT SPECIFICATIONS ................................................................. 4
+
+                1.Product size ............................................................... 4
+                2. Interface specification.............................................. 4
+THE UART COMMUNICATION PROTOCOL ....................................... 5
+
+                PWM output description .............................................. 6
+                Schematic diagram of output： ................................... 7
+EXTENDED FUNCTIONALITY .............................................................. 7
+
+INSTALLATION SIZE ............................................................................... 7
+
+PACKAGE ................................................................................................ 10
+
+MATTERS NEEDING ATTENTION ...................................................... 11
+
+CONTACT ................................................................................................ 11
+     Nova Fitness Co., Ltd.                                SDS011 sensor
+
+
+
+Overview
+     The SDS011 using principle of laser scattering,can get the particle
+concentration between 0.3 to 10μm in the air. It with digital output and
+built-in fan is stable and reliable.
+
+
+
+
+Characteristics
+     1. Accurate and Reliable: laser detection, stable, good consistency;
+     2. Quick response: response time is less than 10 seconds when the
+scene changes;
+     3.     Easy       integration: UART       output (or IO     output can   be
+customized), fan built-in;
+     4. High resolution: resolution of 0.3μ g/m3;
+
+                                           1
+      Nova Fitness Co., Ltd.                                 SDS011 sensor
+
+
+      5.Certification: products have passed CE/FCC/RoHS certification.
+
+Scope of application
+      Detector of PM2.5;Purifier.
+
+Working principle
+      Using laser scattering principle:
+      Light scattering can be induced when particles go through the
+detecting area. The scattered light is transformed into electrical signals and
+these signals will be amplified and processed. The number and diameter of
+particles can be obtained by analysis because the signal waveform has
+certain relations with the particles diameter.
+
+Technical Parameters
+ No               Item                         Parameter                     Note
+
+  1   Measurement parameters               PM2.5,PM10
+
+  2              Range                    0.0-999.9 μg /m3
+
+  3          Rated voltage                        5V
+
+  4          Rated current                 70mA±10mA
+
+  5          Sleep current                      <4 mA                Lase&Fan sleep
+
+                                  Storage environment：-20 ~
+  6       Temperature range
+                                                  +60℃
+
+
+
+                                           2
+     Nova Fitness Co., Ltd.                            SDS011 sensor
+
+
+                               Work environment：-10 ~ +50℃
+
+                               Storage environment：Max 90%
+ 7         Humidity range
+                                Work environment：Max 70%
+
+ 8           Air pressure             86KPa~110KPa
+
+ 9      Corresponding time                   1s
+
+          Serial data output
+10                                          1Hz
+              frequency
+
+        Minimum resolution
+11                                         0.3 μm
+               of particle
+
+                                       70%@0.3μm
+12         Counting yield
+                                       98%@0.5μm
+
+                                      Maximum of ±                     25℃,
+13          Relative error
+                                    15% and ±10μg/m3                   50%RH
+
+14           Product size             71x70x23mm
+
+15           Certification            CE/FCC/RoHS
+
+
+Power requirement
+     Power Voltage：4.7~5.3V
+     Power supply：>1W
+     Supply voltage ripple：<20mV
+
+
+
+
+                                       3
+     Nova Fitness Co., Ltd.                               SDS011 sensor
+
+About service life
+     Service life is the key parameter of laser dust sensor. The laser diode
+in this sensor has high quality and its service life is up to 8000 hours. If you
+need real-time data (such as detector), you can use the default configuration
+that measures at the frequency of 1time per second. On the occasion of
+real-time demand is not high (such as filter, air quality monitoring, etc.),
+you can use the discontinuous working method to prolong the service
+life. For example, you can start the sensor for 30 seconds per minutes. If
+you have any other requirements, please contact us, we are willing to serve
+for manufacturers and developers.
+
+Product specifications
+1.Product size
+     L*W*H=71*70*23mm
+
+2.Interface specification
+
+           No            Name                  Comment
+
+             1                NC             Not Connect
+
+             2            1μm      PM2.5: 0-999μg/m³;PWM Output
+
+             3                5V               5V Input
+
+             4           2.5μm     PM10: 0-999 μg/m³;PWM Output
+
+             5           GND                    Ground
+
+
+                                        4
+   Nova Fitness Co., Ltd.                           SDS011 sensor
+
+
+           6                R     RX of UART（TTL）@3.3V
+
+           7                T     TX of UART（TTL）@3.3V
+
+  PS：The distance between each pin is 2.54mm.
+
+The UART communication protocol
+  Bit rate ：9600
+  Data bit ：8
+  Parity bit：NO
+  Stop bit ：1
+  Data Packet frequency: 1Hz
+
+      The number of bytes           Name             Content
+
+                   0            Message header          AA
+
+                   1            Commander No.           C0
+
+                   2               DATA 1        PM2.5 Low byte
+                   3               DATA 2        PM2.5 High byte
+
+                   4               DATA 3        PM10 Low byte
+
+                   5               DATA 4        PM10 High byte
+                   6               DATA 5           ID byte 1
+                   7               DATA 6           ID byte 2
+
+                   8              Check-sum        Check-sum
+
+                   9             Message tail           AB
+
+  Check-sum: Check-sum=DATA1+DATA2+...+DATA6 。
+
+                                      5
+    Nova Fitness Co., Ltd.                       SDS011 sensor
+
+
+    PM2.5 value: PM2.5 (μg /m3) = ((PM2.5 High byte *256) + PM2.5
+low byte)/10
+    PM10 value: PM10 (μg /m3) = ((PM10 high byte*256) + PM10 low
+byte)/10
+
+PWM output description
+                 Range of PM2.5 value           0-999μg /m³
+                 Range of PM10 value            0-999μg /m³
+                             Cycle              1004ms±1%
+
+      High level output time at the beginning
+                                                    2ms
+                       of the whole cycle
+
+            The middle time of this cycle       1000ms±1%
+      Low level output time at the end of the
+                                                    2ms
+                             whole cycle
+
+
+
+
+                                            6
+    Nova Fitness Co., Ltd.                          SDS011 sensor
+
+
+Schematic diagram of output：
+
+
+
+
+Extended functionality
+
+   1.Manual hibernation(Sleep and wake up)
+   2.Timed hibernate(Cycle to work)
+   3.User ID setting
+   4.Set data reporting mode(Active report and query report)
+   5.Version number query
+   If you have any other requirements, please contact us.
+
+Installation size
+   1. Basic structure
+
+                                    7
+Nova Fitness Co., Ltd.       SDS011 sensor
+
+
+
+
+2. Basic dimensions
+
+
+
+
+                         8
+    Nova Fitness Co., Ltd.                         SDS011 sensor
+
+
+
+
+3. Recommended installation direction
+
+
+
+
+    4. Hose connection: optional. It can be connected with the hose of
+6mm inner diameter and 8mm external diameter. The hose cannot be longer
+
+                                        9
+     Nova Fitness Co., Ltd.                            SDS011 sensor
+
+
+than 1m, the shorter the better. The hose must keep the air flowing.
+     5. Prevent glare: the sensor has shading device inside, so it can work
+normally under the common light. You should pay attention to prevent the
+inlet, outlet from direct light.
+     6. Keep the inlet and outlet unobstructed.
+
+Package
+
+
+
+
+     There are 20 sensors on each floor
+
+
+
+
+     Each box:9×20=180
+
+
+
+
+                                      10
+     Nova Fitness Co., Ltd.                               SDS011 sensor
+
+
+Matters needing attention
+1.In the context of the sensor power supply;
+2.Note the process design to ensure smoothness and stability of sensor
+airflow;
+3.Please ensure that the sensor to work under normal conditions of
+temperature and humidity;
+4.Avoid severe vibration during transport, so as not to affect the accuracy of
+detection and accuracy;
+5.Follow this specification is the correct sensor installation.
+6.Do not light into the air inlet.
+
+
+                                                Contact
+
+                                                 Nova Fitness Co.,Ltd.
+
+                                                 TEL:+86-0531-82868288
+
+                                                 FAX:+86-0531-82868198
+
+                                                 ADD: Room203,Building A
+
+                                                 Jinan International Innovative
+
+                                                 Design Industrial Park
+
+                                                 WEB: www.inovafitness.com
+
+
+
+
+                                        11
+

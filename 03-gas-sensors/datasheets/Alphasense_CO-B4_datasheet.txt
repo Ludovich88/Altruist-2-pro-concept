@@ -1,0 +1,253 @@
+Technical Specifications Version 1.1
+
+
+    CO-B4/CO-B4+ Carbon Monoxide Sensor
+    The CO-B4 sensor is a PPB sensor that is designed for environmental air quality applications with best-in-class baseline
+    stability. This product is available in our standard format (CO-B4) and with our patented Integrated Smart Technology
+    (CO-B4+) that has an IST board with a memory chip and temperature sensor integrated in the sensor. The + sensors store specific
+    calibration, specification, and identification data on every sensor allowing plug and play operation. The on-board temperature
+    sensor improves the accuracy and simplicity of temperature compensation algorithms.
+
+
+    CO-B4 Carbon Monoxide Sensor – 4-Electrode
+
+
+
+
+            Top View                                            Bottom View                                                  Side View
+
+
+
+
+    CO-B4+ Carbon Monoxide Sensor – 4-Electrode (with Integrated Smart Technology)
+
+
+
+
+            Top View                                            Bottom View                                                     IST Board
+
+
+
+
+            Side View
+                                                              Dimensions are in millimetres (± 0.15 mm).
+
+
+T: +44 (0)1376 556700   E: sensors.alphasense@ametek.com   W: www.alphasense.com         For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                         other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+    Sensor Data
+
+    Performance                          Sensitivity               nA/ppm in 2ppm CO                                                             420 to 650
+                                         Response time             t90 (s) from zero to 10ppm CO                                                 < 30
+                                         Zero current              nA in zero air at 20°C                                                        +30 to -250
+                                         Noise*                    ± 2 standard deviations (ppb equivalent)                                      4
+                                         Range                     ppm limit of performance warranty                                             1000
+                                         Linearity                 ppb CO error at full scale, linear at zero, 500ppm CO                         20 to 35
+                                         Overgas limit             maximum ppm for stable response to gas pulse                                  2000
+                                         *
+                                          Tested with Alphasense ISB low noise circuit
+
+
+    Lifetime                             Zero drift                      ppb equivalent change/year in lab air                                   < ± 100
+                                         Sensitivity drift               % change/year in lab air, monthly test                                  < 10
+                                         Operating life                  months until 50% original signal (24-month warranted)                   > 36
+
+
+    Environmental                        Sensitivity @ -20°C             (% output @ -20°C/output @ 20°C) @ 5ppm CO                              40 to 70
+                                         Sensitivity @ 50°C              (% output @ 50°C/output @ 20°C) @ 5ppm CO                               110 to 125
+                                         Zero @ -20°C                    nA                                                                      -30 to +30
+                                         Zero @ 50°C                     nA                                                                      -50 to -200
+
+
+    Cross-sensitivity                    Filter capacity                 ppm-hrs		                                 H2S                           250,000
+                                         H2S sensitivity                 % measured gas @ 5ppm                     H2S                           <1
+                                         NO2 sensitivity                 % measured gas @ 5ppm                     NO2                           <1
+                                         Cl2     sensitivity             % measured gas @ 5ppm                     Cl2                           <1
+                                         NO sensitivity                  % measured gas @ 5ppm                     NO                            < -3
+                                         SO2 sensitivity                 % measured gas @ 5ppm                     SO2                           < 0.1
+                                         H2      sensitivity             % measured gas @ 100ppm                   H2 @ 20°C                     < 50
+                                         C2H4 sensitivity                % measured gas @ 100ppm                   C2H4                          <1
+                                         NH3 sensitivity                 % measured gas @ 20ppm                    NH3                           < 0.1
+
+
+    Key Specifications                   Temperature range               °C                                                                      -30 to 50
+                                         Pressure range                  kPa                                                                     80 to 120
+                                         Humidity range                  % rh continuous                                                         15 to 90
+                                         Storage period                  months @ 3 to 20°C (stored in sealed pot)                               6
+                                         Load resistor                   � (ISB circuit is recommended)                                          33 to 100
+                                         Weight                          g                                                                       < 13
+
+
+
+
+T: +44 (0)1376 556700   E: sensors.alphasense@ametek.com       W: www.alphasense.com     For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                         other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+       Figure 1 Sensitivity Temperature Dependence
+
+                                                                                                  140
+
+
+
+
+         % output (referenced to 20˚C
+                                                                                                  120
+
+                                                                                                  100
+
+                                                                                                   80                                                Figure 1 shows the temperature dependence of
+                                                                                                                                                     sensitivity at 2ppm CO.
+                                                                                                   60
+                                                                                                                                                     This data is taken from a typical batch of sensors.
+                                                                                                   40
+
+                                                                                                   20
+
+                                                                                                       0
+                                        -30        -20       -10          0          10                20            30            40           50
+                                                                                Temperature (˚C)
+
+
+
+
+       Figure 2 Zero Current Temperature Dependence (corrected)
+                                                                                                 20
+
+                                                                                                   0
+                                        -30         -20      -10       0             10            20           30            40           50
+                                                                                                 -20
+                                                                                                                                                     Figure 2 shows the variation in zero output of the
+                                                                                                 -40
+                                                                                                                                                     working electrode caused by changes in
+
+
+
+
+         Zero current (nA)
+                                                                                                 -60                                                 temperature, expressed as nA.
+                                                                                                 -80                                                 This data is taken from a typical batch of sensors.
+                                                                                             -100                                                    Contact Alphasense for further information on
+                                                                                             -120                                                    zero current correction.
+
+                                                                                             -140
+
+                                                                                             -160
+
+                                                                                             -180
+
+                                                                           Temperature (˚C)
+
+
+
+
+       Figure 3 Response from 0 to 1ppm CO
+
+                                         800
+                                         750               1 ppm
+                                                                                                                                                     Figure 3 shows response from 0 to 1ppm CO.
+                                         700
+                                                                                                                                                     Use of Alphasense ISB circuit reduces noise to 4ppb,
+                                         650
+                                                                   700 ppb                                                                           with the opportunity of digital smoothing to reduce
+
+
+
+         Output (mV)
+                                         600
+                                                                                                                                                     noise even further.
+                                         550
+                                         500
+                                                                              400 ppb
+                                         450
+                                         400
+                                         350                                               100 ppb
+                                                                                                            80 ppb        40 ppb
+                                         300                                                                                       0 ppb
+
+                                         250
+                                               0     500    1000   1500       2000        2500     3000        3500        4000     4500     5000
+
+                                                                                      Time (s)
+
+
+
+
+T: +44 (0)1376 556700                              E: sensors.alphasense@ametek.com         W: www.alphasense.com                  For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                                                                   other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+Technical Specifications Version 1.1
+
+
+     IST Board Data
+
+     Interface                                      Communication Bus                                          Compatible with the 400 kHz I²C protocol
+                                                    Max. Bus Speed                                             Up to 1 MHz
+                                                    Input Logic Levels                                         High (Recessive) < 2.3 V | Low (Dominant) < 0.2 V
+                                                    Absolute Max. Input Signal                                 3.6 V
+
+
+
+
+     Electrical                                     Supply Voltage Range                                       1.7 V to 3.6 V
+                                                    Supply current – Stand-By                                  < 5 μA
+                                                    Supply current – Operating                                 < 0.15 mA (temperature reading only)
+                                                                                                               < 2.15 mA (temperature reading + memory reading/writing)
+                                                    Power Supply Conditioning                                  Built-In 100 nF decoupling capacitor
+                                                    ESD Protection                                             4 kV (human body model) - Enhanced ESD / Latch-Up protection
+                                                    Bus Pins Input Capacitance                                 15 pF max.
+
+
+
+
+                                                                                                               –40 °C to +85 °C
+     Performance                                    Operational Temperature
+                                                    Temperature Sensor Accuracy                                ±1°C (-0°C to +70°C)
+                                                    Memory Data Retention                                      > 200 years
+                                                    Memory Write Cycles                                        > 4,000,000
+
+
+
+
+     Data & Communication                          Memory IC & I2C Address                                    M24128X-FCU | Device Address: R - 0xA0 / W – 0xA1
+                                                   Temperature IC & I2C Address                               MAX31875R0TZS+T | Device Address: R - 0x90 / W – 0x91
+                                                   Product Data Start Address                                 0x0900
+                                                   Calibration Data Start Address                             0x0B00
+                                                   User Data Area                                             0x0D00 – 0x18FF (3,072 Bytes)
+                                                   CRC Polynomial                                             0x 01 04C1 1DB7
+                                                   Digital Signature Algorithm                                SHA-256
+
+
+
+
+     Factory-populated data                                                                                                                         15,000+ locations
+
+
+     Product Data                                   Calibration                                     Sensor Specification                            Customer Specific
+     Data Format Version                            Calibration Data Units                          Over-gas limit                                  Custom Parameters
+     Customer (OEM) ID                              Zero (clean dry air) Output                     Concentration Range                             Re-Calibration Due Date
+     Product ID                                     Calibration Span                                Temperature Range Low                           Operational Limits:
+     Type of Sensor / Target Gas                    Calibration Output                              Temperature Range High                          Low | High | STEL | TWA
+     Sensor Serial Number                           Sensitivity                                     Humidity Range Low                              Next Bump Test Due Date
+     End of Storage Period Date                     Calibration Date                                Humidity Range High                             User Data Area
+     Sensor Replacement Date                        Calibration Data Checksum                       Pressure Range Low
+     Product Data Checksum                          Calibration Data Signature                      Pressure Range High
+     Alphasense Digital Signature                                                                   Specification Checksum
+     Customer Digital Signature
+
+
+
+
+At the end of the product’s life, do not dispose of any electronic sensor, component or instrument in the domestic waste, but contact the instrument manufacturer, Alphasense or its distributor for disposal
+instructions. NOTE: all sensors are tested at ambient environmental conditions unless otherwise stated. As applications of use are outside our control, the information provided is given without legal
+responsibility. Customers should test under their own conditions, to ensure that the sensors are suitable for their own requirements.
+In the interest of continued product improvement, we reserve the right to change design features and specifications without prior notification. The data contained in this document is for guidance only.
+Alphasense Ltd accepts no liability for any consequential losses, injury or damage resulting from the use of this document or the information contained within.(©ALPHASENSE LTD) Doc. Ref. CO-B4/FEB24
+
+
+T: +44 (0)1376 556700       E: sensors.alphasense@ametek.com              W: www.alphasense.com              For further information on the performance of this sensor, on other sensors in the range or any
+                                                                                                             other subject, please contact Alphasense Ltd. or visit our website at “www.alphasense.com”.
+

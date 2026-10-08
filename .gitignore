@@ -1,0 +1,6 @@
+# Obsidian workspace (локальные настройки vault, не часть проекта)
+.obsidian/
+
+# Служебные файлы ОС
+.DS_Store
+Thumbs.db

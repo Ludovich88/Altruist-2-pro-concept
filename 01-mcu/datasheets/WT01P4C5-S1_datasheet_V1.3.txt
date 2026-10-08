@@ -1,0 +1,1742 @@
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+WT01P4C5-S1
+Datasheet
+
+Version 1.3
+www.wireless-tag.com
+
+1
+
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+Disclaimer and Copyright Notice
+Information in this document, including the URL addresses for reference,
+is subject to change without notice.
+This document is provided "as is" without warranty of any kind, including
+any warranty of merchantability, fitness for a particular purpose, or
+non-infringement, and any warranty that any proposal, specification, or sample
+is referred to elsewhere. this document disclaims all liability, including liability
+for infringement of any patent, arising out of the use of the information in this
+document. This document does not grant any license, express or implied, by
+estoppel or otherwise, to use any intellectual property.
+The Wi-Fi Alliance member logo is owned by the Wi-Fi Alliance.
+All trade names, trademarks and registered trademarks mentioned herein
+are the property of their respective owners and are hereby acknowledged.
+
+Notice
+The content of this manual is subject to change due to product version
+upgrade or other reasons. WIRELESS-TAG Technology Co.,limited reserves
+the right to modify the contents of this manual without any notice or prompting.
+Ltd. makes every effort to provide accurate information in this manual, but
+WIRELESS-TAG Technology Co.,limited does not ensure that the contents of
+the manual are completely free of errors, and all statements, information and
+recommendations in this manual do not constitute any express or implied
+warranty.
+
+www.wireless-tag.com
+
+2
+
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+Revision History
+Version
+
+Date
+
+Developed/ Changed Content
+
+Modifier By
+
+Auditor
+
+V0.1
+
+2025-5-27
+
+First Creation(Preview)
+
+Pail
+
+Louie
+
+V1.0
+
+2025-9-2
+
+Official Release
+
+Pail
+
+Louie
+
+V1.1
+
+2025-9-25
+
+Pail
+
+Louie
+
+Pail
+
+Louie
+
+Pail
+
+Louie
+
+Correct one error in
+2.2 Hardware Parameters
+Add RF test points to the core
+
+V1.2
+
+2025-11-13
+
+board and update images in the
+document
+Add ESP32-P4 and ESP32-C5
+
+V1.3
+
+2026-1-27
+
+SDIO Connection Guide in
+2.1 Block Diagram
+
+www.wireless-tag.com
+
+3
+
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+Contents
+1. Overview ......................................................... 5
+1.1. Products Introduction ......................................... 5
+1.2. Product Features ............................................ 6
+1.3. Product Pictures ............................................. 6
+1.4. Application Scenarios .........................................6
+2. Product Specification ...............................................7
+2.1. Block Diagram ............................................... 7
+2.2. Hardware Parameters ........................................ 8
+3. Pin Definitions ....................................................10
+3.1. Pin Layout ................................................. 10
+3.2. Pin Description ............................................. 10
+3.3. Startup Item Configuration ................................... 14
+3.3.1. ESP32-P4 Strapping Pins .............................. 14
+3.3.2. ESP32-P4 Chip Boot Mode Control ...................... 15
+3.3.3. ESP32-P4 ROM Messages Printing Control ...............15
+3.3.4. ESP32-C5 Strapping Pins .............................. 16
+3.3.5. ESP32-C5 Chip Boot Mode Control ...................... 17
+3.3.6. ESP32-C5 ROM Messages Printing Control .............. 18
+3.4. Other Pin Descriptions ....................................... 19
+4. Electrical Characteristics ...........................................20
+4.1. Absolute Maximum Limit Value ............................... 20
+4.2. Power Consumption Characteristics ........................... 20
+4.3. Recommended Working Conditions ........................... 20
+5. WT01P4C5-S1 Schematic ......................................... 20
+6. WT01P4C5-S1 Dimensions ........................................ 21
+7. Storage Condition ................................................ 21
+8. Reflow Soldering Curve ........................................... 22
+9. Contact Us .......................................................22
+
+www.wireless-tag.com
+
+4
+
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+1. Overview
+1.1.Products Introduction
+WT01P4C5-S1,a core board with integrated 2.4GHz & 5GHz Wi-Fi6 and
+NOR FLASH based on Espressif’s ESP32-P4 and ESP32-C5 series chips
+designed by Wireless-Tag Technology Co.,Limited.The core processor chip,
+ESP32-P4, is stackable with either 16MB or 32MB PSRAM in a package that
+includes a high-performance (HP) system and a low-power (LP) system.The
+HP system is a RISC-V dual-core processor running at 360MHz and includes a
+JPEG codec, Pixel-Processing Accelerator, H.264 video encoder, and MIPI
+interfaces, providing powerful image and voice processing capabilities.The
+ESP32-C5 high-performance SOC on the core board supports 2.4 & 5G
+dual-band Wi-Fi6 (802.11ax), Bluetooth®5 (LE), Zigbee, and Thread (802.15.4).
+The ESP32-P4 and ESP32-C5 on the core board are connected via their SDIO
+interface, and the rest of the pins are already pinned out.
+
+Figure 1: Main Chip Architecture Diagram
+
+www.wireless-tag.com
+
+5
+
+WIRELESS-TAG
+
+WT01P4C5-S1 Datasheet
+
+The WT01P4C5-S1 series is available in two sizes, see the table below for
+more information.
+WT01P4C5-S1 Series Model Number Comparison
+
+Part Number
+
+Flash
+
+Psram
+
+Module Size (mm)
+
+WT01P4C5-S1-N16R16
+
+16MB
+
+16MB
+
+35.00*35.00
+
+WT01P4C5-S1-N16R32
+
+16MB
+
+32MB
+
+35.00*35.00
+
+1.2.Product Features
+
+
+Dual-core 360 MHz high-frequency CPU
+
+
+
+16 MB Flash and 16/32 MB Psram
+
+
+
+supports 2.4GHz & 5GHz dual-band Wi-Fi6, BLE5.3, Zigbee, Thread
+
+
+
+ESP32-P4 adn ESP32-C5 chip with full pinout
+
+
+
+Supports multiple multimedia interfaces
+
+
+
+Core board size is small, easy to hardware design
+
+
+
+Development materials are complete
+
+1.3.Product Pictures
+
+Figure 2:WT01P4C5-S1(front)
+
+Figure 3:WT01P4C5-S1 (back)
+
+Figure 4:WT01P4C5-S1(front)
+
+Figure 5:WT01P4C5-S1(back)
+
+1.4.Application Scenarios
+
+
+Smart Home
+
+
+
+Industrial Automation
+
+
+
+Consumer Electronics
+www.wireless-tag.com
+
+6
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+
+HMI Human Machine Interaction
+
+
+
+Electronic Robotics
+
+
+
+Camera Video Streaming
+
+
+
+USB Devices
+
+
+
+Healthcare
+
+2. Product Specification
+2.1.Block Diagram
+
+Figure 6: Block diagram of WT01P4C5-S1
+
+Figure 7: P4 & C5 Pin Correspondence Diagram
+
+www.wireless-tag.com
+
+7
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+2.2.Hardware Parameters
+Core
+ESP32-P4
+
+ESP32-C5
+
+Main Frequency
+
+360 MHz（HP Core）
+40 MHz（LP Core）
+
+Core
+
+32-bit RISC-V dual-core
+
+Main Frequency
+
+240 MHz
+
+ESP32-P4 ROM
+
+ESP32-P4 SRAM
+Memory
+
+32-bit RISC-V dual-core
+
+128 KB HP ROM
+16 KB LP ROM
+768 KB HP L2MEM
+32 KB LP SRAM
+
+ESP32-P4 PSRAM
+
+16/32 MB
+
+ESP32-C5 ROM
+
+320 KB
+
+ESP32-C5 SRAM
+
+384 KB
+
+Flash
+
+16MB
+
+GPIO
+
+46
+
+SPI
+
+2
+
+LP SPI
+
+1
+
+UART
+
+5
+
+LP UART
+
+1
+
+ESP32-P4
+
+I3C
+
+1
+
+Peripheral
+
+I2C
+
+2
+
+Interface
+
+LP I2C
+
+1
+
+I2S
+
+3
+
+LP I2S
+
+1
+
+USB JTAG
+
+1
+
+LED PWM
+
+1
+
+MCPWM
+
+2
+
+www.wireless-tag.com
+
+8
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+TWAI®Controller
+(compatible with ISO 11898-1)
+
+3
+
+Hight-Speed USB 2.0 OTG
+
+1
+
+Full-Speed USB 2.0 OTG
+
+1
+
+100 Mbit Ethernet
+
+1
+
+MIPI CSI-2
+
+1
+
+MIPI DSI
+
+1
+
+Parallel IO interface
+
+1
+
+12-bit multi-channel ADC
+
+2
+
+Temperature sensor
+
+1
+
+Touch sensor
+
+1
+
+Analog voltage comparator
+
+1
+
+Brown-out detector
+
+1
+
+GPIO
+
+12
+
+SPI
+
+1
+
+UART
+
+2
+
+I2C
+
+1
+
+I2S
+
+1
+
+LED PWM
+
+1
+
+12-bit multi-channel ADC
+
+1
+
+Temperature sensor
+
+1
+
+Image and
+
+JPEG Codec
+
+1
+
+Voice
+
+PPA
+
+1
+
+Processing
+
+ISP
+
+1
+
+Functionality
+
+H264 encoder
+
+1
+
+ESP32-C5
+Peripheral
+Interface
+
+www.wireless-tag.com
+
+9
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+3. Pin Definitions
+3.1.Pin Layout
+
+Figure 7:WT01P4C5-S1 Pin Layout
+
+3.2.Pin Description
+Pin Definitions
+
+No.
+
+Name
+
+Function
+
+1
+
+C5_EN
+
+Enable ESP32-C5 chip (internal 10K pull-up)
+
+2
+
+C5_IO1
+
+GPIO1，XTAL_32K_N, LP_GPIO1, LP_UART_DSRN, ADC1_CHO
+
+3
+
+C5_IO2
+
+GPIO2，MTMS，LP_GPIO2，LP_UART_RTSN，ADC1_CH1，FSPIQ
+
+4
+
+C5_IO3
+
+GPIO3，MTDI，LP_GPIO3，LP_UART_CTSN，ADC1_CH2
+
+5
+
+C5_IO4
+
+LP_UART_RXD，LP_GPIO4，GPIO4，MTCK，ADC1_CH3，FSPIHD
+
+6
+
+C5_IO5
+
+LP_UART_TXD，LP_GPIO5，GPIO5，MTDO，ADC1_CH4，FSPIWP
+
+7
+
+C5_IO6
+
+LP_I2C_SDA，LP_GPIO6，GPIO6，ADC1_CH5，FSPICLK
+
+8
+
+C5_U0TXD
+
+GPIO11，UOTXD(ESP32-C5 Download Pin)
+
+9
+
+C5_U0RXD
+
+GPIO12，UORXD(ESP32-C5 Download Pin)
+www.wireless-tag.com
+
+10
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+10
+
+GND
+
+GROUND
+
+11
+
+P4_EN
+
+Enable ESP32-P4 chip (internal 10K pull-up)
+
+12
+
+GPIO0
+
+GPIO0，LP_GPIO0，XTAL_32K_N
+
+13
+
+GPIO1
+
+GPIO1，LP_GPIO1，XTAL_32K_P
+
+14
+
+GPIO2
+
+GPIO2，MTCK，LP_GPIO2，TOUCH_CHANNEL0
+
+15
+
+GPIO3
+
+GPIO3，MTDI，LP_GPIO3，TOUCH_CHANNEL1
+
+16
+
+GPIO4
+
+GPIO4，MTMS，LP_GPIO4，TOUCH_CHANNEL2
+
+17
+
+NC1
+
+No internal connections, physical presence only
+
+18
+
+GPIO6
+
+GPIO6，SPI2_HOLD_PAD，LP_GPIO6，TOUCH_CHANNEL4
+
+19
+
+GPIO7
+
+GPIO7，SPI2_CS_PAD，LP_GPIO7，TOUCH_CHANNEL5
+
+20
+
+GPIO8
+
+21
+
+GPIO9
+
+GPIO8，UART0_RTS_PAD，SPI2_D_PAD，LP_GPIO8，
+TOUCH_CHANNEL6
+GPIO9，UART0_CTS_PAD，SPI2_CK_PAD，LP_GPIO9，
+TOUCH_CHANNEL7
+GPIO10，UART1_TXD_PAD，SPI2_Q_PAD，LP_GPIO10，
+
+22
+
+GPIO10
+
+23
+
+NC2
+
+24
+
+GPIO11
+
+25
+
+GPIO20
+
+GPIO20，ADC1_CHANNEL4
+
+26
+
+GPIO21
+
+GPIO21，ADC1_CHANNEL5
+
+27
+
+GPIO22
+
+GPIO22，ADC1_CHANNEL6
+
+28
+
+GPIO23
+
+GPIO23，ADC1_CHANNEL7，REF_50M_CLK_PAD
+
+29
+
+GND
+
+GROUND
+
+30
+
+DSI_DATAP1
+
+MIPI DSI PHY DATAP1
+
+31
+
+DSI_DATAN1
+
+MIPI DSI PHY DATAN1
+
+32
+
+DSI_CLKN
+
+MIPI DSI PHY CLKN
+
+33
+
+DSI_CLKP
+
+MIPI DSI PHY CLKP
+
+TOUCH_CHANNEL8
+No internal connections, physical presence only
+GPIO11，UART1_RXD_PAD，SPI2_WP_PAD，LP_GPIO11，
+TOUCH_CHANNEL9
+
+www.wireless-tag.com
+
+11
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+34
+
+DSI_DATAP0
+
+MIPI DSI PHY DATAP0
+
+35
+
+DSI_DATAN0
+
+MIPI DSI PHY DATAN0
+
+36
+
+GND
+
+GROUND
+
+37
+
+CSI_DATAN0
+
+MIPI CSI PHY DATAN0
+
+38
+
+CSI_DATAP0
+
+MIPI CSI PHY DATAP0
+
+39
+
+CSI_CLKP
+
+MIPI CSI PHY CLKP
+
+40
+
+CSI_CLKN
+
+MIPI CSI PHY CLKN
+
+41
+
+CSI_DATAN1
+
+MIPI CSI PHY DATAN1
+
+42
+
+CSI_DATAP1
+
+MIPI CSI PHY DATAP1
+
+43
+
+GND
+
+GROUND
+
+44
+
+USB_DM
+
+USB2 OTG PHY DM
+
+45
+
+USB_DP
+
+USB2 OTG PHY DP
+
+46
+
+GND
+
+GROUND
+
+47
+
+GND
+
+GROUND
+
+48
+
+GPIO24
+
+GPIO24，USB1P1_N0
+
+49
+
+GPIO25
+
+GPIO25，USB1P1_P0
+
+50
+
+GPIO26
+
+GPIO26，USB1P1_N1
+
+51
+
+GPIO27
+
+GPIO27，USB1P1_P1
+
+52
+
+GPIO28
+
+GPIO28，SPI2_CS_PAD，GMAC_PHY_RXDV_PAD
+
+53
+
+GPIO29
+
+GPIO29，SPI2_D_PAD，GMAC_PHY_RXD0_PAD
+
+54
+
+GPIO30
+
+GPIO30，SPI2_CK_PAD，GMAC_PHY_RXD1_PAD
+
+55
+
+GPIO31
+
+GPIO31，SPI2_Q_PAD，GMAC_PHY_RXER_PAD
+
+56
+
+GPIO32
+
+GPIO32，SPI2_HOLD_PAD，GMAC_RMII_CLK_PAD
+
+57
+
+GPIO33
+
+GPIO33，SPI2_WP_PAD，GMAC_PHY_TXEN_PAD
+
+58
+
+GPIO34
+
+GPIO34，SPI2_IO4_PAD，GMAC_PHY_TXD0_PAD
+
+59
+
+GPIO35
+
+GPIO35，SPI2_IO5_PAD，GMAC_PHY_TXD1_PAD(internal 10K pull-up)
+
+60
+
+GPIO36
+
+GPIO36，SPI2_IO6_PAD，GMAC_PHY_TXER_PAD(internal 10K pull-up)
+
+61
+
+GPIO37
+
+GPIO37，UART0_TXD_PAD，SPI2_IO7_PAD(ESP32-P4 Download Pin)
+www.wireless-tag.com
+
+12
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+62
+
+GPIO38
+
+GPIO38，UART0_RXD_PAD，SPI2_DQS_PAD(ESP32-P4 Download Pin)
+Output POWER
+
+63 ESP_LDO_VO4
+
+（Output voltage range 0.5~2.7V or 3.3V, maximum output
+current 0.2A）
+
+64
+
+GPIO39
+
+GPIO39，SD1_CDATA0_PAD，REF_50M_CLK_PAD
+
+65
+
+GPIO40
+
+GPIO40，SD1_CDATA1_PAD，GMAC_PHY_TXEN_PAD
+
+66
+
+GPIO41
+
+GPIO41，SD1_CDATA2_PAD，GMAC_PHY_TXD0_PAD
+
+67
+
+PWR_CTRL
+
+Core board power control pin(default high, pull low to power off)
+
+68
+
+VCC_5V0
+
+POWER（5V input for core board power supply）
+
+69
+
+VCC_5V0
+
+POWER（5V input for core board power supply）
+
+70
+
+GND
+
+GROUND
+
+71
+
+GND
+
+GROUND
+
+72
+
+VBAT
+
+73
+
+GPIO42
+
+GPIO42，SD1_CDATA3_PAD，GMAC_PHY_TXD1_PAD
+
+74
+
+GPIO43
+
+GPIO43，SD1_CCLK_PAD，GMAC_PHY_TXER_PAD
+
+75
+
+GPIO44
+
+GPIO44，SD1_CCMD_PAD，GMAC_RMII_CLK_PAD
+
+76
+
+GPIO45
+
+GPIO45，SD1_CDATA4_PAD，GMAC_PHY_RXDV_PAD
+
+77
+
+GPIO46
+
+GPIO46，SD1_CDATA5_PAD，GMAC_PHY_RXD0_PAD
+
+78
+
+GPIO47
+
+GPIO47，SD1_CDATA6_PAD，GMAC_PHY_RXD1_PAD
+
+79
+
+GPIO48
+
+GPIO48，SD1_CDATA7_PAD，GMAC_PHY_RXER_PAD
+
+80
+
+GPIO49
+
+GPIO49，GMAC_PHY_TXEN_PAD，ADC2_CHANNEL0
+
+81
+
+GPIO50
+
+GPIO50，GMAC_RMII_CLK_PAD，ADC2_CHANNEL1
+
+82
+
+GPIO51
+
+GPIO51，GMAC_PHY_RXDV_PAD，ADC2_CHANNEL2，ANA_COMP0
+
+83
+
+GPIO52
+
+GPIO52，GMAC_PHY_RXD0_PAD，ADC2_CHANNEL3，ANA_COMP0
+
+84
+
+GPIO53
+
+GPIO53，GMAC_PHY_RXD1_PAD，ADC2_CHANNEL4，ANA_COMP1
+
+85
+
+GPIO54
+
+GPIO54，GMAC_PHY_RXER_PAD，ADC2_CHANNEL5，ANA_COMP1
+
+86
+
+C5_IO23
+
+GPIO23
+
+battery power supply pin (reserved)
+No internal connections, physical presence only
+
+www.wireless-tag.com
+
+13
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+87
+
+C5_IO24
+
+GPIO24
+
+88
+
+C5_IO25
+
+GPIO25
+
+89
+
+C5_IO26
+
+GPIO26
+
+90
+
+C5_IO27
+
+GPIO27
+
+91
+
+C5_IO28
+
+GPIO28(ESP32-C5 BOOT Pin)
+
+92
+
+GND
+
+GROUND
+
+3.3.Startup Item Configuration
+3.3.1. ESP32-P4 Strapping Pins
+The chip allows for configuring the following boot parameters through
+strapping pins and eFuse bits at power-up or a hardware reset, without
+microcontroller interaction.
+
+
+Chip Boot Mode
+
+– Strapping pin: GPIO35, GPIO36, GPIO37 and GPIO38
+
+
+ROM Message Printing
+
+– Strapping pin: GPIO36
+– eFuse bit: EFUSE_UART_PRINT_CONTROL
+
+
+JTAG Signal Source
+
+– Strapping pin: GPIO34
+– eFuse bit: EFUSE_DIS_PAD_JTAG, EFUSE_DIS_USB_JTAG and
+EFUSE_JTAG_SEL_ENABLE
+The default values of all the above eFuse bits are 0, which means that they
+are not burnt. Given that eFuse is one-time programmable, once an eFuse bit is
+programmed to 1, it can never be reverted to 0.
+The default values of the strapping pins, namely the logic levels, are
+determined by pins’internal weak pull-up/pull-down resistors at reset if the pins
+are not connected to any circuit, or connected to an external high-impedance
+circuit.
+Default Configuration of Strapping Pin
+
+Strapping Pin
+
+Default Configuration
+www.wireless-tag.com
+
+Value
+14
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+GPIO34
+
+Floating
+
+-
+
+GPIO35
+
+Weak pull-up
+
+1
+
+GPIO36
+
+Floating
+
+-
+
+GPIO37
+
+Floating
+
+-
+
+GPIO38
+
+Floating
+
+-
+
+To change the bit values, the strapping pins should be connected to external
+pull-down/pull-up resistors. If the ESP32-P4 is used as a device by a host MCU,
+the strapping pin voltage levels can also be controlled by the host MCU.
+All strapping pins have latches. At system reset, the latches sample the bit
+values of their respective strapping pins and store them until the chip is powered
+down or shut down. The states of latches cannot be changed in any other way. It
+makes the strapping pin values available during the entire chip operation, and the
+pins are freed up to be used as regular IO pins after reset.
+3.3.2. ESP32-P4 Chip Boot Mode Control
+GPIO35 ~ GPIO38 control the boot mode after the reset is released.
+Boot Mode
+
+GPIO35
+
+GPIO36
+
+GPIO37
+
+GPIO38
+
+SPI Boot*
+
+1*
+
+Any value
+
+Any value
+
+Any value
+
+Joint Download Boot
+
+0
+
+1
+
+Any value
+
+Any value
+
+*marks the default value and configuration.
+Joint Download Boot mode supports the following download methods:
+
+
+USB Download Boot:
+– USB-Serial-JTAG Download Boot
+– USB 2.0 OTG Download Boot
+
+
+
+UART Download Boot
+
+
+
+SPI Slave Download Boot
+
+3.3.3. ESP32-P4 ROM Messages Printing Control
+During the boot process, the messages by the ROM code can be printed to:
+
+
+(Default) UART0 and USB Serial/JTAG controller
+www.wireless-tag.com
+
+15
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+
+USB Serial/JTAG controller
+
+
+
+UART0
+
+EFUSE_UART_PRINT_CONTROL and GPIO36 control ROM messages
+printing to UART0 as shown in Table.
+UART0 Code Printing
+
+EFUSE_UART_PRINT_CONTROL
+
+GPIO36
+
+0*
+
+Ignored
+
+1
+
+0
+
+2
+
+1
+
+1
+
+1
+
+2
+
+0
+
+3
+
+Ignored
+
+Enabled*
+
+Disabled
+
+*marks the default value and configuration.
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT controls the printing to
+USB Serial/JTAG controller as shown in Table.
+USB Serial/JTAG ROM Code Printing
+
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+
+Enabled*
+
+0*
+
+Disabled
+
+1
+
+*marks the default value and configuration.
+3.3.4. ESP32-C5 Strapping Pins
+The chip allows for configuring the following boot parameters through
+strapping pins and eFuse bits at power-up or a hardware reset, without
+microcontroller interaction.
+
+
+Chip Boot Mode
+
+– Strapping pin: GPIO26, GPIO27 and GPIO28
+
+
+ROM Message Printing
+
+– Strapping pin: GPIO27
+– eFuse bit:
+EFUSE_UART_PRINT_CONTROL and EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+
+www.wireless-tag.com
+
+16
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+The default values of the strapping pins, namely the logic levels, are
+determined by pins’internal weak pull-up/pull-down resistors at reset if the pins
+are not connected to any circuit, or connected to an external high-impedance
+circuit.
+Default Configuration of Strapping Pin
+
+Strapping Pin
+
+Default Configuration
+
+Value
+
+GPIO26
+
+Floating
+
+-
+
+GPIO27
+
+Weak pull-up
+
+1
+
+GPIO28
+
+Weak pull-up
+
+1
+
+To change the bit values, the strapping pins should be connected to external
+pull-down/pull-up resistors.
+All strapping pins have latches. At system reset, the latches sample the bit
+values of their respective strapping pins and store them until the chip is powered
+down or shut down. The states of latches cannot be changed in any other way. It
+makes the strapping pin values available during the entire chip operation, and the
+pins are freed up to be used as regular IO pins after reset.
+3.3.5. ESP32-C5 Chip Boot Mode Control
+GPIO27 and GPIO28 control the boot mode after the reset is released.
+Boot Mode
+
+GPIO26
+
+GPIO27
+
+GPIO28
+
+SPI Boot*
+
+Any value
+
+Any value
+
+1*
+
+Joint Download Boot 0
+
+Any value
+
+1
+
+0
+
+Joint Download Boot 1
+
+0
+
+0
+
+0
+
+*marks the default value and configuration.
+Joint Download Boot mode 0 supports the following download methods:
+
+
+USB-Serial-JTAG Download Boot
+
+
+
+UART Download Boot
+
+Joint Download Boot mode 1 supports the following download methods:
+
+
+UART Download Boot
+
+
+
+SDIO Download Boot
+www.wireless-tag.com
+
+17
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+In SPI Boot mode, the ROM bootloader loads and executes the program from
+SPI flash to boot thesystem.
+In Joint Download Boot 0 mode, users can download binary files into flash
+using UART0 or USB interfaces. It is also possible to download binary files into
+SRAM and execute it from SRAM.
+In Joint Download Boot 1 mode, users can download binary files into flash
+using UART0 or SDIO interfaces. It is also possible to download binary files into
+SRAM and execute it from SRAM.
+3.3.6. ESP32-C5 ROM Messages Printing Control
+During the boot process, the messages by the ROM code can be printed to:
+
+
+(Default) UART0 and USB Serial/JTAG controller
+
+
+
+USB Serial/JTAG controller
+
+
+
+UART0
+
+EFUSE_UART_PRINT_CONTROL and GPIO27 control ROM messages
+printing to UART0 as shown in Table.
+UART0 Code Printing
+
+Register2
+
+eFuse3
+
+GPIO27
+
+0
+
+ROM messages are always printed to UART0 during
+
+（0b00)
+
+boot
+
+*
+
+X4
+
+*
+
+Print is enabled during boot
+Print is disabled during boot
+
+0*
+
+Print is disabled during boot
+
+2（0b10)
+
+Print is enabled during boot
+Print is disabled during boot
+Print is disabled during boot
+
+1（0b01)
+
+1
+
+0
+1
+0
+1
+
+3（0b11)
+
+x
+
+x
+
+x
+
+*marks the default value and configuration.
+2
+
+Register: LP_AON_STORE4_REG[0]
+
+3
+
+eFuse: EFUSE_UART_PRINT_CONTROL
+
+x: x indicates that the value has no effect on the result and can be ignored
+
+4
+
+www.wireless-tag.com
+
+18
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT controls the printing to
+USB Serial/JTAG controller as shown in Table.
+USB Serial/JTAG ROM Code Printing
+
+EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+
+Enabled*
+
+0*
+1
+
+Disabled
+
+Ignored
+
+*marks the default value and configuration
+
+3.4.Other Pin Descriptions
+The GPIO12 and GPIO13 pins of the ESP32-P4 chip on the core board are
+connected to the GPIO0 and CHIP_PU pins of the ESP32-C5 chip on the core
+board (see table below). The ESP32-P4 can wake up the ESP32-C5 via GPIO12.
+and the ESP32-P4 can reset the ESP32-C5 via GPIO13.
+ESP32-P4
+
+ESP32-C5
+
+GPIO12
+
+GPIO0
+
+GPIO13
+
+CHIP_PU
+
+The GPIO14, GPIO15, GPIO16, GPIO17, GPIO18, and GPIO19 pins of the
+ESP32-P4 chip on the core board are connected to the GPIO7, GPIO8, GPIO9,
+GPIO10, GPIO13, and GPIO14 pins on the ESP32-C5 chip within the core board
+(see table below). Communication between the two chips occurs via the SDIO
+interface.
+ESP32-P4
+
+ESP32-C5
+
+GPIO14
+
+GPIO8
+
+GPIO15
+
+GPIO7
+
+GPIO16
+
+GPIO14
+
+GPIO17
+
+GPIO13
+
+GPIO18
+
+GPIO9
+
+GPIO19
+
+GPIO10
+
+www.wireless-tag.com
+
+19
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+4. Electrical Characteristics
+4.1.Absolute Maximum Limit Value
+Exceeding the absolute maximum ratings may result in permanent damage
+to the device. This is an emphasized rating only and does not address the
+functional operation of the device under these or other conditions beyond those
+indicated in these specifications. Prolonged exposure to absolute maximum rating
+conditions may affect module reliability.
+
+4.2.Power Consumption Characteristics
+update soon
+
+4.3.Recommended Working Conditions
+Parameter
+
+Description
+
+Min
+
+Typ
+
+Max
+
+Unit
+
+VCC
+
+Power pin voltage
+
+4.8
+
+5
+
+5.5
+
+V
+
+-
+
+1.5
+
+-
+
+A
+
+-40
+
+-
+
+85
+
+℃
+
+IVCC
+TA
+
+Supply current from
+external power supply
+Operating Temperature
+
+5. WT01P4C5-S1 Schematic
+update soon
+Figure 8: WT01P4C5-S1 Schematic
+
+www.wireless-tag.com
+
+20
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+6. WT01P4C5-S1 Dimensions
+The following figure shows the top view and front view of WT01P4C5-S1 with
+a tolerance of ±0.2 mm.
+
+Figure 9: Dimension figure of WT01P4C5-S1
+
+7. Storage Condition
+Prerequisite
+
+Parameters
+
+Storage condition
+
+Non-condensing atmosphere < 40℃ /90 %RH in sealed MBBs
+
+Conditions of use
+
+168 hours at 25 ± 5℃ , 60 % RH.
+
+Moisture sensitivity
+
+3 levels
+
+www.wireless-tag.com
+
+21
+
+WT01P4C5-S1 Datasheet
+
+WIRELESS-TAG
+
+8. Reflow Soldering Curve
+
+Figure 10: Reflow Soldering Temperature Curve
+
+9. Contact Us
+Official website: www.wireless-tag.com
+Contact Email: gtm@wireless-tag.com
+Technical support e-mail: technical@wireless-tag.com
+
+www.wireless-tag.com
+
+22
+
+
