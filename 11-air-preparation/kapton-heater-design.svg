@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="560" viewBox="0 0 940 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="940" height="560" fill="#fbfaf7"/>
+  <text x="470" y="34" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Нагреватель: PI (Kapton) плёнка — JLCPCB custom</text>
+  <text x="470" y="54" text-anchor="middle" font-size="12" fill="#777">5 В · R ≈ 8.3 Ω · 3 Вт · 400 × 12 мм · etched SS 30 µm · NTC-опция в плёнке</text>
+
+  <!-- ============ unfolded serpentine ============ -->
+  <text x="250" y="92" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">1) Развёртка (заказ в JLCPCB: Gerber/DXF)</text>
+  <!-- substrate -->
+  <rect x="60" y="110" width="380" height="120" rx="6" fill="#f3e6d0" stroke="#c9a86a" stroke-width="2"/>
+  <text x="70" y="128" font-size="10" fill="#a9833f">polyimide substrate (жёлтая)</text>
+  <!-- serpentine path -->
+  <path d="M70,125 H430 M70,143 H430 M70,161 H430 M70,179 H430 M70,205 V125 M150,125 V205 M230,125 V205 M310,125 V205 M390,125 V205 M70,205 H430 M70,223 H430"
+        fill="none" stroke="#96412a" stroke-width="3" opacity="0.9"/>
+  <text x="70" y="244" font-size="10.5" fill="#96412a">змеевик (serpentine): ~15 дорожек × 0.4 мм, шаг 0.8 мм → R ≈ 8.3 Ω</text>
+  <text x="70" y="262" font-size="10.5" fill="#555">pad-полигоны слева для вывода lead-wire; NTC-площадка ПОСЕРЕДИНЕ</text>
+  <!-- pads -->
+  <rect x="52" y="140" width="16" height="30" rx="2" fill="#c0c0c0" stroke="#888"/>
+  <rect x="432" y="170" width="16" height="30" rx="2" fill="#c0c0c0" stroke="#888"/>
+  <!-- NTC -->
+  <circle cx="345" cy="165" r="9" fill="#fff" stroke="#c47a2d" stroke-width="2"/>
+  <text x="345" y="169" text-anchor="middle" font-size="8" fill="#c47a2d" font-weight="bold">NTC</text>
+  <!-- dims -->
+  <line x1="60" y1="112" x2="60" y2="228" stroke="#888" stroke-width="1"/>
+  <line x1="400" y1="240" x2="440" y2="240" stroke="#888" stroke-width="1"/>
+  <text x="250" y="236" font-size="10" fill="#888">длина 400 мм</text>
+
+  <!-- ============ wrapped on tube ============ -->
+  <text x="700" y="92" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">2) Монтаж на трубу</text>
+  <!-- tube -->
+  <rect x="640" y="110" width="120" height="340" rx="12" fill="#b87333" stroke="#8a5222"/>
+  <!-- kapton wrap helix -->
+  <path d="M640,130 Q700,108 760,130 Q700,150 640,130 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <path d="M640,180 Q700,158 760,180 Q700,200 640,180 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <path d="M640,230 Q700,208 760,230 Q700,250 640,230 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <path d="M640,280 Q700,258 760,280 Q700,300 640,280 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <path d="M640,330 Q700,308 760,330 Q700,350 640,330 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <path d="M640,380 Q700,358 760,380 Q700,400 640,380 Z" fill="#f3e6d0" stroke="#c9a86a"/>
+  <text x="700" y="270" font-size="10" fill="#fff" text-anchor="middle" opacity="0.85">ACR 3/8"</text>
+  <!-- insulation -->
+  <rect x="628" y="100" width="144" height="360" rx="16" fill="none" stroke="#444" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="780" y="150" font-size="11" fill="#555"> Kapton-полоса 12 мм</text>
+  <text x="780" y="166" font-size="11" fill="#555">намотана по спирали,</text>
+  <text x="780" y="182" font-size="11" fill="#555">клей-слой к трубе (PSA)</text>
+  <text x="780" y="205" font-size="11" fill="#a9833f">сверху — изоляция HVAC</text>
+  <text x="780" y="221" font-size="11" fill="#a9833f">13 мм ID (3/8")</text>
+  <text x="780" y="244" font-size="11" fill="#555">NTC (третий lead) —</text>
+  <text x="780" y="260" font-size="11" fill="#555">контроль стенки трубы</text>
+
+  <!-- ============ electrical ============ -->
+  <text x="250" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">3) Электрика</text>
+  <rect x="80" y="350" width="100" height="34" rx="7" fill="#fff" stroke="#3f7fbf" stroke-width="1.5"/>
+  <text x="130" y="372" text-anchor="middle" font-size="12" fill="#2c5a8a" font-weight="bold">5 В rail</text>
+  <line x1="180" y1="367" x2="240" y2="367" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="240" y="350" width="120" height="34" rx="7" fill="#fff" stroke="#3f7fbf" stroke-width="1.5"/>
+  <text x="300" y="372" text-anchor="middle" font-size="12" fill="#2c5a8a" font-weight="bold">MOSFET + GPIO ON/OFF</text>
+  <line x1="360" y1="367" x2="420" y2="367" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="420" y="350" width="110" height="34" rx="7" fill="#f3e6d0" stroke="#c9a86a" stroke-width="1.5"/>
+  <text x="475" y="372" text-anchor="middle" font-size="12" fill="#96412a" font-weight="bold">Heater 8.3 Ω</text>
+  <text x="130" y="405" font-size="11" fill="#555">I = P/U = 3/5 = 0.6 A</text>
+  <text x="130" y="422" font-size="11" fill="#555">R = U²/P = 25/3 = 8.33 Ω</text>
+  <text x="130" y="439" font-size="11" fill="#555">JLC допуск сопротивления: ±5 % (≥1 Ω)</text>
+
+  <!-- ============ notes ============ -->
+  <text x="46" y="480" font-size="12" fill="#2f7a31">JLCPCB free routing: заказ задаётся как (напряжение, мощность/сопротивление, L×W) — трассировку делает фабрика;</text>
+  <text x="46" y="498" font-size="12" fill="#2f7a31">опционально встроенный NTC (SMD-площадка) прямо в плёнке — второй NTC-страж не нужен отдельным компонентом.</text>
+  <text x="46" y="522" font-size="12" fill="#a33a18">Плотность мощности = 3 Вт / (40 × 1.2 см) ≈ 0.06 Вт/см² — очень ниже лимита PI (~2.5–7.9 Вт/см²) → деградации нет.</text>
+  <text x="46" y="540" font-size="12" fill="#a33a18">Температурный рейтинг плёнки −40…+200 °C (кратк.); рабочий дизайн: нить ≤ 65 °C, стенка трубы ≤ 40 °C у сенсора.</text>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+</svg>

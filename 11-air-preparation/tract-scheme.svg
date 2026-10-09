@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff9d5c"/>
+      <stop offset="1" stop-color="#e2542f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="560" fill="#fbfaf7"/>
+  <text x="460" y="34" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Altruist-2 Pro — PM air preparation tract (variant C: PTC + MCU hysteresis)</text>
+
+  <!-- Ambient / upstream zone -->
+  <rect x="30" y="440" width="860" height="90" rx="8" fill="#eef4fb" stroke="#9db8d4"/>
+  <text x="50" y="468" font-size="13" fill="#2c5a8a" font-weight="bold">AMBIENT (наружа)</text>
+  <text x="50" y="490" font-size="12" fill="#555">Вход: дождевой козырёк + наклон вниз против ветра/насекомых (insect screen mesh 300 µm)</text>
+  <text x="50" y="510" font-size="12" fill="#555">SHT40 upstream — мерит РОДНОЙ наружный воздух ДО нагревателя (RH-гистерезис: вкл ≥65 %, выкл ≤60 %)</text>
+
+  <!-- Inlet arrow -->
+  <line x1="120" y1="438" x2="120" y2="400" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="132" y="424" font-size="11" fill="#444">1 LPM (SDS011 fan)</text>
+
+  <!-- Heated tube -->
+  <rect x="90" y="330" width="380" height="64" rx="14" fill="url(#hot)" stroke="#a33a18" stroke-width="1.5"/>
+  <rect x="90" y="316" width="380" height="82" rx="16" fill="none" stroke="#b98a4e" stroke-width="5" opacity="0.45"/>
+  <text x="280" y="356" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#fff">Нагретая секция: латунь 9 мм × 220 мм</text>
+  <text x="280" y="374" text-anchor="middle" font-size="12" fill="#fff">PTC-нить 65 °C self-limiting, изоляция EPDM/PTFE 5 мм</text>
+  <text x="280" y="390" text-anchor="middle" font-size="11" fill="#ffe8d6">residence time 0.85 с</text>
+
+  <!-- NTC on tube -->
+  <line x1="90" y1="340" x2="48" y2="340" stroke="#c47a2d" stroke-width="2"/>
+  <rect x="10" y="322" width="38" height="34" rx="5" fill="#fff" stroke="#c47a2d"/>
+  <text x="29" y="343" text-anchor="middle" font-size="10.5" fill="#c47a2d" font-weight="bold">NTC</text>
+  <text x="6" y="376" font-size="10" fill="#8a5a1c">guard T&gt;50 °C → cut</text>
+
+  <!-- MOSFET control -->
+  <rect x="150" y="255" width="260" height="42" rx="7" fill="#eafbe7" stroke="#4a9d4c"/>
+  <text x="280" y="273" text-anchor="middle" font-size="12" fill="#2f7a31" font-weight="bold">ESP32-P4 GPIO → MOSFET AO3400 (5 В)</text>
+  <text x="280" y="289" text-anchor="middle" font-size="11" fill="#2f7a31">ON/OFF hysteresis по RH от SHT40 · NTC-страж · телеметрия</text>
+  <line x1="280" y1="297" x2="280" y2="314" stroke="#4a9d4c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Cold zone -->
+  <rect x="470" y="330" width="110" height="64" rx="10" fill="#dbe7f3" stroke="#7a9cbb"/>
+  <text x="525" y="352" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5a8a">Холодная зона</text>
+  <text x="525" y="368" text-anchor="middle" font-size="11" fill="#2c5a8a">5–8 см без нити,</text>
+  <text x="525" y="382" text-anchor="middle" font-size="11" fill="#2c5a8a">без изоляции → ~40 °C</text>
+
+  <!-- Heated air line into T-split -->
+  <line x1="580" y1="362" x2="640" y2="362" stroke="#444" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="600" y="350" font-size="11" fill="#444">≈40 °C</text>
+
+  <!-- T-split -->
+  <circle cx="655" cy="362" r="7" fill="#444"/>
+  <line x1="655" y1="362" x2="655" y2="300" stroke="#444" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="655" y1="362" x2="655" y2="420" stroke="#444" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="668" y="352" font-size="11" fill="#777">T-split (тройник)</text>
+
+  <!-- Sensor A: SDS011 -->
+  <rect x="600" y="230" width="270" height="66" rx="10" fill="#fff" stroke="#3f7fbf" stroke-width="2"/>
+  <text x="735" y="256" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5a8a">Канал A — SDS011</text>
+  <text x="735" y="274" text-anchor="middle" font-size="11.5" fill="#555">основной PM-сенсор, ~1 LPM (встроенный вентилятор)</text>
+  <text x="735" y="290" text-anchor="middle" font-size="11" fill="#a06">RH входа цель ≤45–50 % (штатная калибровка ~50 %)</text>
+
+  <!-- Sensor B: PMSA003 -->
+  <rect x="600" y="424" width="270" height="60" rx="10" fill="#fff" stroke="#3f7fbf" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="735" y="449" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2c5a8a">Канал B — PMSA003 (опция)</text>
+  <text x="735" y="467" text-anchor="middle" font-size="11.5" fill="#555">~0.1 LPM через дроссель от общего тракта</text>
+
+  <!-- Homogeneous warm plenum note -->
+  <rect x="30" y="60" width="860" height="70" rx="8" fill="#fdf6e3" stroke="#c9ab5e"/>
+  <text x="50" y="86" font-size="12.5" fill="#8a6d1f" font-weight="bold">Тёплый плениум (газовые сенсоры)</text>
+  <text x="50" y="105" font-size="11.5" fill="#8a6d1f">MiCS-4514 / SPEC 110-406 / SGP41 получают тот же воздух БЕЗ подогрева (общий объём корпуса); NH₃-канал — макс. короткая трасса (ADR-001 DNP)</text>
+  <line x1="460" y1="130" x2="460" y2="228" stroke="#c9ab5e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- Residual bias note -->
+  <rect x="30" y="170" width="430" height="46" rx="7" fill="#fff" stroke="#b9b9b9"/>
+  <text x="45" y="190" font-size="11.5" fill="#555">После осушки — постоянное смещение ×≈2.5 вниз (Duisburg)</text>
+  <text x="45" y="207" font-size="11.5" fill="#555">→ один калибровочный коэффициент в firmware</text>
+</svg>

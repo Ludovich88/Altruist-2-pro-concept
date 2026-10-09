@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <linearGradient id="hot" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#e2542f"/>
+      <stop offset="1" stop-color="#ff9d5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="560" fill="#fbfaf7"/>
+  <text x="380" y="34" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">V1 — прямая вертикальная труба</text>
+  <text x="380" y="54" text-anchor="middle" font-size="12" fill="#777">ACR 3/8" (ID 7.9 мм) × 40 см · PTC-нить 65 °C · изоляция 5 мм</text>
+
+  <!-- head -->
+  <rect x="300" y="80" width="160" height="34" rx="10" fill="#eef4fb" stroke="#9db8d4"/>
+  <text x="380" y="102" text-anchor="middle" font-size="12" fill="#2c5a8a" font-weight="bold">Голова: козырёк + screen</text>
+
+  <!-- tube -->
+  <rect x="340" y="120" width="80" height="330" rx="14" fill="url(#hot)" stroke="#a33a18"/>
+  <rect x="328" y="116" width="104" height="338" rx="16" fill="none" stroke="#b98a4e" stroke-width="5" opacity="0.4"/>
+  <text x="460" y="280" font-size="12" fill="#a33a18" font-weight="bold">Нагретая секция: 40 см</text>
+  <text x="460" y="297" font-size="11" fill="#a33a18">residence 1.18 с @ 1 LPM</text>
+
+  <!-- NTC -->
+  <line x1="328" y1="290" x2="286" y2="290" stroke="#c47a2d" stroke-width="2"/>
+  <rect x="250" y="274" width="36" height="32" rx="5" fill="#fff" stroke="#c47a2d"/>
+  <text x="268" y="294" text-anchor="middle" font-size="10" fill="#c47a2d" font-weight="bold">NTC</text>
+
+  <!-- flow arrows -->
+  <line x1="380" y1="118" x2="380" y2="126" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="380" y1="430" x2="380" y2="452" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="394" y="446" font-size="11" fill="#444">≈40 °C на выходе</text>
+
+  <!-- drip leg -->
+  <rect x="310" y="456" width="140" height="30" rx="6" fill="#dbe7f3" stroke="#7a9cbb"/>
+  <text x="380" y="476" text-anchor="middle" font-size="11.5" fill="#2c5a8a">Drip leg / дренаж (низ)</text>
+
+  <!-- sensors -->
+  <rect x="250" y="498" width="260" height="42" rx="8" fill="#fff" stroke="#3f7fbf" stroke-width="1.6"/>
+  <text x="380" y="516" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5a8a">Сенсоры (вход A SDS011, вход B PMSA003)</text>
+  <text x="380" y="533" text-anchor="middle" font-size="10.5" fill="#777">в тёплом объёме · SHT40 upstream на входе</text>
+
+  <!-- note -->
+  <text x="46" y="140" font-size="11.5" fill="#555">Плюсы: простейший монтаж, чистый поток,</text>
+  <text x="46" y="157" font-size="11.5" fill="#555">легко инструментировать NTC по высоте.</text>
+  <text x="46" y="180" font-size="11.5" fill="#8a6d1f">Минус: 40 см высоты в корпусе;</text>
+  <text x="46" y="197" font-size="11.5" fill="#8a6d1f">ламинарный профиль (нет перемешивания).</text>
+</svg>

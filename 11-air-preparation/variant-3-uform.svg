@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <linearGradient id="hotU" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2542f"/>
+      <stop offset="1" stop-color="#ff9d5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="560" fill="#fbfaf7"/>
+  <text x="380" y="34" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">V3 — U-образная трасса (вниз-вверх-вниз)</text>
+  <text x="380" y="54" text-anchor="middle" font-size="12" fill="#777">нагретые восходящие колена · низ U = отстойник/дренаж</text>
+
+  <!-- head -->
+  <rect x="40" y="90" width="140" height="32" rx="10" fill="#eef4fb" stroke="#9db8d4"/>
+  <text x="110" y="111" text-anchor="middle" font-size="12" fill="#2c5a8a" font-weight="bold">Голова + screen</text>
+
+  <!-- path: down, hot up, hot up, out -->
+  <path d="M110,122 L110,430 Q110,470 150,470 L250,470 Q290,470 290,430 L290,170 Q290,130 330,130 L430,130 Q470,130 470,170 L470,300"
+        fill="none" stroke="#999" stroke-width="10" stroke-linecap="round"/>
+  <!-- hot segments overlay: bottom U + second riser -->
+  <path d="M110,300 L110,430 Q110,470 150,470 L250,470 Q290,470 290,430 L290,300"
+        fill="none" stroke="#e2542f" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+  <path d="M470,200 L470,300" fill="none" stroke="#ff9d5c" stroke-width="10" stroke-linecap="round"/>
+  <line x1="290" y1="290" x2="290" y2="420" stroke="#ffe8d6" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="304" y="360" font-size="11" fill="#fff" font-weight="bold">нагретая</text>
+  <text x="304" y="374" font-size="11" fill="#fff" font-weight="bold">секция ~40 см</text>
+
+  <!-- NTC -->
+  <line x1="290" y1="330" x2="336" y2="330" stroke="#c47a2d" stroke-width="2"/>
+  <rect x="338" y="316" width="34" height="30" rx="5" fill="#fff" stroke="#c47a2d"/>
+  <text x="355" y="335" text-anchor="middle" font-size="10" fill="#c47a2d" font-weight="bold">NTC</text>
+
+  <!-- drip leg at bottom of U -->
+  <rect x="130" y="488" width="140" height="28" rx="6" fill="#dbe7f3" stroke="#7a9cbb"/>
+  <text x="200" y="507" text-anchor="middle" font-size="11" fill="#2c5a8a">Дренаж: низ U-колена</text>
+  <line x1="180" y1="474" x2="180" y2="486" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- flow arrows -->
+  <line x1="110" y1="140" x2="110" y2="180" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="470" y1="220" x2="470" y2="260" stroke="#888" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- out -->
+  <line x1="470" y1="306" x2="530" y2="306" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="480" y="292" font-size="11" fill="#444">≈40 °C</text>
+  <rect x="530" y="286" width="160" height="40" rx="7" fill="#fff" stroke="#3f7fbf" stroke-width="1.6"/>
+  <text x="610" y="303" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2c5a8a">Сенсоры A + B</text>
+  <text x="610" y="320" text-anchor="middle" font-size="10.5" fill="#777">SHT40 upstream</text>
+
+  <text x="46" y="545" font-size="11.5" fill="#555">Прямые секции удобны для намотки нити; каждое нижнее колено — точка сбора конденсата.</text>
+</svg>
